@@ -19,12 +19,12 @@ package impl
 import (
 	"context"
 
-	crossplugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/entity"
-	plugin "github.com/coze-dev/coze-studio/backend/domain/plugin/service"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	crossplugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/entity"
+	plugin "github.com/kozex-ai/kozex/backend/domain/plugin/service"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 var defaultSVC crossplugin.PluginService

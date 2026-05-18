@@ -22,8 +22,8 @@ import (
 	"github.com/cloudwego/eino-ext/components/model/ollama"
 	"github.com/eino-contrib/ollama/api"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type ollamaModelBuilder struct {

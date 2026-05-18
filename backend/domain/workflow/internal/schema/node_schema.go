@@ -19,8 +19,8 @@ package schema
 import (
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 // NodeSchema is the universal description and configuration for a workflow Node.

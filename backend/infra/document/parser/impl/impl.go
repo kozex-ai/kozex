@@ -20,13 +20,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser/impl/builtin"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser/impl/ppstructure"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser/impl/builtin"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser/impl/ppstructure"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type Manager = parser.Manager

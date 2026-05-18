@@ -26,12 +26,12 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/apache/rocketmq-client-go/v2/rlog"
 
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/signal"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func RegisterConsumer(nameServer, topic, group string, consumerHandler eventbus.ConsumerHandler, opts ...eventbus.ConsumerOpt) error {

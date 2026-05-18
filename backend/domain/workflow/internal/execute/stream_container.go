@@ -23,7 +23,7 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
 )
 
 type StreamContainer struct {

@@ -23,8 +23,8 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/variable"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/variable"
 )
 
 type ParentIntermediateStore struct {

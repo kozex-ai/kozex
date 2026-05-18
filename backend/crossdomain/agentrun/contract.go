@@ -19,7 +19,7 @@ package crossagentrun
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
 )
 
 //go:generate  mockgen -destination agentrunmock/agent_run_mock.go --package agentrunmock -source agent_run.go

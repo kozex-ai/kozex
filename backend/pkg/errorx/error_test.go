@@ -24,7 +24,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx/code"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx/code"
 )
 
 var (

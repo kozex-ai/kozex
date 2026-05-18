@@ -23,9 +23,9 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/urltobase64url"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/urltobase64url"
 )
 
 func TestTransformMessagePart(t *testing.T) {

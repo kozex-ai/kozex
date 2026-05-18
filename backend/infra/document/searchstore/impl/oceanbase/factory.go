@@ -20,10 +20,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/infra/oceanbase"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/infra/oceanbase"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type Factory struct {

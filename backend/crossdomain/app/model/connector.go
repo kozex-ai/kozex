@@ -17,8 +17,8 @@
 package model
 
 import (
-	publishAPI "github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/publish"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	publishAPI "github.com/kozex-ai/kozex/backend/api/model/app/intelligence/publish"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var ConnectorIDWhiteList = []int64{

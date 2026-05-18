@@ -22,8 +22,8 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func GetWorkflowDebugURL(ctx context.Context, workflowID, spaceID, executeID int64) string {

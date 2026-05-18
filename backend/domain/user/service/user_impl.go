@@ -32,19 +32,19 @@ import (
 
 	"golang.org/x/crypto/argon2"
 
-	uploadEntity "github.com/coze-dev/coze-studio/backend/domain/upload/entity"
-	userEntity "github.com/coze-dev/coze-studio/backend/domain/user/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/user/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/user/repository"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	uploadEntity "github.com/kozex-ai/kozex/backend/domain/upload/entity"
+	userEntity "github.com/kozex-ai/kozex/backend/domain/user/entity"
+	"github.com/kozex-ai/kozex/backend/domain/user/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/user/repository"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type Components struct {

@@ -19,12 +19,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type pluginAuthConverter struct {

@@ -17,8 +17,8 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type PluginInfo struct {

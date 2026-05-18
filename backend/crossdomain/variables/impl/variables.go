@@ -19,12 +19,12 @@ package impl
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/kvmemory"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	crossvariables "github.com/coze-dev/coze-studio/backend/crossdomain/variables"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/variables/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
-	variables "github.com/coze-dev/coze-studio/backend/domain/memory/variables/service"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/kvmemory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	crossvariables "github.com/kozex-ai/kozex/backend/crossdomain/variables"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/variables/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
+	variables "github.com/kozex-ai/kozex/backend/domain/memory/variables/service"
 )
 
 var defaultSVC crossvariables.Variables

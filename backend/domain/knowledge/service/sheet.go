@@ -26,17 +26,17 @@ import (
 
 	"github.com/xuri/excelize/v2"
 
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/consts"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/convert"
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	rentity "github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/consts"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/convert"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	rentity "github.com/kozex-ai/kozex/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func (k *knowledgeSVC) GetAlterTableSchema(ctx context.Context, req *AlterTableSchemaRequest) (*TableSchemaResponse, error) {

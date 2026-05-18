@@ -20,15 +20,15 @@ import (
 	"context"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/i18n"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/i18n"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type ModelmgrApplicationService struct {

@@ -23,7 +23,7 @@ import (
 	"database/sql/driver"
 	"fmt"
 	"github.com/apache/thrift/lib/go/thrift"
-	"github.com/coze-dev/coze-studio/backend/api/model/base"
+	"github.com/kozex-ai/kozex/backend/api/model/base"
 )
 
 type TableDataType int64

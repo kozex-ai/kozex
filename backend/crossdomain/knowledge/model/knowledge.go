@@ -21,9 +21,9 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type ListKnowledgeRequest struct {

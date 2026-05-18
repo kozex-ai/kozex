@@ -22,8 +22,8 @@ import (
 
 	"github.com/cloudwego/eino/components/embedding"
 
-	contract "github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	contract "github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type denseOnlyWrap struct {

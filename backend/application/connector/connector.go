@@ -19,9 +19,9 @@ package connector
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/connector/entity"
-	connector "github.com/coze-dev/coze-studio/backend/domain/connector/service"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/domain/connector/entity"
+	connector "github.com/kozex-ai/kozex/backend/domain/connector/service"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type ConnectorApplicationService struct {

@@ -22,12 +22,12 @@ import (
 	"fmt"
 	"strings"
 
-	config "github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr/internal/model"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr/internal/query"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	config "github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr/internal/model"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr/internal/query"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func (c *ModelConfig) GetProviderModelList(ctx context.Context) ([]*config.ProviderModelList, error) {

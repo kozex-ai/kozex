@@ -19,8 +19,8 @@ package entity
 import (
 	"github.com/xuri/excelize/v2"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/knowledge"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/api/model/data/knowledge"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
 )
 
 type Database = model.Database

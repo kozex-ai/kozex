@@ -23,18 +23,18 @@ import (
 
 	"github.com/milvus-io/milvus/client/v2/milvusclient"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore/impl/elasticsearch"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore/impl/milvus"
-	searchstoreOceanbase "github.com/coze-dev/coze-studio/backend/infra/document/searchstore/impl/oceanbase"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore/impl/vikingdb"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding/impl"
-	"github.com/coze-dev/coze-studio/backend/infra/es/impl/es"
-	"github.com/coze-dev/coze-studio/backend/infra/oceanbase"
-	"github.com/coze-dev/coze-studio/backend/pkg/envkey"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore/impl/elasticsearch"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore/impl/milvus"
+	searchstoreOceanbase "github.com/kozex-ai/kozex/backend/infra/document/searchstore/impl/oceanbase"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore/impl/vikingdb"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/infra/embedding/impl"
+	"github.com/kozex-ai/kozex/backend/infra/es/impl/es"
+	"github.com/kozex-ai/kozex/backend/infra/oceanbase"
+	"github.com/kozex-ai/kozex/backend/pkg/envkey"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type Manager = searchstore.Manager

@@ -23,18 +23,18 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/convert"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type Config struct {

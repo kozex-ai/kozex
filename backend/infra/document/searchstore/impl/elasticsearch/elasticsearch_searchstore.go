@@ -28,10 +28,10 @@ import (
 	"github.com/cloudwego/eino/components/retriever"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/es"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/es"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type esSearchStore struct {

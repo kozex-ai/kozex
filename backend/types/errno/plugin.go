@@ -19,7 +19,7 @@ package errno
 import (
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx/code"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx/code"
 )
 
 // Plugin: 109 000 000 ~ 109 999 999

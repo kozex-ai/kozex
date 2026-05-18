@@ -27,16 +27,16 @@ import (
 	"github.com/cloudwego/eino/components/tool"
 	"github.com/cloudwego/eino/components/tool/utils"
 
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	crossdatabase "github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	"github.com/coze-dev/coze-studio/backend/infra/sqlparser"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	crossdatabase "github.com/kozex-ai/kozex/backend/crossdomain/database"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	"github.com/kozex-ai/kozex/backend/infra/sqlparser"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 const (

@@ -24,10 +24,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/internal/dal/model"
-	mock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/internal/mock/infra/orm"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/entity"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/internal/dal/model"
+	mock "github.com/kozex-ai/kozex/backend/internal/mock/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/internal/mock/infra/orm"
 )
 
 func TestApiAuthImpl_Create(t *testing.T) {

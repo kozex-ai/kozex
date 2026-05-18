@@ -26,12 +26,12 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	workflow2 "github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/exit"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
+	workflow2 "github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/exit"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
 )
 
 type workflow = compose.Workflow[map[string]any, map[string]any]

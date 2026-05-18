@@ -26,7 +26,7 @@ import (
 	"github.com/apache/pulsar-client-go/pulsar"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var serviceURL = "pulsar://localhost:6650"

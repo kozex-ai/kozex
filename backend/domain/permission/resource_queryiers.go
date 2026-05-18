@@ -20,18 +20,18 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/agent"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/app"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/knowledge"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin"
-	crossuser "github.com/coze-dev/coze-studio/backend/crossdomain/user"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/crossdomain/agent"
+	"github.com/kozex-ai/kozex/backend/crossdomain/app"
+	"github.com/kozex-ai/kozex/backend/crossdomain/database"
+	"github.com/kozex-ai/kozex/backend/crossdomain/knowledge"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin"
+	crossuser "github.com/kozex-ai/kozex/backend/crossdomain/user"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 
-	databaseModel "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
+	databaseModel "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
 )
 
 type AgentResourceQueryer struct {

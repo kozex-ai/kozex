@@ -17,9 +17,9 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
 )
 
 // Use composition instead of aliasing for domain entities to enhance extensibility

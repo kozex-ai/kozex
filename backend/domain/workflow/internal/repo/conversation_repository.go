@@ -24,13 +24,13 @@ import (
 	"gorm.io/gen"
 	"gorm.io/gorm"
 
-	crossconversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/repo/dal/model"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	crossconversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/repo/dal/model"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 const batchSize = 10

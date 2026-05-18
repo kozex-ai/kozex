@@ -17,10 +17,10 @@
 package app
 
 import (
-	resourceCommon "github.com/coze-dev/coze-studio/backend/api/model/resource/common"
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	resourceCommon "github.com/kozex-ai/kozex/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func toResourceType(resType resourceCommon.ResType) (entity.ResourceType, error) {

@@ -26,16 +26,16 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	workflow2 "github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	schema2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
+	workflow2 "github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/convert"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	schema2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
 )
 
 type OutputEmitter struct {

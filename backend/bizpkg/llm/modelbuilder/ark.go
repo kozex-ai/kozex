@@ -22,12 +22,12 @@ import (
 	"github.com/cloudwego/eino-ext/components/model/ark"
 	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type arkModelBuilder struct {

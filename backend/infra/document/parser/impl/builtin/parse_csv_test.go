@@ -28,8 +28,8 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	contract "github.com/coze-dev/coze-studio/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
 )
 
 func TestParseCSV(t *testing.T) {

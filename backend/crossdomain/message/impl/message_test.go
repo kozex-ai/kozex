@@ -24,13 +24,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 type mockWorkflowRepo struct {

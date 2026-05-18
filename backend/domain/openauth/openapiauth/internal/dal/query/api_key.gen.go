@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/internal/dal/model"
 )
 
 func newAPIKey(db *gorm.DB, opts ...gen.DOOption) aPIKey {

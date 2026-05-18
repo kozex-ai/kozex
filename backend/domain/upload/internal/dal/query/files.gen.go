@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/upload/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/upload/internal/dal/model"
 )
 
 func newFiles(db *gorm.DB, opts ...gen.DOOption) files {

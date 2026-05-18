@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/application/base/appinfra"
-	crossdatacopy "github.com/coze-dev/coze-studio/backend/crossdomain/datacopy"
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy"
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy/service"
+	"github.com/kozex-ai/kozex/backend/application/base/appinfra"
+	crossdatacopy "github.com/kozex-ai/kozex/backend/crossdomain/datacopy"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy/service"
 )
 
 var defaultSVC crossdatacopy.DataCopy

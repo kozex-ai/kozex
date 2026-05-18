@@ -23,8 +23,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/user/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/user/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/domain/user/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/user/internal/dal/query"
 )
 
 func NewUserDAO(db *gorm.DB) *UserDAO {

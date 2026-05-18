@@ -20,16 +20,16 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/api/model/resource/common"
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/service"
-	dbservice "github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/service"
+	dbservice "github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 var defaultAction = []*common.ResourceAction{

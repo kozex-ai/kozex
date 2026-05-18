@@ -28,12 +28,12 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	entity2 "github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/sqlparser"
-	sqlparserImpl "github.com/coze-dev/coze-studio/backend/infra/sqlparser/impl/sqlparser"
-	mock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	entity2 "github.com/kozex-ai/kozex/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/infra/sqlparser"
+	sqlparserImpl "github.com/kozex-ai/kozex/backend/infra/sqlparser/impl/sqlparser"
+	mock "github.com/kozex-ai/kozex/backend/internal/mock/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func setupTestDB(t *testing.T) (*gorm.DB, rdb.RDB) {

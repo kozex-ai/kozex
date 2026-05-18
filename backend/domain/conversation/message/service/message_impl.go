@@ -20,10 +20,10 @@ import (
 	"context"
 	"sort"
 
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/repository"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/repository"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type messageImpl struct {

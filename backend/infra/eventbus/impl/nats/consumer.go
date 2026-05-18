@@ -25,11 +25,11 @@ import (
 
 	"github.com/nats-io/nats.go"
 
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/signal"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func RegisterConsumer(serverURL, topic, group string, consumerHandler eventbus.ConsumerHandler, opts ...eventbus.ConsumerOpt) error {

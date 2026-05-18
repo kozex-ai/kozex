@@ -19,8 +19,8 @@ package dto
 import (
 	"github.com/getkin/kin-openapi/openapi3"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
 )
 
 type CreateDraftToolsWithCodeRequest struct {

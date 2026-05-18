@@ -23,15 +23,15 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 
-	"github.com/coze-dev/coze-studio/backend/api/internal/httputil"
-	"github.com/coze-dev/coze-studio/backend/application/user"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/domain/user/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/internal/httputil"
+	"github.com/kozex-ai/kozex/backend/application/user"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/domain/user/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 var noNeedSessionCheckPath = map[string]bool{

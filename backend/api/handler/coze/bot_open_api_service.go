@@ -22,16 +22,16 @@ import (
 	"context"
 	"fmt"
 
-	openapiauthApp "github.com/coze-dev/coze-studio/backend/application/openauth"
-	"github.com/coze-dev/coze-studio/backend/application/plugin"
-	"github.com/coze-dev/coze-studio/backend/application/singleagent"
-	"github.com/coze-dev/coze-studio/backend/application/upload"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
+	openapiauthApp "github.com/kozex-ai/kozex/backend/application/openauth"
+	"github.com/kozex-ai/kozex/backend/application/plugin"
+	"github.com/kozex-ai/kozex/backend/application/singleagent"
+	"github.com/kozex-ai/kozex/backend/application/upload"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_open_api"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_open_api"
 )
 
 // OauthAuthorizationCode .

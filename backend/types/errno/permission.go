@@ -16,7 +16,7 @@
 
 package errno
 
-import "github.com/coze-dev/coze-studio/backend/pkg/errorx/code"
+import "github.com/kozex-ai/kozex/backend/pkg/errorx/code"
 
 // Permission: 108 000 000 ~ 108 999 999
 const (

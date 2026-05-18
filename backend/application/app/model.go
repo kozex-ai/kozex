@@ -17,7 +17,7 @@
 package app
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/api/model/resource/common"
 )
 
 type copyMetaInfo struct {

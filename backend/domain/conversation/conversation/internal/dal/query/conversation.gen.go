@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/internal/dal/model"
 )
 
 func newConversation(db *gorm.DB, opts ...gen.DOOption) conversation {

@@ -23,9 +23,9 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 const (

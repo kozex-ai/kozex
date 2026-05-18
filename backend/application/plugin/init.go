@@ -23,17 +23,17 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/conf"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/repository"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/service"
-	search "github.com/coze-dev/coze-studio/backend/domain/search/service"
-	user "github.com/coze-dev/coze-studio/backend/domain/user/service"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/conf"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/repository"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/service"
+	search "github.com/kozex-ai/kozex/backend/domain/search/service"
+	user "github.com/kozex-ai/kozex/backend/domain/user/service"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type ServiceComponents struct {

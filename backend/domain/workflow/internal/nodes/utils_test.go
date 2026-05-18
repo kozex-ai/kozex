@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 func TestExtractJSONString(t *testing.T) {

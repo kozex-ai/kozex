@@ -17,7 +17,7 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/crossdomain/app/model"
+	"github.com/kozex-ai/kozex/backend/crossdomain/app/model"
 )
 
 type APP = model.APP

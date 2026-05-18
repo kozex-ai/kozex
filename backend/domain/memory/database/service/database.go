@@ -19,11 +19,11 @@ package service
 import (
 	"context"
 
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/knowledge"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/api/model/data/knowledge"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/entity"
 )
 
 //go:generate mockgen -destination  ../../../../internal/mock/domain/memory/database/database_mock.go  --package database  -source database.go

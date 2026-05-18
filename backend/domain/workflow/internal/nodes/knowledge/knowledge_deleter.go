@@ -24,13 +24,13 @@ import (
 
 	"github.com/spf13/cast"
 
-	crossknowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge"
-	knowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
+	crossknowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge"
+	knowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/convert"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
 )
 
 type DeleterConfig struct {

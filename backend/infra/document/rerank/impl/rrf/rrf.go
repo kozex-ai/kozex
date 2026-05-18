@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func NewRRFReranker(k int64) rerank.Reranker {

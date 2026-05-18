@@ -19,12 +19,12 @@ package entity
 import (
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	message2 "github.com/coze-dev/coze-studio/backend/api/model/conversation/message"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	message2 "github.com/kozex-ai/kozex/backend/api/model/conversation/message"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/internal/dal/model"
 )
 
 type RunRecord = model.RunRecord

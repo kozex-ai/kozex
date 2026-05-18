@@ -30,7 +30,7 @@ import (
 	reflect "reflect"
 
 	schema "github.com/cloudwego/eino/schema"
-	entity "github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
+	entity "github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
 	gomock "go.uber.org/mock/gomock"
 )
 

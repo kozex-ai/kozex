@@ -20,11 +20,11 @@ import (
 
 	"github.com/volcengine/volc-sdk-golang/service/visual"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr"
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr/impl/ppocr"
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr/impl/veocr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr/impl/ppocr"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr/impl/veocr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type OCR = ocr.OCR

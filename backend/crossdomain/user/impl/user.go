@@ -19,9 +19,9 @@ package impl
 import (
 	"context"
 
-	crossuser "github.com/coze-dev/coze-studio/backend/crossdomain/user"
-	"github.com/coze-dev/coze-studio/backend/domain/user/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/user/service"
+	crossuser "github.com/kozex-ai/kozex/backend/crossdomain/user"
+	"github.com/kozex-ai/kozex/backend/domain/user/entity"
+	"github.com/kozex-ai/kozex/backend/domain/user/service"
 )
 
 var defaultSVC crossuser.User

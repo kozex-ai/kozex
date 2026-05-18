@@ -26,8 +26,8 @@ import (
 	"github.com/nats-io/nats.go"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var serviceURL = "nats://localhost:4222"

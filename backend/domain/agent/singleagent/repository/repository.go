@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/internal/dal"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 func NewSingleAgentRepo(db *gorm.DB, idGen idgen.IDGenerator, cli cache.Cmdable) SingleAgentDraftRepo {

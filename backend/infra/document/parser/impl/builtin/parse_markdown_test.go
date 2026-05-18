@@ -27,8 +27,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	contract "github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	ms "github.com/coze-dev/coze-studio/backend/internal/mock/infra/storage"
+	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
+	ms "github.com/kozex-ai/kozex/backend/internal/mock/infra/storage"
 )
 
 func TestParseMarkdown(t *testing.T) {

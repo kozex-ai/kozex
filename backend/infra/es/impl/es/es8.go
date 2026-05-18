@@ -32,11 +32,11 @@ import (
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types/enums/sortorder"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types/enums/textquerytype"
 
-	"github.com/coze-dev/coze-studio/backend/infra/es"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/infra/es"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 type es8Client struct {

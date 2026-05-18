@@ -29,13 +29,13 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	plugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	plugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func newReplyCallback(_ context.Context, executeID string, returnDirectlyTools map[string]struct{}) (clb callbacks.Handler,

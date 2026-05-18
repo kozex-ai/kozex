@@ -24,10 +24,10 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	upload "github.com/coze-dev/coze-studio/backend/api/model/file/upload"
-	uploadSVC "github.com/coze-dev/coze-studio/backend/application/upload"
+	upload "github.com/kozex-ai/kozex/backend/api/model/file/upload"
+	uploadSVC "github.com/kozex-ai/kozex/backend/application/upload"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 // CommonUpload .

@@ -17,7 +17,7 @@
 package model
 
 import (
-	resource "github.com/coze-dev/coze-studio/backend/api/model/resource/common"
+	resource "github.com/kozex-ai/kozex/backend/api/model/resource/common"
 )
 
 type ResourceDocument struct {

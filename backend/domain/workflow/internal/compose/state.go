@@ -25,15 +25,15 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	workflow2 "github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	schema2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/variable"
+	workflow2 "github.com/kozex-ai/kozex/backend/api/model/workflow"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	schema2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/variable"
 )
 
 type State struct {

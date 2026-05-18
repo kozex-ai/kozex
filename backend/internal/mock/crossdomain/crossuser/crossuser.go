@@ -29,7 +29,7 @@ import (
 	context "context"
 	reflect "reflect"
 
-	crossuser "github.com/coze-dev/coze-studio/backend/crossdomain/user"
+	crossuser "github.com/kozex-ai/kozex/backend/crossdomain/user"
 	gomock "go.uber.org/mock/gomock"
 )
 

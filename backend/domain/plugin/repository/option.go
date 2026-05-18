@@ -17,7 +17,7 @@
 package repository
 
 import (
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/dal"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/dal"
 )
 
 type PluginSelectedOptions func(*dal.PluginSelectedOption)

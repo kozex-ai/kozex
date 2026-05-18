@@ -25,20 +25,20 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	wf "github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	wf "github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/convert"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 const (

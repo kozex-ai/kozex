@@ -26,17 +26,17 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	crossplugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/internal/agentflow"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/repository"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/kvstore"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	crossplugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/internal/agentflow"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/repository"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/kvstore"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type singleAgentImpl struct {

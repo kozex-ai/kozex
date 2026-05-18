@@ -21,8 +21,8 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
 )
 
 //go:generate  mockgen -destination messagemock/message_mock.go --package messagemock -source message.go

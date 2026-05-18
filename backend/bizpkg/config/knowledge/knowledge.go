@@ -25,10 +25,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/pkg/envkey"
-	"github.com/coze-dev/coze-studio/backend/pkg/kvstore"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/pkg/envkey"
+	"github.com/kozex-ai/kozex/backend/pkg/kvstore"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 const (

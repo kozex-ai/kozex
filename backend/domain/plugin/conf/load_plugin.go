@@ -28,13 +28,13 @@ import (
 	"golang.org/x/mod/semver"
 	"gopkg.in/yaml.v3"
 
-	common "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	common "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type pluginProductMeta struct {

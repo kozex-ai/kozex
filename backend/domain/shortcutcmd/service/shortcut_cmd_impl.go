@@ -19,8 +19,8 @@ package service
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/repository"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/entity"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/repository"
 )
 
 type Components struct {

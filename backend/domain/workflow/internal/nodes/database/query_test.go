@@ -26,13 +26,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	crossdatabase "github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/database/databasemock"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
+	crossdatabase "github.com/kozex-ai/kozex/backend/crossdomain/database"
+	"github.com/kozex-ai/kozex/backend/crossdomain/database/databasemock"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
 )
 
 type mockDsSelect struct {

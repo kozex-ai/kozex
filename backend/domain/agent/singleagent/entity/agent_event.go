@@ -16,7 +16,7 @@
 
 package entity
 
-import model "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
+import model "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
 
 type AgentEvent = model.AgentEvent
 

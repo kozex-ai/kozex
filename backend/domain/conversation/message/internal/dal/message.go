@@ -25,16 +25,16 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"gorm.io/gorm"
 
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type MessageDAO struct {

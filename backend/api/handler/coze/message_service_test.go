@@ -27,10 +27,10 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/ut"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/message"
-	"github.com/coze-dev/coze-studio/backend/application"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/message"
+	"github.com/kozex-ai/kozex/backend/application"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestGetMessageList(t *testing.T) {

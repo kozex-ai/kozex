@@ -24,25 +24,25 @@ import (
 	"strconv"
 	"strings"
 
-	product_public_api "github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_public_api"
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	appworkflow "github.com/coze-dev/coze-studio/backend/application/workflow"
+	product_public_api "github.com/kozex-ai/kozex/backend/api/model/marketplace/product_public_api"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	appworkflow "github.com/kozex-ai/kozex/backend/application/workflow"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	appApplication "github.com/coze-dev/coze-studio/backend/application/app"
-	"github.com/coze-dev/coze-studio/backend/application/modelmgr"
-	"github.com/coze-dev/coze-studio/backend/application/plugin"
-	"github.com/coze-dev/coze-studio/backend/application/search"
-	"github.com/coze-dev/coze-studio/backend/application/singleagent"
-	"github.com/coze-dev/coze-studio/backend/application/template"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/marketplace/product_common"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	appApplication "github.com/kozex-ai/kozex/backend/application/app"
+	"github.com/kozex-ai/kozex/backend/application/modelmgr"
+	"github.com/kozex-ai/kozex/backend/application/plugin"
+	"github.com/kozex-ai/kozex/backend/application/search"
+	"github.com/kozex-ai/kozex/backend/application/singleagent"
+	"github.com/kozex-ai/kozex/backend/application/template"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 // PublicGetProductList .

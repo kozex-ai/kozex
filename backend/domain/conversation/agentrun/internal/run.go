@@ -22,16 +22,16 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/repository"
-	msgEntity "github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/repository"
+	msgEntity "github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type AgentRuntime struct {

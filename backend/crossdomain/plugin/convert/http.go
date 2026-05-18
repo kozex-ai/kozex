@@ -19,7 +19,7 @@ package convert
 import (
 	"net/http"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
 )
 
 var httpMethods = map[common.APIMethod]string{

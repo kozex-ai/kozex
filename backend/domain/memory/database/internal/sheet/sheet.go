@@ -35,15 +35,15 @@ import (
 	"github.com/extrame/xls"
 	"github.com/xuri/excelize/v2"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/knowledge"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/data/knowledge"
+	"github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/entity"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type CellTypeIdentifier struct {

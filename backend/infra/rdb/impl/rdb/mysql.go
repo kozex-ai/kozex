@@ -25,11 +25,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/sqlparser"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	"github.com/kozex-ai/kozex/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/infra/sqlparser"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type mysqlService struct {

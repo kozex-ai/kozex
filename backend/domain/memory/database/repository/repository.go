@@ -21,12 +21,12 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/entity"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/internal/dal"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 func NewAgentToDatabaseDAO(db *gorm.DB, idGen idgen.IDGenerator) AgentToDatabaseDAO {

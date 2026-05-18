@@ -19,8 +19,8 @@ package conversation
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/repository"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/repository"
 )
 
 type conversationImpl struct {

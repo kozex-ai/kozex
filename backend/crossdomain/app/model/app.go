@@ -17,10 +17,10 @@
 package model
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/common"
-	publishAPI "github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/publish"
-	resourceCommon "github.com/coze-dev/coze-studio/backend/api/model/resource/common"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/app/intelligence/common"
+	publishAPI "github.com/kozex-ai/kozex/backend/api/model/app/intelligence/publish"
+	resourceCommon "github.com/kozex-ai/kozex/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type APP struct {

@@ -31,17 +31,17 @@ import (
 	"github.com/go-resty/resty/v2"
 	"github.com/tidwall/sjson"
 
-	pluginConsts "github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/encoder"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/i18n"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/saasapi"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	pluginConsts "github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/encoder"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/i18n"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/saasapi"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type httpCallImpl struct {

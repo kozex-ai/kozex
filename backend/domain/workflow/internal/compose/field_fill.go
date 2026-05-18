@@ -24,9 +24,9 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	schema2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	schema2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 // outputValueFiller will fill the output value with nil if the key is not present in the output map.

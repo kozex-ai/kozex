@@ -21,18 +21,18 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/message"
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/run"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/message"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/run"
+	"github.com/kozex-ai/kozex/backend/crossdomain/message/model"
 
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	convEntity "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	uploadService "github.com/coze-dev/coze-studio/backend/domain/upload/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	convEntity "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	uploadService "github.com/kozex-ai/kozex/backend/domain/upload/service"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type OpenapiMessageApplication struct {

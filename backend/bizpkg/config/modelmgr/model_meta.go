@@ -24,9 +24,9 @@ import (
 
 	"github.com/jinzhu/copier"
 
-	config "github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	config "github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type ModelMetaConf struct {

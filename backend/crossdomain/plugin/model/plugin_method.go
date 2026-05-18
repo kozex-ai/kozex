@@ -18,9 +18,9 @@ package model
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 func (p PluginInfo) GetToolExample(ctx context.Context, toolName string) *ToolExample {

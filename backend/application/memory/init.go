@@ -19,15 +19,15 @@ package memory
 import (
 	"gorm.io/gorm"
 
-	database "github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/repository"
-	variables "github.com/coze-dev/coze-studio/backend/domain/memory/variables/service"
-	search "github.com/coze-dev/coze-studio/backend/domain/search/service"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	rdbService "github.com/coze-dev/coze-studio/backend/infra/rdb/impl/rdb"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	database "github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/repository"
+	variables "github.com/kozex-ai/kozex/backend/domain/memory/variables/service"
+	search "github.com/kozex-ai/kozex/backend/domain/search/service"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	rdbService "github.com/kozex-ai/kozex/backend/infra/rdb/impl/rdb"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type MemoryApplicationServices struct {

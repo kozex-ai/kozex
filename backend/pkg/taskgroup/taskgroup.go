@@ -22,7 +22,7 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type TaskGroup interface {

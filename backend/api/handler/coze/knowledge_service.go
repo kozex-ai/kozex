@@ -24,11 +24,11 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	dataset "github.com/coze-dev/coze-studio/backend/api/model/data/knowledge"
-	"github.com/coze-dev/coze-studio/backend/application/knowledge"
-	application "github.com/coze-dev/coze-studio/backend/application/knowledge"
-	"github.com/coze-dev/coze-studio/backend/application/memory"
-	"github.com/coze-dev/coze-studio/backend/application/upload"
+	dataset "github.com/kozex-ai/kozex/backend/api/model/data/knowledge"
+	"github.com/kozex-ai/kozex/backend/application/knowledge"
+	application "github.com/kozex-ai/kozex/backend/application/knowledge"
+	"github.com/kozex-ai/kozex/backend/application/memory"
+	"github.com/kozex-ai/kozex/backend/application/upload"
 )
 
 // CreateDataset .

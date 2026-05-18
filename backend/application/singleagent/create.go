@@ -20,17 +20,17 @@ import (
 	"context"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	intelligence "github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/common"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	searchEntity "github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	intelligence "github.com/kozex-ai/kozex/backend/api/model/app/intelligence/common"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	searchEntity "github.com/kozex-ai/kozex/backend/domain/search/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func (s *SingleAgentApplicationService) CreateSingleAgentDraft(ctx context.Context, req *developer_api.DraftBotCreateRequest) (*developer_api.DraftBotCreateResponse, error) {

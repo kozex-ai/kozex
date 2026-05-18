@@ -17,7 +17,7 @@
 package official
 
 import (
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/entity"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/entity"
 )
 
 func GetPromptList() []*entity.PromptResource {

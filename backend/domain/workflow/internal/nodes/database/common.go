@@ -25,13 +25,13 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 const rowNum = "rowNum"

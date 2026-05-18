@@ -21,7 +21,7 @@ import (
 
 	"github.com/cloudwego/eino-ext/components/embedding/gemini"
 
-	contract "github.com/coze-dev/coze-studio/backend/infra/embedding"
+	contract "github.com/kozex-ai/kozex/backend/infra/embedding"
 )
 
 func NewGeminiEmbedder(ctx context.Context, config *gemini.EmbeddingConfig, dimensions int64, batchSize int) (contract.Embedder, error) {

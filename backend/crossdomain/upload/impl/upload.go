@@ -19,8 +19,8 @@ package impl
 import (
 	"context"
 
-	crossupload "github.com/coze-dev/coze-studio/backend/crossdomain/upload"
-	"github.com/coze-dev/coze-studio/backend/domain/upload/service"
+	crossupload "github.com/kozex-ai/kozex/backend/crossdomain/upload"
+	"github.com/kozex-ai/kozex/backend/domain/upload/service"
 )
 
 var defaultSVC crossupload.Uploader

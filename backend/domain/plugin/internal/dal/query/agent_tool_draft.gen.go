@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/dal/model"
 )
 
 func newAgentToolDraft(db *gorm.DB, opts ...gen.DOOption) agentToolDraft {

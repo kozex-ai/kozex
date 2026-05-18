@@ -19,7 +19,7 @@ package vo
 import (
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 type DraftInfo struct {

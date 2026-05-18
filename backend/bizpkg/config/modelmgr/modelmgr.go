@@ -21,9 +21,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr/internal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/kvstore"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr/internal/query"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/kvstore"
 )
 
 /*

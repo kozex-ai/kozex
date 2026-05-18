@@ -22,17 +22,17 @@ import (
 	"net/url"
 	"os"
 
-	botOpenAPI "github.com/coze-dev/coze-studio/backend/api/model/app/bot_open_api"
-	developerAPI "github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	pluginAPI "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop"
-	common "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	pluginConf "github.com/coze-dev/coze-studio/backend/domain/plugin/conf"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/encrypt"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	botOpenAPI "github.com/kozex-ai/kozex/backend/api/model/app/bot_open_api"
+	developerAPI "github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	pluginAPI "github.com/kozex-ai/kozex/backend/api/model/plugin_develop"
+	common "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	pluginConf "github.com/kozex-ai/kozex/backend/domain/plugin/conf"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/encrypt"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func (p *PluginApplicationService) GetOAuthSchema(ctx context.Context, req *pluginAPI.GetOAuthSchemaRequest) (resp *pluginAPI.GetOAuthSchemaResponse, err error) {

@@ -19,7 +19,7 @@ package openapiauth
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/entity"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/entity"
 )
 
 type APIAuth interface {

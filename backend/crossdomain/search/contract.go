@@ -19,7 +19,7 @@ package search
 import (
 	"context"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/search/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/search/model"
 )
 
 type Search interface {

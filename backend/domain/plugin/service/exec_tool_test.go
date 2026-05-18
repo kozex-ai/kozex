@@ -28,8 +28,8 @@ import (
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
 )
 
 func TestToolExecutorProcessWithInvalidRespProcessStrategyOfReturnDefault(t *testing.T) {

@@ -19,10 +19,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner/impl/direct"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner/impl/sandbox"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner/impl/direct"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner/impl/sandbox"
 )
 
 type Runner = coderunner.Runner

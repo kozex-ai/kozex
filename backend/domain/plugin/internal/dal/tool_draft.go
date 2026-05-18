@@ -25,16 +25,16 @@ import (
 	"gorm.io/gen/field"
 	"gorm.io/gorm"
 
-	common "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/conf"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	common "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/conf"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/entity"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 func NewToolDraftDAO(db *gorm.DB, idGen idgen.IDGenerator) *ToolDraftDAO {

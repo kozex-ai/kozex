@@ -27,10 +27,10 @@ import (
 	"github.com/cloudwego/eino/components/embedding"
 	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
 
-	contract "github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	contract "github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type EmbeddingConfig = ark.EmbeddingConfig

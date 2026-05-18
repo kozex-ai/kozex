@@ -20,11 +20,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func NewStorageImagex(ctx context.Context, ak, sk, bucketName, endpoint, region string) (imagex.ImageX, error) {

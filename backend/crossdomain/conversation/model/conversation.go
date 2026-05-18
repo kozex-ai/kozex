@@ -16,7 +16,7 @@
 
 package model
 
-import "github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
+import "github.com/kozex-ai/kozex/backend/api/model/conversation/common"
 
 type GetCurrent struct {
 	UserID      int64        `json:"user_id"`

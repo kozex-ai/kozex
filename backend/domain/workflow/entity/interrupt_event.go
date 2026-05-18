@@ -22,8 +22,8 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 type InterruptEvent struct {

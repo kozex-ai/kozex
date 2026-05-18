@@ -24,13 +24,13 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	crossknowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge"
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	knowledgeEntity "github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	crossknowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	knowledgeEntity "github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type retrieverConfig struct {

@@ -22,9 +22,9 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 var ctxCacheKey = "builtin_chat_model_in_context"

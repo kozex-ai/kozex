@@ -30,10 +30,10 @@ import (
 	"github.com/cloudwego/eino/components/document/parser"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr"
-	contract "github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser/impl/builtin"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
+	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser/impl/builtin"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type ppstructureParser struct {

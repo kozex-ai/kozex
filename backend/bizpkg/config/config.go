@@ -21,11 +21,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/base"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/knowledge"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/base"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/knowledge"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type BasicConfiguration = config.BasicConfiguration

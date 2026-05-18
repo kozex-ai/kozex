@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/coze-dev/coze-studio/backend/infra/es"
+	"github.com/kozex-ai/kozex/backend/infra/es"
 )
 
 type (

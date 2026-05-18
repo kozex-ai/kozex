@@ -23,14 +23,14 @@ import (
 	"github.com/cloudwego/eino/components/tool"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	crossplugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	pluginEntity "github.com/coze-dev/coze-studio/backend/domain/plugin/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	crossplugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	pluginEntity "github.com/kozex-ai/kozex/backend/domain/plugin/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type toolConfig struct {

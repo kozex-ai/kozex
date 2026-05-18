@@ -25,18 +25,18 @@ import (
 
 	"gorm.io/gorm"
 
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/repo/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/repo/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/repo/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/repo/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type executeHistoryStoreImpl struct {

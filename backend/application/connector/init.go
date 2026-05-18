@@ -17,8 +17,8 @@
 package connector
 
 import (
-	connector "github.com/coze-dev/coze-studio/backend/domain/connector/service"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	connector "github.com/kozex-ai/kozex/backend/domain/connector/service"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 func InitService(tos storage.Storage) *ConnectorApplicationService {

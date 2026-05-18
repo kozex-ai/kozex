@@ -17,8 +17,8 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var PublishConnectorIDWhiteList = map[int64]bool{

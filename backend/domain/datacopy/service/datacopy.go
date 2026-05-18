@@ -22,11 +22,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy"
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy/internal/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy/internal/dal/dao"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy/entity"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy/internal/convert"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy/internal/dal/dao"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 type DataCopySVCConfig struct {

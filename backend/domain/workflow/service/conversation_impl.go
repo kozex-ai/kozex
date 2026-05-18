@@ -20,23 +20,23 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	conventity "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	conventity "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
 
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/pkg/taskgroup"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/pkg/taskgroup"
 
-	workflow2 "github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	crossconversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	workflow2 "github.com/kozex-ai/kozex/backend/api/model/workflow"
+	crossconversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type conversationImpl struct {

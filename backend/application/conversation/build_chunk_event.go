@@ -21,7 +21,7 @@ import (
 
 	"github.com/hertz-contrib/sse"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/run"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/run"
 )
 
 func buildDoneEvent(event string) *sse.Event {

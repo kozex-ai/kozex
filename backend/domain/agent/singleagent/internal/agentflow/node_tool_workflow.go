@@ -19,11 +19,11 @@ package agentflow
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 type workflowConfig struct {

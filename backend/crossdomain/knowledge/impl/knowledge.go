@@ -21,15 +21,15 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	crossknowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/service"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	crossknowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/service"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 var defaultSVC crossknowledge.Knowledge

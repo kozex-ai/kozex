@@ -22,13 +22,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/adaptor"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/validate"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/variable"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/adaptor"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/validate"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/variable"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func validateWorkflowTree(ctx context.Context, config vo.ValidateTreeConfig) ([]*validate.Issue, error) {

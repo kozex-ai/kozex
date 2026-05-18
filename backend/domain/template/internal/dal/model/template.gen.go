@@ -20,7 +20,7 @@
 
 package model
 
-import product_public_api "github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_public_api"
+import product_public_api "github.com/kozex-ai/kozex/backend/api/model/marketplace/product_public_api"
 
 const TableNameTemplate = "template"
 

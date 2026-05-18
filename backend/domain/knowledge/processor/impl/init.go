@@ -19,16 +19,16 @@ package impl
 import (
 	"context"
 
-	knowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/processor"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/repository"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	knowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/processor"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/repository"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type DocProcessorConfig struct {

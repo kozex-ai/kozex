@@ -19,9 +19,9 @@ package service
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/kvmemory"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/kvmemory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
 )
 
 type Variables interface {

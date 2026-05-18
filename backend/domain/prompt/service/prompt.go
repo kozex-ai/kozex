@@ -19,7 +19,7 @@ package prompt
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/entity"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/entity"
 )
 
 type Prompt interface {

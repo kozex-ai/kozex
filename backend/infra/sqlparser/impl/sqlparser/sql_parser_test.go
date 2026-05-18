@@ -22,8 +22,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/infra/sqlparser"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/sqlparser"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestSQLParser_ParseAndModifySQL(t *testing.T) {

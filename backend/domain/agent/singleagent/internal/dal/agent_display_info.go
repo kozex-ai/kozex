@@ -22,11 +22,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func makeAgentDisplayInfoKey(userID, agentID int64) string {

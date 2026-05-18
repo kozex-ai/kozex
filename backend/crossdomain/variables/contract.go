@@ -19,10 +19,10 @@ package variables
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/kvmemory"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	variables "github.com/coze-dev/coze-studio/backend/crossdomain/variables/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/kvmemory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	variables "github.com/kozex-ai/kozex/backend/crossdomain/variables/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
 )
 
 // TODO (@fanlv): Parameter references need to be modified.

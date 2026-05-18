@@ -17,7 +17,7 @@
 package entity
 
 import (
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
 )
 
 // Use composition instead of aliasing for domain entities to enhance extensibility

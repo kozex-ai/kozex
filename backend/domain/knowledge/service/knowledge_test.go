@@ -29,16 +29,16 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser/impl/builtin"
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank/impl/rrf"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb/impl/rdb"
-	producerMock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/eventbus"
-	mock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/idgen"
-	storageMock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser/impl/builtin"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank/impl/rrf"
+	"github.com/kozex-ai/kozex/backend/infra/rdb/impl/rdb"
+	producerMock "github.com/kozex-ai/kozex/backend/internal/mock/infra/eventbus"
+	mock "github.com/kozex-ai/kozex/backend/internal/mock/infra/idgen"
+	storageMock "github.com/kozex-ai/kozex/backend/internal/mock/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func MockKnowledgeSVC(t *testing.T) Knowledge {

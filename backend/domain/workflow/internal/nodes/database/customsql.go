@@ -24,14 +24,14 @@ import (
 	"regexp"
 	"strconv"
 
-	crossdatabase "github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/canvas/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	crossdatabase "github.com/kozex-ai/kozex/backend/crossdomain/database"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/canvas/convert"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 var singleQuotesStringRegexp = regexp.MustCompile("[`']\\{\\{([a-zA-Z_][a-zA-Z0-9_]*(?:\\.\\w+|\\[\\d+\\])*)+\\}\\}[`']")

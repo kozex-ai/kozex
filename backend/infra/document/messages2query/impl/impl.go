@@ -19,10 +19,10 @@ import (
 	"context"
 	"path/filepath"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/fileutil"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/infra/document/messages2query"
-	"github.com/coze-dev/coze-studio/backend/infra/document/messages2query/impl/builtin"
+	"github.com/kozex-ai/kozex/backend/bizpkg/fileutil"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/infra/document/messages2query"
+	"github.com/kozex-ai/kozex/backend/infra/document/messages2query/impl/builtin"
 )
 
 type MessagesToQuery = messages2query.MessagesToQuery

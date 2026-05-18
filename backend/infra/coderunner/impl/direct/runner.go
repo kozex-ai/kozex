@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/fileutil"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/bizpkg/fileutil"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 var pythonCode = `

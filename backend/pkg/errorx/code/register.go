@@ -17,7 +17,7 @@
 package code
 
 import (
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx/internal"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx/internal"
 )
 
 type RegisterOptionFn = internal.RegisterOption

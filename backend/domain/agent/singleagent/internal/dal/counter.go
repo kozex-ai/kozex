@@ -20,8 +20,8 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
 )
 
 func NewCountRepo(cli cache.Cmdable) *CounterImpl {

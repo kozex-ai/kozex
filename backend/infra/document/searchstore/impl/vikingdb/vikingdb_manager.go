@@ -23,10 +23,10 @@ import (
 
 	"github.com/volcengine/volc-sdk-golang/service/vikingdb"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type ManagerConfig struct {

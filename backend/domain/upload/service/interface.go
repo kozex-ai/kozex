@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/upload/entity"
+	"github.com/kozex-ai/kozex/backend/domain/upload/entity"
 )
 
 //go:generate mockgen -destination ../../../internal/mock/domain/upload/upload_service_mock.go --package upload -source interface.go

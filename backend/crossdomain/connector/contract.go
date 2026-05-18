@@ -19,7 +19,7 @@ package connector
 import (
 	"context"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
 )
 
 type Connector interface {

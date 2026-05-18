@@ -35,12 +35,12 @@ import (
 	client "github.com/milvus-io/milvus/client/v2/milvusclient"
 	"github.com/slongfield/pyfmt"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/sets"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/sets"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type milvusSearchStore struct {

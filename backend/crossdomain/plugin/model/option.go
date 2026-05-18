@@ -16,7 +16,7 @@
 
 package model
 
-import "github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
+import "github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
 
 type ExecuteToolOption struct {
 	ProjectInfo *ProjectInfo

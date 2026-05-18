@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/app/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/app/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
+	"github.com/kozex-ai/kozex/backend/domain/app/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/app/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 func NewAPPConnectorReleaseRefDAO(db *gorm.DB, idGen idgen.IDGenerator) *APPConnectorReleaseRefDAO {

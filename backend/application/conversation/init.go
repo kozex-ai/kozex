@@ -19,19 +19,19 @@ package conversation
 import (
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/application/singleagent"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/repository"
-	agentrun "github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/service"
-	convRepo "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/repository"
-	conversation "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/service"
-	msgRepo "github.com/coze-dev/coze-studio/backend/domain/conversation/message/repository"
-	message "github.com/coze-dev/coze-studio/backend/domain/conversation/message/service"
-	shortcutRepo "github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/repository"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/service"
-	uploadService "github.com/coze-dev/coze-studio/backend/domain/upload/service"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/application/singleagent"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/repository"
+	agentrun "github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/service"
+	convRepo "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/repository"
+	conversation "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/service"
+	msgRepo "github.com/kozex-ai/kozex/backend/domain/conversation/message/repository"
+	message "github.com/kozex-ai/kozex/backend/domain/conversation/message/service"
+	shortcutRepo "github.com/kozex-ai/kozex/backend/domain/shortcutcmd/repository"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/service"
+	uploadService "github.com/kozex-ai/kozex/backend/domain/upload/service"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type ServiceComponents struct {

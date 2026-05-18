@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/internal/dal/model"
 )
 
 func newSingleAgentVersion(db *gorm.DB, opts ...gen.DOOption) singleAgentVersion {

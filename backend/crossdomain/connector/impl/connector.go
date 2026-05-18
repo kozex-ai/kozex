@@ -19,9 +19,9 @@ package impl
 import (
 	"context"
 
-	crossconnector "github.com/coze-dev/coze-studio/backend/crossdomain/connector"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
-	connector "github.com/coze-dev/coze-studio/backend/domain/connector/service"
+	crossconnector "github.com/kozex-ai/kozex/backend/crossdomain/connector"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
+	connector "github.com/kozex-ai/kozex/backend/domain/connector/service"
 )
 
 var defaultSVC crossconnector.Connector

@@ -19,10 +19,10 @@ package impl
 import (
 	"context"
 
-	crossconversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	conversation "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/service"
+	crossconversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	conversation "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/service"
 )
 
 var defaultSVC crossconversation.Conversation

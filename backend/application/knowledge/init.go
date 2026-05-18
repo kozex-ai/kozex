@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/coze-dev/coze-studio/backend/application/search"
-	knowledgeImpl "github.com/coze-dev/coze-studio/backend/domain/knowledge/service"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/application/search"
+	knowledgeImpl "github.com/kozex-ai/kozex/backend/domain/knowledge/service"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 type ServiceComponents = knowledgeImpl.KnowledgeSVCConfig

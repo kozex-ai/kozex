@@ -21,9 +21,9 @@ import (
 	"os"
 	"strings"
 
-	config "github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/pkg/envkey"
+	config "github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/pkg/envkey"
 )
 
 func (c *ModelConfig) GetBuiltinChatModelConfig(ctx context.Context, builtinModelID int64) (*Model, error) {

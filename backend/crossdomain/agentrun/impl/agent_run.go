@@ -19,9 +19,9 @@ package impl
 import (
 	"context"
 
-	crossagentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	agentrun "github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/service"
+	crossagentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	agentrun "github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/service"
 )
 
 type AgentRun interface {

@@ -17,8 +17,8 @@
 package model
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
 )
 
 type ExecuteSQLRequest struct {

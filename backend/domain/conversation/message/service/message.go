@@ -19,7 +19,7 @@ package message
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
 )
 
 type Message interface {

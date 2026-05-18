@@ -20,7 +20,7 @@
 
 package model
 
-import "github.com/coze-dev/coze-studio/backend/api/model/playground"
+import "github.com/kozex-ai/kozex/backend/api/model/playground"
 
 const TableNameShortcutCommand = "shortcut_command"
 

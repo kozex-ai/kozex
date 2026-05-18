@@ -29,7 +29,7 @@ import (
 	context "context"
 	reflect "reflect"
 
-	service "github.com/coze-dev/coze-studio/backend/domain/upload/service"
+	service "github.com/kozex-ai/kozex/backend/domain/upload/service"
 	gomock "go.uber.org/mock/gomock"
 )
 

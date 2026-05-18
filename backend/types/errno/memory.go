@@ -16,7 +16,7 @@
 
 package errno
 
-import "github.com/coze-dev/coze-studio/backend/pkg/errorx/code"
+import "github.com/kozex-ai/kozex/backend/pkg/errorx/code"
 
 // Memory: 106 000 000 ~ 106 999 999
 const (

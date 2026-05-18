@@ -1,4 +1,4 @@
-module github.com/coze-dev/coze-studio/backend
+module github.com/kozex-ai/kozex/backend
 
 go 1.24.0
 

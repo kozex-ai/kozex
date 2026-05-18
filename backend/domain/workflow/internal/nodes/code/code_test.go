@@ -24,11 +24,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner"
-	mockcode "github.com/coze-dev/coze-studio/backend/internal/mock/domain/workflow/crossdomain/code"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	mockcode "github.com/kozex-ai/kozex/backend/internal/mock/domain/workflow/crossdomain/code"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 )
 
 var codeTpl string

@@ -25,7 +25,7 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func InitConfig(ctx context.Context) (err error) {

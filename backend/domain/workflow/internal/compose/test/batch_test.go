@@ -26,16 +26,16 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/stretchr/testify/assert"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	compose2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/compose"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/batch"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/entry"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/exit"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/subworkflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	compose2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/compose"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/batch"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/entry"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/exit"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/subworkflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
 )
 
 type interruptibleConfig struct{}

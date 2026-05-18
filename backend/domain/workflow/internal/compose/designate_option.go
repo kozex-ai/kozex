@@ -24,17 +24,17 @@ import (
 
 	einoCompose "github.com/cloudwego/eino/compose"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	workflow2 "github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/exit"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/llm"
-	schema2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	wrapPlugin "github.com/coze-dev/coze-studio/backend/domain/workflow/plugin"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	workflow2 "github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/exit"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/llm"
+	schema2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	wrapPlugin "github.com/kozex-ai/kozex/backend/domain/workflow/plugin"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func (r *WorkflowRunner) designateOptions(ctx context.Context) ([]einoCompose.Option, error) {

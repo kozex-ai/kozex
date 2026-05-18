@@ -25,12 +25,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	messagemock "github.com/coze-dev/coze-studio/backend/crossdomain/message/messagemock"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	mock_workflow "github.com/coze-dev/coze-studio/backend/internal/mock/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	messagemock "github.com/kozex-ai/kozex/backend/crossdomain/message/messagemock"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	mock_workflow "github.com/kozex-ai/kozex/backend/internal/mock/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestImpl_handleHistory(t *testing.T) {

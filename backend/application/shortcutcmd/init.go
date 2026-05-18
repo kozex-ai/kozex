@@ -19,9 +19,9 @@ package shortcutcmd
 import (
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/repository"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/service"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/repository"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/service"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 var ShortcutCmdSVC *ShortcutCmdApplicationService

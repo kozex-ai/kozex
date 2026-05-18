@@ -19,18 +19,18 @@ package prompt
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	"github.com/coze-dev/coze-studio/backend/api/model/resource/common"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	"github.com/coze-dev/coze-studio/backend/application/search"
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/entity"
-	prompt "github.com/coze-dev/coze-studio/backend/domain/prompt/service"
-	searchEntity "github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	"github.com/kozex-ai/kozex/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	"github.com/kozex-ai/kozex/backend/application/search"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/entity"
+	prompt "github.com/kozex-ai/kozex/backend/domain/prompt/service"
+	searchEntity "github.com/kozex-ai/kozex/backend/domain/search/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type PromptApplicationService struct {

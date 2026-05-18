@@ -20,10 +20,10 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
 )
 
 type EventType string

@@ -19,7 +19,7 @@ package app
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
 )
 
 var defaultSVC AppService

@@ -19,7 +19,7 @@ package upload
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/upload/service"
+	"github.com/kozex-ai/kozex/backend/domain/upload/service"
 )
 
 var defaultSVC Uploader

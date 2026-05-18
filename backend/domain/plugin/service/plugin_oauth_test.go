@@ -25,7 +25,7 @@ import (
 	"github.com/stretchr/testify/suite"
 	"go.uber.org/mock/gomock"
 
-	mock_plugin_oauth "github.com/coze-dev/coze-studio/backend/domain/plugin/repository/mock"
+	mock_plugin_oauth "github.com/kozex-ai/kozex/backend/domain/plugin/repository/mock"
 )
 
 type pluginOAuthSuite struct {

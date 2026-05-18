@@ -19,7 +19,7 @@ package dal
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/user/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/user/internal/dal/model"
 )
 
 func (dao *SpaceDAO) AddSpaceUser(ctx context.Context, spaceUser *model.SpaceUser) error {

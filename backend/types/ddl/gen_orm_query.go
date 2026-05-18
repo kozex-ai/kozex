@@ -30,15 +30,15 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	plugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	appEntity "github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	variableEntity "github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	plugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	appEntity "github.com/kozex-ai/kozex/backend/domain/app/entity"
+	variableEntity "github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
 )
 
 var path2Table2Columns2Model = map[string]map[string]map[string]any{

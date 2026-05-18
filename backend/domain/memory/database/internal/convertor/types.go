@@ -21,9 +21,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/infra/rdb/entity"
 )
 
 const (

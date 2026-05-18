@@ -19,9 +19,9 @@ package impl
 import (
 	"context"
 
-	crosssearch "github.com/coze-dev/coze-studio/backend/crossdomain/search"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/search/model"
-	"github.com/coze-dev/coze-studio/backend/domain/search/service"
+	crosssearch "github.com/kozex-ai/kozex/backend/crossdomain/search"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/search/model"
+	"github.com/kozex-ai/kozex/backend/domain/search/service"
 )
 
 var defaultSVC crosssearch.Search

@@ -16,7 +16,7 @@
 
 package processor
 
-import "github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
+import "github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
 
 type DocProcessor interface {
 	BeforeCreate() error         // Get data source

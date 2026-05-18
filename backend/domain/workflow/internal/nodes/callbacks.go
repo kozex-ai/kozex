@@ -19,8 +19,8 @@ package nodes
 import (
 	"reflect"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type StructuredCallbackOutput struct {

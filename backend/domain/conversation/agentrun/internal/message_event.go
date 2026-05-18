@@ -29,18 +29,18 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"github.com/mohae/deepcopy"
 
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
 
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	msgEntity "github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	msgEntity "github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type Event struct {

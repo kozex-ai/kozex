@@ -21,9 +21,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/dal"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 type OAuthRepoComponents struct {

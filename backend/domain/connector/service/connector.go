@@ -19,7 +19,7 @@ package connector
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/connector/entity"
+	"github.com/kozex-ai/kozex/backend/domain/connector/entity"
 )
 
 type Connector interface {

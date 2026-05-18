@@ -23,12 +23,12 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/internal"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/repository"
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/internal"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/repository"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
 )
 
 type runImpl struct {

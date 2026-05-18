@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/infra/storage/impl/minio"
-	"github.com/coze-dev/coze-studio/backend/infra/storage/impl/s3"
-	"github.com/coze-dev/coze-studio/backend/infra/storage/impl/tos"
-	"github.com/coze-dev/coze-studio/backend/pkg/envkey"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/infra/storage/impl/minio"
+	"github.com/kozex-ai/kozex/backend/infra/storage/impl/s3"
+	"github.com/kozex-ai/kozex/backend/infra/storage/impl/tos"
+	"github.com/kozex-ai/kozex/backend/pkg/envkey"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 type Storage = storage.Storage

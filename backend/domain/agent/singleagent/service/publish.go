@@ -22,13 +22,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	crossconnector "github.com/coze-dev/coze-studio/backend/crossdomain/connector"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/kvstore"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	crossconnector "github.com/kozex-ai/kozex/backend/crossdomain/connector"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/kvstore"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func (s *singleAgentImpl) SavePublishRecord(ctx context.Context, p *entity.SingleAgentPublish, e *entity.SingleAgent) error {

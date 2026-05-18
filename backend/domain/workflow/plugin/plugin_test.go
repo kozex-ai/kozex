@@ -21,9 +21,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	workflow3 "github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	workflow3 "github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestToWorkflowAPIParameter(t *testing.T) {

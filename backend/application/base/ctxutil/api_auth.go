@@ -19,9 +19,9 @@ package ctxutil
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/ctxcache"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func GetApiAuthFromCtx(ctx context.Context) *entity.ApiKey {

@@ -28,10 +28,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/volcengine/volc-sdk-golang/service/vikingdb"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding/impl/wrap"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/infra/embedding/impl/wrap"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestVikingEmbeddingIntegration(t *testing.T) {

@@ -19,8 +19,8 @@ package service
 import (
 	"context"
 
-	connectorModel "github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
+	connectorModel "github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
 )
 
 type AppService interface {

@@ -24,10 +24,10 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	appApplication "github.com/coze-dev/coze-studio/backend/application/app"
+	appApplication "github.com/kozex-ai/kozex/backend/application/app"
 
-	resource "github.com/coze-dev/coze-studio/backend/api/model/resource"
-	"github.com/coze-dev/coze-studio/backend/application/search"
+	resource "github.com/kozex-ai/kozex/backend/api/model/resource"
+	"github.com/kozex-ai/kozex/backend/application/search"
 )
 
 // LibraryResourceList .

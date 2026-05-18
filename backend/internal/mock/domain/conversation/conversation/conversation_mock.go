@@ -29,7 +29,7 @@ import (
 	context "context"
 	reflect "reflect"
 
-	entity "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
+	entity "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
 	gomock "go.uber.org/mock/gomock"
 )
 

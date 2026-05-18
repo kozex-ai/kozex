@@ -23,10 +23,10 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/message"
-	application "github.com/coze-dev/coze-studio/backend/application/conversation"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/message"
+	application "github.com/kozex-ai/kozex/backend/application/conversation"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 // GetMessageList .

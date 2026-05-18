@@ -16,7 +16,7 @@
 
 package model
 
-import "github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
+import "github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
 
 type Connector struct {
 	ID              int64                                `json:"id"`

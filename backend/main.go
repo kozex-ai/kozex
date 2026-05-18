@@ -31,13 +31,13 @@ import (
 	"github.com/hertz-contrib/cors"
 	"github.com/joho/godotenv"
 
-	"github.com/coze-dev/coze-studio/backend/api/middleware"
-	"github.com/coze-dev/coze-studio/backend/api/router"
-	"github.com/coze-dev/coze-studio/backend/application"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/api/middleware"
+	"github.com/kozex-ai/kozex/backend/api/router"
+	"github.com/kozex-ai/kozex/backend/application"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func main() {

@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/upload/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/upload/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/upload/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/domain/upload/entity"
+	"github.com/kozex-ai/kozex/backend/domain/upload/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/upload/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type FilesDAO struct {

@@ -27,7 +27,7 @@ import (
 	"github.com/pingcap/tidb/pkg/parser/opcode"
 	_ "github.com/pingcap/tidb/pkg/parser/test_driver"
 
-	"github.com/coze-dev/coze-studio/backend/infra/sqlparser"
+	"github.com/kozex-ai/kozex/backend/infra/sqlparser"
 )
 
 // Impl implements the SQLParser interface

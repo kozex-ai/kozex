@@ -23,16 +23,16 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	crossagentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun"
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	agententity "github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	crossagentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	agententity "github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 
-	message "github.com/coze-dev/coze-studio/backend/domain/conversation/message/service"
+	message "github.com/kozex-ai/kozex/backend/domain/conversation/message/service"
 )
 
 var defaultSVC crossmessage.Message

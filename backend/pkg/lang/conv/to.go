@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 // StrToInt64E returns strconv.ParseInt(v, 10, 64)

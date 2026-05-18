@@ -19,15 +19,15 @@ package app
 import (
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/app/repository"
-	"github.com/coze-dev/coze-studio/backend/domain/app/service"
-	connector "github.com/coze-dev/coze-studio/backend/domain/connector/service"
-	variables "github.com/coze-dev/coze-studio/backend/domain/memory/variables/service"
-	search "github.com/coze-dev/coze-studio/backend/domain/search/service"
-	user "github.com/coze-dev/coze-studio/backend/domain/user/service"
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/domain/app/repository"
+	"github.com/kozex-ai/kozex/backend/domain/app/service"
+	connector "github.com/kozex-ai/kozex/backend/domain/connector/service"
+	variables "github.com/kozex-ai/kozex/backend/domain/memory/variables/service"
+	search "github.com/kozex-ai/kozex/backend/domain/search/service"
+	user "github.com/kozex-ai/kozex/backend/domain/user/service"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 type ServiceComponents struct {

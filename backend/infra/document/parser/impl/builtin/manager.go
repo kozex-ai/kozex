@@ -19,11 +19,11 @@ package builtin
 import (
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/fileutil"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr"
-	"github.com/coze-dev/coze-studio/backend/infra/document/parser"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/bizpkg/fileutil"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
+	"github.com/kozex-ai/kozex/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 func NewManager(storage storage.Storage, ocr ocr.OCR, imageAnnotationModel modelbuilder.BaseChatModel) parser.Manager {

@@ -16,7 +16,7 @@
 
 package model
 
-import "github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
+import "github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
 
 type Tool struct {
 	PluginID   int64                  `json:"plugin_id"`

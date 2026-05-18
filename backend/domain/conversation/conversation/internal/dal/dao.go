@@ -23,14 +23,14 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	conversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	conversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type ConversationDAO struct {

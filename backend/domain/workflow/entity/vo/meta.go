@@ -19,7 +19,7 @@ package vo
 import (
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
 )
 
 type ContentType = workflow.WorkFlowType

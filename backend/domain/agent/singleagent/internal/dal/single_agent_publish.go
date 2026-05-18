@@ -22,11 +22,11 @@ import (
 
 	// Add this import to fix the undefined issue with gen. Expr
 
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 // List method: paging query publishing records pageIndex starts at 1

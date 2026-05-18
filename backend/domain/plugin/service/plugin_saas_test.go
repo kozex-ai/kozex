@@ -22,11 +22,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	domainDto "github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/repository"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	domainDto "github.com/kozex-ai/kozex/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/repository"
 
-	pluginCommon "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
+	pluginCommon "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
 )
 
 func TestSearchSaasPluginResponse_JSONUnmarshal(t *testing.T) {

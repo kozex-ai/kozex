@@ -21,8 +21,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 type AppCache struct {

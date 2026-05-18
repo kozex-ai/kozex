@@ -21,7 +21,7 @@
 package model
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
 	"gorm.io/gorm"
 )
 

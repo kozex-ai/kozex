@@ -29,9 +29,9 @@ import (
 	context "context"
 	reflect "reflect"
 
-	conversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
-	conversation0 "github.com/coze-dev/coze-studio/backend/crossdomain/conversation"
-	entity "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
+	conversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
+	conversation0 "github.com/kozex-ai/kozex/backend/crossdomain/conversation"
+	entity "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
 	gomock "go.uber.org/mock/gomock"
 )
 

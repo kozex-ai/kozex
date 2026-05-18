@@ -23,16 +23,16 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	compose2 "github.com/coze-dev/coze-studio/backend/domain/workflow/internal/compose"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/entry"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/exit"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/selector"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/textprocessor"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/nodes/variableaggregator"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	compose2 "github.com/kozex-ai/kozex/backend/domain/workflow/internal/compose"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/entry"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/exit"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/selector"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/textprocessor"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes/variableaggregator"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestAddSelector(t *testing.T) {

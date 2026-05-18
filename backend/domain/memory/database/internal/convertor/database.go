@@ -19,8 +19,8 @@ package convertor
 import (
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/infra/rdb/entity"
 )
 
 func ConvertResultSetToString(resultSet *entity.ResultSet, physicalToFieldName map[string]string, physicalToFieldType map[string]table.FieldItemType) []map[string]string {

@@ -19,15 +19,15 @@ package singleagent
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	intelligence "github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/common"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	searchEntity "github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	shortcutCMDEntity "github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	intelligence "github.com/kozex-ai/kozex/backend/api/model/app/intelligence/common"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	searchEntity "github.com/kozex-ai/kozex/backend/domain/search/entity"
+	shortcutCMDEntity "github.com/kozex-ai/kozex/backend/domain/shortcutcmd/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type duplicateAgentResourceFn func(ctx context.Context, appContext *ServiceComponents, oldAgent, newAgent *entity.SingleAgent) (*entity.SingleAgent, error)

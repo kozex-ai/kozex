@@ -19,7 +19,7 @@ package user
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/user/entity"
+	"github.com/kozex-ai/kozex/backend/domain/user/entity"
 )
 
 type EntitySpace = entity.Space

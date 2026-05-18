@@ -21,8 +21,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	pluginCommon "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
+	pluginCommon "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
 )
 
 func TestConvertJsonSchemaToParameters(t *testing.T) {

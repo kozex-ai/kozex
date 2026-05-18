@@ -25,9 +25,9 @@ import (
 	"github.com/cloudwego/eino/components/model"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/execute"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
 )
 
 type ModelWithInfo interface {

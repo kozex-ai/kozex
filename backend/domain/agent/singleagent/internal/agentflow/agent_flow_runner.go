@@ -26,15 +26,15 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
-	"github.com/coze-dev/coze-studio/backend/pkg/urltobase64url"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/pkg/urltobase64url"
 )
 
 type AgentState struct {

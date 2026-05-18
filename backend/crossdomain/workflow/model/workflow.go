@@ -19,8 +19,8 @@ package model
 import (
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
 )
 
 type Locator uint8

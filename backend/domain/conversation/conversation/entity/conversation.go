@@ -17,8 +17,8 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
 )
 
 type Conversation = model.Conversation

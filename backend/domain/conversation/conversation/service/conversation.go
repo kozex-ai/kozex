@@ -19,7 +19,7 @@ package conversation
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
 )
 
 //go:generate mockgen -destination ../../../../internal/mock/domain/conversation/conversation/conversation_mock.go --package conversation -source conversation.go

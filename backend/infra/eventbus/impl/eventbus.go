@@ -20,13 +20,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus/impl/kafka"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus/impl/nats"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus/impl/nsq"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus/impl/pulsar"
-	"github.com/coze-dev/coze-studio/backend/infra/eventbus/impl/rmq"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/kafka"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/nats"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/nsq"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/pulsar"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/rmq"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 type (

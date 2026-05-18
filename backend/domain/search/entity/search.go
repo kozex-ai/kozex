@@ -17,8 +17,8 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/common"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/search/model"
+	"github.com/kozex-ai/kozex/backend/api/model/app/intelligence/common"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/search/model"
 )
 
 const (

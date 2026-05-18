@@ -17,7 +17,7 @@
 package entity
 
 import (
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
 )
 
 type Message = model.Message

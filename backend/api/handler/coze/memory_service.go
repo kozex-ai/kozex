@@ -24,11 +24,11 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/kvmemory"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	appApplication "github.com/coze-dev/coze-studio/backend/application/app"
-	"github.com/coze-dev/coze-studio/backend/application/memory"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/kvmemory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	appApplication "github.com/kozex-ai/kozex/backend/application/app"
+	"github.com/kozex-ai/kozex/backend/application/memory"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
 )
 
 // GetSysVariableConf .

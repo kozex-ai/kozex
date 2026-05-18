@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
 )
 
 func PutImageObject(ctx context.Context, st storage.Storage, imgExt string, uid int64, img []byte) (format string, err error) {

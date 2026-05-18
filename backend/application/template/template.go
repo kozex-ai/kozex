@@ -19,12 +19,12 @@ package template
 import (
 	"context"
 
-	productAPI "github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_public_api"
-	"github.com/coze-dev/coze-studio/backend/domain/template/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/template/repository"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	productAPI "github.com/kozex-ai/kozex/backend/api/model/marketplace/product_public_api"
+	"github.com/kozex-ai/kozex/backend/domain/template/entity"
+	"github.com/kozex-ai/kozex/backend/domain/template/repository"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 type ApplicationService struct {

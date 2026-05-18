@@ -21,13 +21,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/base"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/entity"
-	database "github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/base"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/entity"
+	database "github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 func convertAddDatabase(req *table.AddDatabaseRequest) *database.CreateDatabaseRequest {

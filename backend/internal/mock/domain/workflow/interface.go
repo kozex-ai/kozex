@@ -31,14 +31,14 @@ import (
 
 	compose "github.com/cloudwego/eino/compose"
 	schema "github.com/cloudwego/eino/schema"
-	workflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	workflow0 "github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	workflow1 "github.com/coze-dev/coze-studio/backend/domain/workflow"
-	config "github.com/coze-dev/coze-studio/backend/domain/workflow/config"
-	entity "github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	vo "github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	storage "github.com/coze-dev/coze-studio/backend/infra/storage"
+	workflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	workflow0 "github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	workflow1 "github.com/kozex-ai/kozex/backend/domain/workflow"
+	config "github.com/kozex-ai/kozex/backend/domain/workflow/config"
+	entity "github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	vo "github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	storage "github.com/kozex-ai/kozex/backend/infra/storage"
 	gomock "go.uber.org/mock/gomock"
 )
 

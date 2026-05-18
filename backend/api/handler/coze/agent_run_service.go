@@ -27,13 +27,13 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/run"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/run"
 
-	"github.com/coze-dev/coze-studio/backend/application/conversation"
-	sseImpl "github.com/coze-dev/coze-studio/backend/infra/sse/impl/sse"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/application/conversation"
+	sseImpl "github.com/kozex-ai/kozex/backend/infra/sse/impl/sse"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 // AgentRun .

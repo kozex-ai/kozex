@@ -21,8 +21,8 @@ import (
 
 	"github.com/milvus-io/milvus/client/v2/entity"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/searchstore"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/infra/document/searchstore"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 func denseFieldName(name string) string {

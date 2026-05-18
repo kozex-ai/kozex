@@ -26,15 +26,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	crossagentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/agentrunmock"
-	messageentity "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	crossupload "github.com/coze-dev/coze-studio/backend/crossdomain/upload"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/upload/uploadmock"
-	agententity "github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	uploadentity "github.com/coze-dev/coze-studio/backend/domain/upload/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/upload/service"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	crossagentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun"
+	"github.com/kozex-ai/kozex/backend/crossdomain/agentrun/agentrunmock"
+	messageentity "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	crossupload "github.com/kozex-ai/kozex/backend/crossdomain/upload"
+	"github.com/kozex-ai/kozex/backend/crossdomain/upload/uploadmock"
+	agententity "github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	uploadentity "github.com/kozex-ai/kozex/backend/domain/upload/entity"
+	"github.com/kozex-ai/kozex/backend/domain/upload/service"
 )
 
 func TestApplicationService_makeChatFlowUserInput(t *testing.T) {

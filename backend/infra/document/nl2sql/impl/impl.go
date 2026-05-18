@@ -19,10 +19,10 @@ import (
 	"context"
 	"path/filepath"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/fileutil"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
-	"github.com/coze-dev/coze-studio/backend/infra/document/nl2sql"
-	"github.com/coze-dev/coze-studio/backend/infra/document/nl2sql/impl/builtin"
+	"github.com/kozex-ai/kozex/backend/bizpkg/fileutil"
+	"github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
+	"github.com/kozex-ai/kozex/backend/infra/document/nl2sql"
+	"github.com/kozex-ai/kozex/backend/infra/document/nl2sql/impl/builtin"
 )
 
 type NL2SQL = nl2sql.NL2SQL

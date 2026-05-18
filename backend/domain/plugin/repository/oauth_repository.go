@@ -19,7 +19,7 @@ package repository
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/dto"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/dto"
 )
 
 //go:generate mockgen -source=./oauth_repository.go -package=mock_plugin_oauth -destination=./mock/mock_oauth_repository.go

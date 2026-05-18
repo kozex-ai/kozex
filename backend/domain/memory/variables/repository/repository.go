@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/internal/dal"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 func NewVariableRepo(db *gorm.DB, generator idgen.IDGenerator) VariableRepository {

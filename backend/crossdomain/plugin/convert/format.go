@@ -17,8 +17,8 @@
 package convert
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
 )
 
 var assistTypeToFormat = map[consts.APIFileAssistType]string{

@@ -26,11 +26,11 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/internal/encoder"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/saasapi"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/internal/encoder"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/saasapi"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type saasCallImpl struct {

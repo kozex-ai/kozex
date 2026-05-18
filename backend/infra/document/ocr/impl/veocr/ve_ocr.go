@@ -27,9 +27,9 @@ import (
 	"github.com/volcengine/volc-sdk-golang/service/visual"
 	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document/ocr"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type Config struct {

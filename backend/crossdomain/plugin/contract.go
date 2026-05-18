@@ -21,9 +21,9 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/plugin/model"
-	workflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	"github.com/coze-dev/coze-studio/backend/domain/plugin/entity"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/plugin/model"
+	workflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/domain/plugin/entity"
 )
 
 //go:generate  mockgen -destination pluginmock/plugin_mock.go --package pluginmock -source plugin.go

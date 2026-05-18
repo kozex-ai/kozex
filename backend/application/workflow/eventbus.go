@@ -19,10 +19,10 @@ package workflow
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/resource/common"
-	"github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	search "github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/search/service"
+	"github.com/kozex-ai/kozex/backend/api/model/resource/common"
+	"github.com/kozex-ai/kozex/backend/domain/search/entity"
+	search "github.com/kozex-ai/kozex/backend/domain/search/entity"
+	"github.com/kozex-ai/kozex/backend/domain/search/service"
 )
 
 var eventBus service.ResourceEventBus

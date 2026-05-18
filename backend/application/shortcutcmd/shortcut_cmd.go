@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
 
-	"github.com/coze-dev/coze-studio/backend/domain/permission"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/domain/permission"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/entity"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
 )
 
 type ShortcutCmdApplicationService struct {

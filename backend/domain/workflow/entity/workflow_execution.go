@@ -19,8 +19,8 @@ package entity
 import (
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
 )
 
 type WorkflowExecuteStatus workflow.WorkflowExeStatus

@@ -17,7 +17,7 @@
 package repository
 
 import (
-	"github.com/coze-dev/coze-studio/backend/domain/app/internal/dal"
+	"github.com/kozex-ai/kozex/backend/domain/app/internal/dal"
 )
 
 type APPSelectedOptions func(*dal.APPSelectedOption)

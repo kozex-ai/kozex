@@ -27,13 +27,13 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/passport"
-	"github.com/coze-dev/coze-studio/backend/application/user"
-	"github.com/coze-dev/coze-studio/backend/domain/user/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/hertzutil/domain"
-	"github.com/coze-dev/coze-studio/backend/pkg/i18n"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/api/model/passport"
+	"github.com/kozex-ai/kozex/backend/application/user"
+	"github.com/kozex-ai/kozex/backend/domain/user/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/hertzutil/domain"
+	"github.com/kozex-ai/kozex/backend/pkg/i18n"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 // PassportWebEmailRegisterV2Post .

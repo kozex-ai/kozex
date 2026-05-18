@@ -19,8 +19,8 @@ package openauth
 import (
 	"gorm.io/gorm"
 
-	openapiauth2 "github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	openapiauth2 "github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 var (

@@ -19,7 +19,7 @@ package progressbar
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
 )
 
 // ProgressBar is the interface for the progress bar.

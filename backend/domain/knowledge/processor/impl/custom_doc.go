@@ -16,7 +16,7 @@
 
 package impl
 
-import "github.com/coze-dev/coze-studio/backend/pkg/logs"
+import "github.com/kozex-ai/kozex/backend/pkg/logs"
 
 // Create a document after the user enters custom content
 type customDocProcessor struct {

@@ -17,8 +17,8 @@
 package entity
 
 import (
-	"github.com/coze-dev/coze-studio/backend/crossdomain/app/model"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/app/model"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var ConnectorIDWhiteList = []int64{

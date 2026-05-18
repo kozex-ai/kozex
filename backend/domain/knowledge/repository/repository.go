@@ -21,10 +21,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/dal/dao"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/dal/dao"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/dal/query"
 )
 
 func NewKnowledgeDAO(db *gorm.DB) KnowledgeRepo {

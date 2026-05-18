@@ -24,10 +24,10 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/knowledge"
-	"github.com/coze-dev/coze-studio/backend/application/memory"
-	"github.com/coze-dev/coze-studio/backend/application/singleagent"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/api/model/data/knowledge"
+	"github.com/kozex-ai/kozex/backend/application/memory"
+	"github.com/kozex-ai/kozex/backend/application/singleagent"
 )
 
 // ListDatabase .

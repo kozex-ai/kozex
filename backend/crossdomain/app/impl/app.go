@@ -19,9 +19,9 @@ package crossapp
 import (
 	"context"
 
-	crossapp "github.com/coze-dev/coze-studio/backend/crossdomain/app"
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/app/service"
+	crossapp "github.com/kozex-ai/kozex/backend/crossdomain/app"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
+	"github.com/kozex-ai/kozex/backend/domain/app/service"
 )
 
 type appServiceImpl struct {

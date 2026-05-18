@@ -24,7 +24,7 @@ import (
 
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
 )
 
 type redisStore struct {

@@ -22,7 +22,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func parseClusterEndpoints(address string) ([]string, error) {

@@ -17,8 +17,8 @@
 package parser
 
 import (
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/sets"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/sets"
 )
 
 type Manager interface {

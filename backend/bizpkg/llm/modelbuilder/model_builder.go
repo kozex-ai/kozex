@@ -22,13 +22,13 @@ import (
 
 	"github.com/cloudwego/eino/components/model"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	bizConf "github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	bizConf "github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type BaseChatModel = model.BaseChatModel

@@ -25,9 +25,9 @@ import (
 	"github.com/volcengine/volc-sdk-golang/base"
 	veimagex "github.com/volcengine/volc-sdk-golang/service/imagex/v2"
 
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 func NewDefault() (imagex.ImageX, error) {

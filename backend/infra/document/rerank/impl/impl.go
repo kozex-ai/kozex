@@ -16,10 +16,10 @@
 package impl
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank"
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank/impl/rrf"
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank/impl/vikingdb"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank/impl/rrf"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank/impl/vikingdb"
 )
 
 type Reranker = rerank.Reranker

@@ -30,8 +30,8 @@ import (
 	reflect "reflect"
 
 	schema "github.com/cloudwego/eino/schema"
-	playground "github.com/coze-dev/coze-studio/backend/api/model/playground"
-	entity "github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
+	playground "github.com/kozex-ai/kozex/backend/api/model/playground"
+	entity "github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
 	gomock "go.uber.org/mock/gomock"
 )
 

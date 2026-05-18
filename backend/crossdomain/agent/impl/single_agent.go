@@ -21,13 +21,13 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	crossagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	singleagent "github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	crossagent "github.com/kozex-ai/kozex/backend/crossdomain/agent"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	singleagent "github.com/kozex-ai/kozex/backend/domain/agent/singleagent/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 var defaultSVC crossagent.SingleAgent

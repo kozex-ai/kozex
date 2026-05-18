@@ -22,12 +22,12 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/entity"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/internal/dal"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type apiAuthImpl struct {

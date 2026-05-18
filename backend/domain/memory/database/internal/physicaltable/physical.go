@@ -20,13 +20,13 @@ import (
 	"context"
 	"fmt"
 
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/internal/convertor"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	entity3 "github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/internal/convertor"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	entity3 "github.com/kozex-ai/kozex/backend/infra/rdb/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func CreatePhysicalTable(ctx context.Context, db rdb.RDB, columns []*entity3.Column) (*rdb.CreateTableResponse, error) {

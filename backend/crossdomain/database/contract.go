@@ -19,7 +19,7 @@ package database
 import (
 	"context"
 
-	database "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
+	database "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
 )
 
 //go:generate  mockgen -destination databasemock/database_mock.go --package databasemock -source model.go

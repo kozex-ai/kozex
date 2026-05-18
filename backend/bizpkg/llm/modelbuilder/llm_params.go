@@ -16,7 +16,7 @@
 
 package modelbuilder
 
-import "github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
+import "github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
 
 type LLMParams struct {
 	Temperature      *float32                       `json:"temperature"`

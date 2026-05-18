@@ -21,8 +21,8 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	"github.com/coze-dev/coze-studio/backend/domain/agent/singleagent/entity"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	"github.com/kozex-ai/kozex/backend/domain/agent/singleagent/entity"
 )
 
 //go:generate mockgen -destination ../../../../internal/mock/domain/agent/singleagent/single_agent_mock.go --package singleagent -source single_agent.go

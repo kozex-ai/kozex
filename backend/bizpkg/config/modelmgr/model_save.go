@@ -21,10 +21,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr/internal/model"
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config/modelmgr/internal/query"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr/internal/model"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config/modelmgr/internal/query"
 )
 
 func (c *ModelConfig) CreateModel(ctx context.Context, modelClass developer_api.ModelClass, modelShowName string, conn *config.Connection, extra *ModelExtra) (int64, error) {

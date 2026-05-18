@@ -17,8 +17,8 @@
 package modelmgr
 
 import (
-	config "github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/developer_api"
+	config "github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/api/model/app/developer_api"
 )
 
 func getModelProviderList() []*config.ModelProvider {

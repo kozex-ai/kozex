@@ -20,10 +20,10 @@ import (
 	"context"
 	"strings"
 
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/internal/official"
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/repository"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/entity"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/internal/official"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/repository"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type promptService struct {

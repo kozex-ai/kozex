@@ -22,12 +22,12 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/search/model"
-	searchEntity "github.com/coze-dev/coze-studio/backend/domain/search/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/es"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/search/model"
+	searchEntity "github.com/kozex-ai/kozex/backend/domain/search/entity"
+	"github.com/kozex-ai/kozex/backend/infra/es"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 var searchInstance *searchImpl

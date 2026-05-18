@@ -23,9 +23,9 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/fileutil"
-	"github.com/coze-dev/coze-studio/backend/infra/coderunner"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/bizpkg/fileutil"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func NewRunner(config *Config) coderunner.Runner {

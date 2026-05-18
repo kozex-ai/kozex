@@ -17,7 +17,7 @@
 package builtin
 
 import (
-	"github.com/coze-dev/coze-studio/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document"
 )
 
 func alignTableSliceValue(schema []*document.Column, row []*document.ColumnData) (err error) {

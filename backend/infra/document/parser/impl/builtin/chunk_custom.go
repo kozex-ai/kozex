@@ -25,7 +25,7 @@ import (
 	"github.com/cloudwego/eino/components/document/parser"
 	"github.com/cloudwego/eino/schema"
 
-	contract "github.com/coze-dev/coze-studio/backend/infra/document/parser"
+	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
 )
 
 var (

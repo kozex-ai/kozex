@@ -28,9 +28,9 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/infra/storage/impl/internal/fileutil"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/infra/storage/impl/internal/fileutil"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type minioClient struct {

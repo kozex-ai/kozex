@@ -23,15 +23,15 @@ import (
 
 	"github.com/spf13/cast"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/database/table"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	crossdatabase "github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	database "github.com/coze-dev/coze-studio/backend/domain/memory/database/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/api/model/data/database/table"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	crossdatabase "github.com/kozex-ai/kozex/backend/crossdomain/database"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	database "github.com/kozex-ai/kozex/backend/domain/memory/database/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
 )
 
 var defaultSVC crossdatabase.Database

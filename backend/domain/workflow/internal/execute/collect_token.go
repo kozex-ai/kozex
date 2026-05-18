@@ -25,8 +25,8 @@ import (
 	"github.com/cloudwego/eino/schema"
 	callbacks2 "github.com/cloudwego/eino/utils/callbacks"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 type TokenCollector struct {

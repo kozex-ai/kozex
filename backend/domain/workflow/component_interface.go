@@ -23,11 +23,11 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/cloudwego/eino/schema"
 
-	workflowModel "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
-	conventity "github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/config"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	workflowModel "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
+	conventity "github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/config"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 type Executable interface {

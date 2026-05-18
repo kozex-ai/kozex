@@ -24,8 +24,8 @@ import (
 	"github.com/cloudwego/eino/components/document/parser"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	contract "github.com/coze-dev/coze-studio/backend/infra/document/parser"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
 )
 
 func TestParseJSON(t *testing.T) {

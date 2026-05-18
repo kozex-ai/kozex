@@ -32,7 +32,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/internal/dal/model"
 )
 
 func newShortcutCommand(db *gorm.DB, opts ...gen.DOOption) shortcutCommand {

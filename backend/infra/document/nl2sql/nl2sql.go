@@ -21,7 +21,7 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document"
 )
 
 //go:generate  mockgen -destination ../../../internal/mock/infra/nl2sql_mock/nl2sql_mock.go -package mock -source nl2sql.go Factory

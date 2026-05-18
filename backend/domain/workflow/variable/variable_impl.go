@@ -25,14 +25,14 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/cloudwego/eino/compose"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/kvmemory"
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
-	crossvariables "github.com/coze-dev/coze-studio/backend/crossdomain/variables"
-	variablesModel "github.com/coze-dev/coze-studio/backend/crossdomain/variables/model"
-	"github.com/coze-dev/coze-studio/backend/domain/memory/variables/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/kvmemory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
+	crossvariables "github.com/kozex-ai/kozex/backend/crossdomain/variables"
+	variablesModel "github.com/kozex-ai/kozex/backend/crossdomain/variables/model"
+	"github.com/kozex-ai/kozex/backend/domain/memory/variables/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type varStore struct {

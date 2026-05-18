@@ -23,10 +23,10 @@ import (
 	einoCompose "github.com/cloudwego/eino/compose"
 	"golang.org/x/exp/maps"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/compose"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/internal/schema"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/compose"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
 )
 
 func WorkflowSchemaFromNode(ctx context.Context, c *vo.Canvas, nodeID string) (

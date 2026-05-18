@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/entity"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/entity"
 )
 
 //go:generate mockgen -destination ../../../internal/mock/domain/shortcutcmd/shortcut_cmd_mock.go --package shortcutcmd -source shortcut_cmd.go

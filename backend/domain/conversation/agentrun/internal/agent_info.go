@@ -18,12 +18,12 @@ package internal
 import (
 	"context"
 
-	crossagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	crossagent "github.com/kozex-ai/kozex/backend/crossdomain/agent"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func getAgentHistoryRounds(agentInfo *singleagent.SingleAgent) int32 {

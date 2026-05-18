@@ -19,8 +19,8 @@ package conversation
 import (
 	"context"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
 )
 
 //go:generate  mockgen -destination conversationmock/conversation_mock.go --package conversationmock -source conversation.go

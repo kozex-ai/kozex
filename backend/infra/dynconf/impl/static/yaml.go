@@ -24,7 +24,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/coze-dev/coze-studio/backend/infra/dynconf/impl/static/internal"
+	"github.com/kozex-ai/kozex/backend/infra/dynconf/impl/static/internal"
 )
 
 var (

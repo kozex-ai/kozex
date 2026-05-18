@@ -22,8 +22,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 const (

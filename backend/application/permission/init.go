@@ -17,7 +17,7 @@
 package permission
 
 import (
-	"github.com/coze-dev/coze-studio/backend/domain/permission"
+	"github.com/kozex-ai/kozex/backend/domain/permission"
 )
 
 type ServiceComponents struct {

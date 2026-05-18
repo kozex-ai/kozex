@@ -17,7 +17,7 @@
 package errno
 
 import (
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx/code"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx/code"
 )
 
 // single agent: 100 000 000 ~ 100 999 999

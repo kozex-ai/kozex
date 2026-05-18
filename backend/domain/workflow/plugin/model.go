@@ -17,8 +17,8 @@
 package plugin
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 type ToolsInfoRequest struct {

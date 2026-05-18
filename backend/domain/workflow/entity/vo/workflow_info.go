@@ -17,8 +17,8 @@
 package vo
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
 type ReleasedWorkflowData struct {

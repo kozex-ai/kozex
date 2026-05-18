@@ -23,14 +23,14 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_open_api"
-	openapimodel "github.com/coze-dev/coze-studio/backend/api/model/permission/openapiauth"
-	"github.com/coze-dev/coze-studio/backend/application/base/ctxutil"
-	openapi "github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth"
-	"github.com/coze-dev/coze-studio/backend/domain/openauth/openapiauth/entity"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_open_api"
+	openapimodel "github.com/kozex-ai/kozex/backend/api/model/permission/openapiauth"
+	"github.com/kozex-ai/kozex/backend/application/base/ctxutil"
+	openapi "github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth"
+	"github.com/kozex-ai/kozex/backend/domain/openauth/openapiauth/entity"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type OpenAuthApplicationService struct {

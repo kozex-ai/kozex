@@ -21,7 +21,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/datacopy"
+	"github.com/kozex-ai/kozex/backend/domain/datacopy"
 )
 
 type DataCopy interface {

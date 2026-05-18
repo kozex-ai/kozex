@@ -26,17 +26,17 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	msgEntity "github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
-	"github.com/coze-dev/coze-studio/backend/pkg/safego"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	msgEntity "github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/safego"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func (art *AgentRuntime) ChatflowRun(ctx context.Context, imagex imagex.ImageX) (err error) {

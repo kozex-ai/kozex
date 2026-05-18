@@ -20,7 +20,7 @@ package coze
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	coze "github.com/coze-dev/coze-studio/backend/api/handler/coze"
+	coze "github.com/kozex-ai/kozex/backend/api/handler/coze"
 )
 
 /*

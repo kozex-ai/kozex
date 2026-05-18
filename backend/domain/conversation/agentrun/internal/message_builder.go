@@ -24,20 +24,20 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	messageModel "github.com/coze-dev/coze-studio/backend/api/model/conversation/message"
-	crossagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent"
-	singleagent "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
-	message "github.com/coze-dev/coze-studio/backend/crossdomain/message/model"
-	"github.com/coze-dev/coze-studio/backend/infra/imagex"
+	messageModel "github.com/kozex-ai/kozex/backend/api/model/conversation/message"
+	crossagent "github.com/kozex-ai/kozex/backend/crossdomain/agent"
+	singleagent "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
+	message "github.com/kozex-ai/kozex/backend/crossdomain/message/model"
+	"github.com/kozex-ai/kozex/backend/infra/imagex"
 
-	crossmessage "github.com/coze-dev/coze-studio/backend/crossdomain/message"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/agentrun/entity"
-	msgEntity "github.com/coze-dev/coze-studio/backend/domain/conversation/message/entity"
+	crossmessage "github.com/kozex-ai/kozex/backend/crossdomain/message"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/agentrun/entity"
+	msgEntity "github.com/kozex-ai/kozex/backend/domain/conversation/message/entity"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 func buildSendMsg(_ context.Context, msg *msgEntity.Message, isFinish bool, rtDependence *AgentRuntime) *entity.ChunkMessageItem {

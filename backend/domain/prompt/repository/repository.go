@@ -21,9 +21,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/prompt/internal/dal"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/entity"
+	"github.com/kozex-ai/kozex/backend/domain/prompt/internal/dal"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 func NewPromptRepo(db *gorm.DB, generator idgen.IDGenerator) PromptRepository {

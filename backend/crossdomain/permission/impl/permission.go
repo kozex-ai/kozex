@@ -19,9 +19,9 @@ package crosspermission
 import (
 	"context"
 
-	crosspermission "github.com/coze-dev/coze-studio/backend/crossdomain/permission"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/permission/model"
-	"github.com/coze-dev/coze-studio/backend/domain/permission"
+	crosspermission "github.com/kozex-ai/kozex/backend/crossdomain/permission"
+	"github.com/kozex-ai/kozex/backend/crossdomain/permission/model"
+	"github.com/kozex-ai/kozex/backend/domain/permission"
 )
 
 type impl struct {

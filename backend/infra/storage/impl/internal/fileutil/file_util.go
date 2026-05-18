@@ -18,8 +18,8 @@ package fileutil
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/taskgroup"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/taskgroup"
 )
 
 func AssembleFileUrl(ctx context.Context, urlExpire *int64, files []*storage.FileInfo, s storage.Storage) ([]*storage.FileInfo, error) {

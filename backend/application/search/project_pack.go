@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/intelligence"
-	"github.com/coze-dev/coze-studio/backend/api/model/app/intelligence/common"
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	appService "github.com/coze-dev/coze-studio/backend/domain/app/service"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/api/model/app/intelligence"
+	"github.com/kozex-ai/kozex/backend/api/model/app/intelligence/common"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
+	appService "github.com/kozex-ai/kozex/backend/domain/app/service"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type projectInfo struct {

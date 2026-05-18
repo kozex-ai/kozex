@@ -27,8 +27,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/bizpkg/config"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/bizpkg/config"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 // CozeAPIClient represents a client for coze.cn OpenAPI

@@ -24,8 +24,8 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/envkey"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/envkey"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 func New() (*gorm.DB, error) {

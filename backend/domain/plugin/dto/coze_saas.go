@@ -19,7 +19,7 @@ package dto
 import (
 	"encoding/json"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_common"
+	"github.com/kozex-ai/kozex/backend/api/model/marketplace/product_common"
 )
 
 // SearchSaasPluginRequest represents the request parameters for searching SaaS plugins

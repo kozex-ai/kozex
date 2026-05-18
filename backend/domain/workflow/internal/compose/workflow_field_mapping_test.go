@@ -22,7 +22,7 @@ import (
 	"github.com/cloudwego/eino/compose"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+	"github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 )
 
 func TestAddFieldMappingsWithDeduplication(t *testing.T) {

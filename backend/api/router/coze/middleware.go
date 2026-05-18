@@ -20,7 +20,7 @@ package coze
 
 import (
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/coze-dev/coze-studio/backend/api/middleware"
+	"github.com/kozex-ai/kozex/backend/api/middleware"
 )
 
 func rootMw() []app.HandlerFunc {

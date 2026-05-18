@@ -16,7 +16,7 @@
 
 package messages2query
 
-import "github.com/coze-dev/coze-studio/backend/bizpkg/llm/modelbuilder"
+import "github.com/kozex-ai/kozex/backend/bizpkg/llm/modelbuilder"
 
 type Option func(o *Options)
 

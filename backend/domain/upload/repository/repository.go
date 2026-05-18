@@ -21,8 +21,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/upload/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/upload/internal/dal/dao"
+	"github.com/kozex-ai/kozex/backend/domain/upload/entity"
+	"github.com/kozex-ai/kozex/backend/domain/upload/internal/dal/dao"
 )
 
 func NewFilesRepo(db *gorm.DB) FilesRepo {

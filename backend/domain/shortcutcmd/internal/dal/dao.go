@@ -23,13 +23,13 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/entity"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/shortcutcmd/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type ShortCutCmdDAO struct {

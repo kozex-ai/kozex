@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/domain/search/entity"
+	"github.com/kozex-ai/kozex/backend/domain/search/entity"
 )
 
 type ProjectEventBus interface {

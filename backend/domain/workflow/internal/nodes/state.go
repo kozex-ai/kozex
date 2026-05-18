@@ -16,7 +16,7 @@
 
 package nodes
 
-import "github.com/coze-dev/coze-studio/backend/domain/workflow/entity/vo"
+import "github.com/kozex-ai/kozex/backend/domain/workflow/entity/vo"
 
 type IntermediateResultStore interface {
 	GetIntermediateResult(nodeKey vo.NodeKey) map[string]any

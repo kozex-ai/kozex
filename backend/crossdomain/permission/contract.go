@@ -19,7 +19,7 @@ package permission
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/crossdomain/permission/model"
+	"github.com/kozex-ai/kozex/backend/crossdomain/permission/model"
 )
 
 var defaultSVC Permission

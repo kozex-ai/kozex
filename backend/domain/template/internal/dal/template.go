@@ -23,10 +23,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/coze-dev/coze-studio/backend/domain/template/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/template/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/template/internal/dal/query"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/domain/template/entity"
+	"github.com/kozex-ai/kozex/backend/domain/template/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/template/internal/dal/query"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 var (

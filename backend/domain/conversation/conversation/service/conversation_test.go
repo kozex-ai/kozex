@@ -24,13 +24,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/conversation/common"
-	conversation "github.com/coze-dev/coze-studio/backend/crossdomain/conversation/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/conversation/conversation/repository"
-	mock "github.com/coze-dev/coze-studio/backend/internal/mock/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/internal/mock/infra/orm"
+	"github.com/kozex-ai/kozex/backend/api/model/conversation/common"
+	conversation "github.com/kozex-ai/kozex/backend/crossdomain/conversation/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/entity"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/conversation/conversation/repository"
+	mock "github.com/kozex-ai/kozex/backend/internal/mock/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/internal/mock/infra/orm"
 )
 
 // Test_NewListMessage tests the NewListMessage function

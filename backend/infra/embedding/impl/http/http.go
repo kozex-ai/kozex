@@ -29,11 +29,11 @@ import (
 
 	opt "github.com/cloudwego/eino/components/embedding"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/logs"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
 )
 
 const (

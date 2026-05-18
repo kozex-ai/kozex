@@ -22,21 +22,21 @@ import (
 
 	"gorm.io/gorm"
 
-	connectorModel "github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
-	databaseModel "github.com/coze-dev/coze-studio/backend/crossdomain/database/model"
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
+	connectorModel "github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
+	databaseModel "github.com/kozex-ai/kozex/backend/crossdomain/database/model"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
 
-	crossconnector "github.com/coze-dev/coze-studio/backend/crossdomain/connector"
-	crossdatabase "github.com/coze-dev/coze-studio/backend/crossdomain/database"
-	crossknowledge "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge"
-	crossplugin "github.com/coze-dev/coze-studio/backend/crossdomain/plugin"
-	crossworkflow "github.com/coze-dev/coze-studio/backend/crossdomain/workflow"
+	crossconnector "github.com/kozex-ai/kozex/backend/crossdomain/connector"
+	crossdatabase "github.com/kozex-ai/kozex/backend/crossdomain/database"
+	crossknowledge "github.com/kozex-ai/kozex/backend/crossdomain/knowledge"
+	crossplugin "github.com/kozex-ai/kozex/backend/crossdomain/plugin"
+	crossworkflow "github.com/kozex-ai/kozex/backend/crossdomain/workflow"
 
-	"github.com/coze-dev/coze-studio/backend/domain/app/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/app/repository"
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	"github.com/kozex-ai/kozex/backend/domain/app/entity"
+	"github.com/kozex-ai/kozex/backend/domain/app/repository"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type Components struct {

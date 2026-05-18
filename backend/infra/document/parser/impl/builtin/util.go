@@ -25,7 +25,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/document"
 )
 
 const baseWord = "1Aa2Bb3Cc4Dd5Ee6Ff7Gg8Hh9Ii0JjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"

@@ -19,7 +19,7 @@ package knowledge
 import (
 	"context"
 
-	"github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
 )
 
 //go:generate  mockgen -destination knowledgemock/knowledge_mock.go --package knowledgemock -source model.go

@@ -16,7 +16,7 @@
 
 package entity
 
-import "github.com/coze-dev/coze-studio/backend/domain/shortcutcmd/internal/dal/model"
+import "github.com/kozex-ai/kozex/backend/domain/shortcutcmd/internal/dal/model"
 
 type ShortcutCmd = model.ShortcutCommand
 

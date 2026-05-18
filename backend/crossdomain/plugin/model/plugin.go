@@ -17,8 +17,8 @@
 package model
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	api "github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	api "github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
 )
 
 type BindToolInfo struct {

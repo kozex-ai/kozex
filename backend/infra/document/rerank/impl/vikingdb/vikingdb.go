@@ -28,9 +28,9 @@ import (
 
 	"github.com/volcengine/volc-sdk-golang/base"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/document/rerank"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/document/rerank"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func NewReranker(cfg *config.VikingDBConfig) rerank.Reranker {

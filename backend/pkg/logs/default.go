@@ -23,7 +23,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/coze-dev/coze-studio/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var logger FullLogger = &defaultLogger{

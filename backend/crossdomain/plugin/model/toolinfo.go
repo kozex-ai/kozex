@@ -25,13 +25,13 @@ import (
 	"github.com/getkin/kin-openapi/openapi3"
 	gonanoid "github.com/matoous/go-nanoid"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	productAPI "github.com/coze-dev/coze-studio/backend/api/model/marketplace/product_public_api"
-	"github.com/coze-dev/coze-studio/backend/api/model/plugin_develop/common"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/consts"
-	"github.com/coze-dev/coze-studio/backend/crossdomain/plugin/convert"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/slices"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	productAPI "github.com/kozex-ai/kozex/backend/api/model/marketplace/product_public_api"
+	"github.com/kozex-ai/kozex/backend/api/model/plugin_develop/common"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/consts"
+	"github.com/kozex-ai/kozex/backend/crossdomain/plugin/convert"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
 )
 
 type ToolInfo struct {

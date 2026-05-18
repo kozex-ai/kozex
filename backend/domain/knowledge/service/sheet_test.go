@@ -25,17 +25,17 @@ import (
 	"github.com/smartystreets/goconvey/convey"
 	"go.uber.org/mock/gomock"
 
-	knowledgeModel "github.com/coze-dev/coze-studio/backend/crossdomain/knowledge/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/entity"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/consts"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/convert"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/dal/model"
-	"github.com/coze-dev/coze-studio/backend/domain/knowledge/internal/mock/dal/dao"
-	"github.com/coze-dev/coze-studio/backend/infra/document"
-	"github.com/coze-dev/coze-studio/backend/infra/rdb"
-	rentity "github.com/coze-dev/coze-studio/backend/infra/rdb/entity"
-	mrdb "github.com/coze-dev/coze-studio/backend/internal/mock/infra/rdb"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	knowledgeModel "github.com/kozex-ai/kozex/backend/crossdomain/knowledge/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/entity"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/consts"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/convert"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/dal/model"
+	"github.com/kozex-ai/kozex/backend/domain/knowledge/internal/mock/dal/dao"
+	"github.com/kozex-ai/kozex/backend/infra/document"
+	"github.com/kozex-ai/kozex/backend/infra/rdb"
+	rentity "github.com/kozex-ai/kozex/backend/infra/rdb/entity"
+	mrdb "github.com/kozex-ai/kozex/backend/internal/mock/infra/rdb"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func TestValidateTableSchema(t *testing.T) {

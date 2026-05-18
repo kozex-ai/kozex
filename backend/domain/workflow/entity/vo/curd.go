@@ -17,7 +17,7 @@
 package vo
 
 import (
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/workflow/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/workflow/model"
 )
 
 type Page struct {

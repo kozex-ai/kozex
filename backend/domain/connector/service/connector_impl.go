@@ -19,14 +19,14 @@ package connector
 import (
 	"context"
 
-	connector "github.com/coze-dev/coze-studio/backend/crossdomain/connector/model"
-	"github.com/coze-dev/coze-studio/backend/domain/connector/entity"
-	"github.com/coze-dev/coze-studio/backend/infra/storage"
-	"github.com/coze-dev/coze-studio/backend/pkg/errorx"
-	"github.com/coze-dev/coze-studio/backend/pkg/i18n"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/conv"
-	"github.com/coze-dev/coze-studio/backend/types/consts"
-	"github.com/coze-dev/coze-studio/backend/types/errno"
+	connector "github.com/kozex-ai/kozex/backend/crossdomain/connector/model"
+	"github.com/kozex-ai/kozex/backend/domain/connector/entity"
+	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/pkg/errorx"
+	"github.com/kozex-ai/kozex/backend/pkg/i18n"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
+	"github.com/kozex-ai/kozex/backend/types/consts"
+	"github.com/kozex-ai/kozex/backend/types/errno"
 )
 
 type connectorImpl struct {

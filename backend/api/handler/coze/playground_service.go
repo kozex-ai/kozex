@@ -24,13 +24,13 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
-	appApplication "github.com/coze-dev/coze-studio/backend/application/app"
-	"github.com/coze-dev/coze-studio/backend/application/prompt"
-	"github.com/coze-dev/coze-studio/backend/application/shortcutcmd"
-	"github.com/coze-dev/coze-studio/backend/application/singleagent"
-	"github.com/coze-dev/coze-studio/backend/application/upload"
-	"github.com/coze-dev/coze-studio/backend/application/user"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
+	appApplication "github.com/kozex-ai/kozex/backend/application/app"
+	"github.com/kozex-ai/kozex/backend/application/prompt"
+	"github.com/kozex-ai/kozex/backend/application/shortcutcmd"
+	"github.com/kozex-ai/kozex/backend/application/singleagent"
+	"github.com/kozex-ai/kozex/backend/application/upload"
+	"github.com/kozex-ai/kozex/backend/application/user"
 )
 
 // UpdateDraftBotInfoAgw .

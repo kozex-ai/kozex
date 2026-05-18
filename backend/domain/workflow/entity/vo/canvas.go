@@ -19,10 +19,10 @@ package vo
 import (
 	"fmt"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/app/bot_common"
-	"github.com/coze-dev/coze-studio/backend/api/model/workflow"
-	"github.com/coze-dev/coze-studio/backend/pkg/i18n"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ternary"
+	"github.com/kozex-ai/kozex/backend/api/model/app/bot_common"
+	"github.com/kozex-ai/kozex/backend/api/model/workflow"
+	"github.com/kozex-ai/kozex/backend/pkg/i18n"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ternary"
 )
 
 // Canvas is the definition of FRONTEND schema for a workflow.

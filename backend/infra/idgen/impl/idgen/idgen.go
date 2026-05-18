@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/coze-dev/coze-studio/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/cache"
 
-	"github.com/coze-dev/coze-studio/backend/infra/idgen"
+	"github.com/kozex-ai/kozex/backend/infra/idgen"
 )
 
 const (

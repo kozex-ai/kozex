@@ -17,7 +17,7 @@
 package model
 
 import (
-	"github.com/coze-dev/coze-studio/backend/api/model/data/variable/project_memory"
+	"github.com/kozex-ai/kozex/backend/api/model/data/variable/project_memory"
 )
 
 type UserVariableMeta struct {

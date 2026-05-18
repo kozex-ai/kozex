@@ -25,12 +25,12 @@ import (
 	"github.com/cloudwego/eino-ext/components/embedding/openai"
 	"google.golang.org/genai"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/admin/config"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding/impl/ark"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding/impl/http"
-	"github.com/coze-dev/coze-studio/backend/infra/embedding/impl/wrap"
-	"github.com/coze-dev/coze-studio/backend/pkg/lang/ptr"
+	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
+	"github.com/kozex-ai/kozex/backend/infra/embedding"
+	"github.com/kozex-ai/kozex/backend/infra/embedding/impl/ark"
+	"github.com/kozex-ai/kozex/backend/infra/embedding/impl/http"
+	"github.com/kozex-ai/kozex/backend/infra/embedding/impl/wrap"
+	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 )
 
 func GetEmbedding(ctx context.Context, cfg *config.EmbeddingConfig) (embedding.Embedder, error) {

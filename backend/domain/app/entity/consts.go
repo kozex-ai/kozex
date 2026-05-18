@@ -16,7 +16,7 @@
 
 package entity
 
-import "github.com/coze-dev/coze-studio/backend/crossdomain/app/model"
+import "github.com/kozex-ai/kozex/backend/crossdomain/app/model"
 
 type PublishStatus = model.PublishStatus
 

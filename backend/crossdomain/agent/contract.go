@@ -21,11 +21,11 @@ import (
 
 	"github.com/cloudwego/eino/schema"
 
-	model "github.com/coze-dev/coze-studio/backend/crossdomain/agent/model"
+	model "github.com/kozex-ai/kozex/backend/crossdomain/agent/model"
 
-	agentrun "github.com/coze-dev/coze-studio/backend/crossdomain/agentrun/model"
+	agentrun "github.com/kozex-ai/kozex/backend/crossdomain/agentrun/model"
 
-	"github.com/coze-dev/coze-studio/backend/api/model/playground"
+	"github.com/kozex-ai/kozex/backend/api/model/playground"
 )
 
 // Requests and responses must not reference domain entities and can only use models under api/model/crossdomain.
