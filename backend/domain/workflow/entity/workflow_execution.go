@@ -61,6 +61,7 @@ const (
 	WorkflowFailed      = WorkflowExecuteStatus(workflow.WorkflowExeStatus_Fail)
 	WorkflowCancel      = WorkflowExecuteStatus(workflow.WorkflowExeStatus_Cancel)
 	WorkflowInterrupted = WorkflowExecuteStatus(5)
+	WorkflowQueued      = WorkflowExecuteStatus(6)
 )
 
 const (

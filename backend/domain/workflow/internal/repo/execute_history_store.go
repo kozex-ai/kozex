@@ -78,7 +78,7 @@ func (e *executeHistoryStoreImpl) CreateWorkflowExecution(ctx context.Context, e
 		SpaceID:         execution.SpaceID,
 		Mode:            mode,
 		OperatorID:      execution.Operator,
-		Status:          int32(entity.WorkflowRunning),
+		Status:          int32(execution.Status),
 		Input:           ptr.FromOrDefault(execution.Input, ""),
 		RootExecutionID: execution.RootExecutionID,
 		ParentNodeID:    ptr.FromOrDefault(execution.ParentNodeID, ""),

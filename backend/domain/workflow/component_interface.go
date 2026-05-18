@@ -33,6 +33,11 @@ import (
 type Executable interface {
 	SyncExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (*entity.WorkflowExecution, vo.TerminatePlan, error)
 	AsyncExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (int64, error)
+	// QueueExecute publishes the job to MQ and returns a pre-allocated executeID (status=queued).
+	// The actual graph execution happens in the executor consumer.
+	QueueExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (int64, error)
+	// ExecuteJob is called by the executor consumer to run a queued job.
+	ExecuteJob(ctx context.Context, job workflowModel.WorkflowJob) error
 	AsyncExecuteNode(ctx context.Context, nodeID string, config workflowModel.ExecuteConfig, input map[string]any) (int64, error)
 	AsyncResume(ctx context.Context, req *entity.ResumeRequest, config workflowModel.ExecuteConfig) error
 	StreamExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (*schema.StreamReader[*entity.Message], error)

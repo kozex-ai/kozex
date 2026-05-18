@@ -114,3 +114,14 @@ func InitKnowledgeEventBusProducer() (eventbus.Producer, error) {
 
 	return knowledgeProducer, nil
 }
+
+func InitWorkflowExecutorProducer() (eventbus.Producer, error) {
+	nameServer := os.Getenv(consts.MQServer)
+
+	p, err := NewProducer(nameServer, consts.RMQTopicWorkflowExecutor, consts.RMQConsumeGroupWorkflowExecutor, 1)
+	if err != nil {
+		return nil, fmt.Errorf("init workflow executor producer failed: %w", err)
+	}
+
+	return p, nil
+}

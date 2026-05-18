@@ -285,7 +285,7 @@ func newWfTestRunner(t *testing.T) *wfTestRunner {
 	workflowRepo, _ := service.NewWorkflowRepository(mockIDGen, db, redisClient, mockTos, cpStore, utChatModel, &config.WorkflowConfig{
 		NodeOfCodeConfig: &config.NodeOfCodeConfig{},
 	})
-	mockey.Mock(appworkflow.GetWorkflowDomainSVC).Return(service.NewWorkflowService(workflowRepo)).Build()
+	mockey.Mock(appworkflow.GetWorkflowDomainSVC).Return(service.NewWorkflowService(workflowRepo, nil)).Build()
 	mockey.Mock(workflow2.GetRepository).Return(workflowRepo).Build()
 	publishPatcher := mockey.Mock(appworkflow.PublishWorkflowResource).Return(nil).Build()
 

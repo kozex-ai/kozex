@@ -52,9 +52,17 @@ type WorkflowRunner struct {
 	container *execute.StreamContainer
 	config    model.ExecuteConfig
 
-	executeID      int64
-	eventChan      chan *execute.Event
-	interruptEvent *entity.InterruptEvent
+	executeID         int64
+	eventChan         chan *execute.Event
+	interruptEvent    *entity.InterruptEvent
+	existingExecuteID *int64
+}
+
+// WithExistingID instructs Prepare to use a pre-allocated executeID (status=queued in DB)
+// instead of generating a new one. The existing record will be updated from queued to running.
+func (r *WorkflowRunner) WithExistingID(id int64) *WorkflowRunner {
+	r.existingExecuteID = &id
+	return r
 }
 
 type workflowRunOptions struct {
@@ -123,7 +131,9 @@ func (r *WorkflowRunner) Prepare(ctx context.Context) (
 		config    = r.config
 	)
 
-	if r.resumeReq == nil {
+	if r.existingExecuteID != nil {
+		executeID = *r.existingExecuteID
+	} else if r.resumeReq == nil {
 		executeID, err = repo.GenID(ctx)
 		if err != nil {
 			return ctx, 0, nil, nil, vo.WrapError(errno.ErrIDGenError,
@@ -258,26 +268,36 @@ func (r *WorkflowRunner) Prepare(ctx context.Context) (
 	}
 
 	if interruptEvent == nil {
-		var logID string
-		logID, _ = ctx.Value(consts.CtxLogIDKey).(string)
+		if r.existingExecuteID != nil {
+			// record already exists with queued status, update to running
+			if _, _, err = repo.UpdateWorkflowExecution(ctx, &entity.WorkflowExecution{
+				ID:     executeID,
+				Status: entity.WorkflowRunning,
+			}, []entity.WorkflowExecuteStatus{entity.WorkflowQueued}); err != nil {
+				return ctx, 0, nil, nil, fmt.Errorf("failed to transition queued execution to running: %w", err)
+			}
+		} else {
+			var logID string
+			logID, _ = ctx.Value(consts.CtxLogIDKey).(string)
 
-		wfExec := &entity.WorkflowExecution{
-			ID:                     executeID,
-			WorkflowID:             wb.ID,
-			Version:                wb.Version,
-			SpaceID:                wb.SpaceID,
-			ExecuteConfig:          config,
-			Status:                 entity.WorkflowRunning,
-			Input:                  ptr.Of(r.input),
-			RootExecutionID:        executeID,
-			NodeCount:              sc.NodeCount(),
-			CurrentResumingEventID: ptr.Of(int64(0)),
-			CommitID:               wb.CommitID,
-			LogID:                  logID,
-		}
+			wfExec := &entity.WorkflowExecution{
+				ID:                     executeID,
+				WorkflowID:             wb.ID,
+				Version:                wb.Version,
+				SpaceID:                wb.SpaceID,
+				ExecuteConfig:          config,
+				Status:                 entity.WorkflowRunning,
+				Input:                  ptr.Of(r.input),
+				RootExecutionID:        executeID,
+				NodeCount:              sc.NodeCount(),
+				CurrentResumingEventID: ptr.Of(int64(0)),
+				CommitID:               wb.CommitID,
+				LogID:                  logID,
+			}
 
-		if err = repo.CreateWorkflowExecution(ctx, wfExec); err != nil {
-			return ctx, 0, nil, nil, err
+			if err = repo.CreateWorkflowExecution(ctx, wfExec); err != nil {
+				return ctx, 0, nil, nil, err
+			}
 		}
 	}
 

@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-opencoze-debug",
+      "type": "shell",
+      "command": "go",
+      "args": [
+        "build",
+        "-gcflags=all=-N -l",
+        "-o",
+        "${workspaceFolder}/bin/opencoze-debug",
+        "main.go"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "group": "build",
+      "problemMatcher": ["$go"]
+    }
+  ]
+}

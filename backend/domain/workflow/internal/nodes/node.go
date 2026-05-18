@@ -18,7 +18,6 @@ package nodes
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/cloudwego/eino/compose"
 	einoschema "github.com/cloudwego/eino/schema"
@@ -171,7 +170,7 @@ func RegisterNodeAdaptor(et entity.NodeType, f func() NodeAdaptor) {
 func GetNodeAdaptor(et entity.NodeType) (NodeAdaptor, bool) {
 	na, ok := nodeAdaptors[et]
 	if !ok {
-		panic(fmt.Sprintf("node type %s not registered", et))
+		return nil, false
 	}
 	return na(), ok
 }

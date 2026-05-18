@@ -37,6 +37,7 @@ import (
 	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/compose"
 	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/execute"
 	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/nodes"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
 	"github.com/kozex-ai/kozex/backend/pkg/errorx"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/slices"
@@ -46,7 +47,8 @@ import (
 )
 
 type executableImpl struct {
-	repo workflow.Repository
+	repo        workflow.Repository
+	jobProducer eventbus.Producer
 }
 
 func (i *impl) SyncExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (*entity.WorkflowExecution, vo.TerminatePlan, error) {
@@ -301,6 +303,179 @@ func (i *impl) AsyncExecute(ctx context.Context, config workflowModel.ExecuteCon
 	wf.AsyncRun(cancelCtx, convertedInput, opts...)
 
 	return executeID, nil
+}
+
+// QueueExecute creates a queued execution record and publishes the job to MQ.
+// The executor consumer picks it up and calls ExecuteJob to do the actual run.
+func (i *impl) QueueExecute(ctx context.Context, config workflowModel.ExecuteConfig, input map[string]any) (int64, error) {
+	if i.jobProducer == nil {
+		return 0, fmt.Errorf("QueueExecute: workflow job producer is not configured")
+	}
+
+	wfMeta, err := i.Get(ctx, &vo.GetPolicy{
+		ID:       config.ID,
+		QType:    config.From,
+		MetaOnly: true,
+		Version:  config.Version,
+	})
+	if err != nil {
+		return 0, err
+	}
+
+	repo := workflow.GetRepository()
+	executeID, err := repo.GenID(ctx)
+	if err != nil {
+		return 0, fmt.Errorf("QueueExecute: failed to generate execute ID: %w", err)
+	}
+
+	inStr, err := sonic.MarshalString(input)
+	if err != nil {
+		return 0, err
+	}
+
+	var logID string
+	logID, _ = ctx.Value(consts.CtxLogIDKey).(string)
+
+	if err = repo.CreateWorkflowExecution(ctx, &entity.WorkflowExecution{
+		ID:                     executeID,
+		WorkflowID:             wfMeta.ID,
+		Version:                wfMeta.GetVersion(),
+		SpaceID:                wfMeta.SpaceID,
+		ExecuteConfig:          config,
+		Status:                 entity.WorkflowQueued,
+		Input:                  ptr.Of(inStr),
+		RootExecutionID:        executeID,
+		NodeCount:              0,
+		CurrentResumingEventID: ptr.Of(int64(0)),
+		CommitID:               wfMeta.CommitID,
+		LogID:                  logID,
+	}); err != nil {
+		return 0, fmt.Errorf("QueueExecute: failed to create queued execution record: %w", err)
+	}
+
+	job := workflowModel.WorkflowJob{
+		ExecuteID: executeID,
+		Config:    config,
+		Input:     input,
+	}
+
+	jobBytes, err := sonic.Marshal(job)
+	if err != nil {
+		return 0, fmt.Errorf("QueueExecute: failed to marshal job: %w", err)
+	}
+
+	if err = i.jobProducer.Send(ctx, jobBytes); err != nil {
+		return 0, fmt.Errorf("QueueExecute: failed to publish workflow job: %w", err)
+	}
+
+	if config.Mode == workflowModel.ExecuteModeDebug {
+		if err = repo.SetTestRunLatestExeID(ctx, config.ID, config.Operator, executeID); err != nil {
+			logs.CtxErrorf(ctx, "QueueExecute: failed to set test run latest exe id: %v", err)
+		}
+	}
+
+	return executeID, nil
+}
+
+// ExecuteJob is called by the executor consumer to run a queued job.
+// It mirrors AsyncExecute but uses the pre-allocated executeID via WithExistingID.
+//
+// Crash recovery gap: AsyncRun is fire-and-forget — NSQ ACKs the message as soon as
+// ExecuteJob returns, before the graph finishes. A process crash mid-execution leaves
+// the record stuck in Running forever. A watchdog job should periodically scan for
+// executions in Running/Queued state older than a timeout and either mark them Failed
+// or re-queue them (requiring this function to remain idempotent via the status check below).
+func (i *impl) ExecuteJob(ctx context.Context, job workflowModel.WorkflowJob) error {
+	config := job.Config
+	input := job.Input
+
+	// Idempotency check: skip if the execution is no longer in Queued state.
+	// This guards against duplicate delivery or watchdog re-queue of an already-running job.
+	repo := workflow.GetRepository()
+	exe, found, err := repo.GetWorkflowExecution(ctx, job.ExecuteID)
+	if err != nil {
+		return fmt.Errorf("ExecuteJob: failed to fetch execution status: %w", err)
+	}
+	if found && exe.Status != entity.WorkflowQueued {
+		logs.CtxInfof(ctx, "ExecuteJob: skipping execute_id=%d, status already=%v", job.ExecuteID, exe.Status)
+		return nil
+	}
+
+	wfEntity, err := i.Get(ctx, &vo.GetPolicy{
+		ID:       config.ID,
+		QType:    config.From,
+		MetaOnly: false,
+		Version:  config.Version,
+		CommitID: config.CommitID,
+	})
+	if err != nil {
+		return err
+	}
+
+	config.WorkflowMode = wfEntity.Mode
+
+	if wfEntity.AppID != nil && config.AppID == nil {
+		config.AppID = wfEntity.AppID
+	}
+
+	c := &vo.Canvas{}
+	if err = sonic.UnmarshalString(wfEntity.Canvas, c); err != nil {
+		return fmt.Errorf("ExecuteJob: failed to unmarshal canvas: %w", err)
+	}
+
+	workflowSC, err := adaptor.CanvasToWorkflowSchema(ctx, c)
+	if err != nil {
+		return fmt.Errorf("ExecuteJob: failed to convert canvas to workflow schema: %w", err)
+	}
+
+	config.InputFileFields = slices.ToMap(workflowSC.GetAllNodesInputFileFields(ctx), func(e *workflowModel.FileInfo) (string, *workflowModel.FileInfo) {
+		return e.FileURL, e
+	})
+	config.CommitID = wfEntity.CommitID
+
+	var wfOpts []compose.WorkflowOption
+	wfOpts = append(wfOpts, compose.WithIDAsName(wfEntity.ID))
+	if s := execute.GetStaticConfig(); s != nil && s.MaxNodeCountPerWorkflow > 0 {
+		wfOpts = append(wfOpts, compose.WithMaxNodeCount(s.MaxNodeCountPerWorkflow))
+	}
+
+	wf, err := compose.NewWorkflow(ctx, workflowSC, wfOpts...)
+	if err != nil {
+		return fmt.Errorf("ExecuteJob: failed to create workflow: %w", err)
+	}
+
+	var cOpts []nodes.ConvertOption
+	inputFileFields := make(map[string]*workflowModel.FileInfo)
+	cOpts = append(cOpts, nodes.WithCollectFileFields(inputFileFields), nodes.WithNotNeedTrimQueryFileName(true))
+	if config.InputFailFast {
+		cOpts = append(cOpts, nodes.FailFast())
+	}
+
+	convertedInput, ws, err := nodes.ConvertInputs(ctx, input, wf.Inputs(), cOpts...)
+	if err != nil {
+		return err
+	} else if ws != nil {
+		logs.CtxWarnf(ctx, "ExecuteJob: convert inputs warnings: %v", *ws)
+	}
+
+	for k, v := range inputFileFields {
+		config.InputFileFields[k] = v
+	}
+
+	inStr, err := sonic.MarshalString(input)
+	if err != nil {
+		return err
+	}
+
+	cancelCtx, _, _, _, err := compose.NewWorkflowRunner(wfEntity.GetBasic(), workflowSC, config,
+		compose.WithInput(inStr)).WithExistingID(job.ExecuteID).Prepare(ctx)
+	if err != nil {
+		return err
+	}
+
+	wf.AsyncRun(cancelCtx, convertedInput)
+
+	return nil
 }
 
 func (i *impl) handleHistory(ctx context.Context, config *workflowModel.ExecuteConfig, input map[string]any, historyRounds int64, shouldFetchConversationByName bool) error {

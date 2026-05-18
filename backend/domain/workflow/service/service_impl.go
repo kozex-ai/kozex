@@ -40,6 +40,7 @@ import (
 	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/repo"
 	"github.com/kozex-ai/kozex/backend/domain/workflow/internal/schema"
 	"github.com/kozex-ai/kozex/backend/infra/cache"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
 	"github.com/kozex-ai/kozex/backend/infra/idgen"
 	"github.com/kozex-ai/kozex/backend/infra/storage"
 	"github.com/kozex-ai/kozex/backend/pkg/errorx"
@@ -57,14 +58,15 @@ type impl struct {
 	*conversationImpl
 }
 
-func NewWorkflowService(repo workflow.Repository) workflow.Service {
+func NewWorkflowService(repo workflow.Repository, jobProducer eventbus.Producer) workflow.Service {
 	return &impl{
 		repo: repo,
 		asToolImpl: &asToolImpl{
 			repo: repo,
 		},
 		executableImpl: &executableImpl{
-			repo: repo,
+			repo:        repo,
+			jobProducer: jobProducer,
 		},
 		conversationImpl: &conversationImpl{repo: repo},
 	}

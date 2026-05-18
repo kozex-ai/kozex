@@ -569,7 +569,7 @@ func (w *ApplicationService) TestRun(ctx context.Context, req *workflow.WorkFlow
 		return nil, errors.New("project_id and bot_id cannot be set at the same time")
 	}
 
-	exeID, err := GetWorkflowDomainSVC().AsyncExecute(ctx, exeCfg, maps.ToAnyValue(req.Input))
+	exeID, err := GetWorkflowDomainSVC().QueueExecute(ctx, exeCfg, maps.ToAnyValue(req.Input))
 	if err != nil {
 		return nil, err
 	}
@@ -1799,7 +1799,7 @@ func (w *ApplicationService) OpenAPIRun(ctx context.Context, req *workflow.OpenA
 	if req.GetIsAsync() {
 		exeCfg.SyncPattern = workflowModel.SyncPatternAsync
 		exeCfg.TaskType = workflowModel.TaskTypeBackground
-		exeID, err := GetWorkflowDomainSVC().AsyncExecute(ctx, exeCfg, parameters)
+		exeID, err := GetWorkflowDomainSVC().QueueExecute(ctx, exeCfg, parameters)
 		if err != nil {
 			return nil, err
 		}

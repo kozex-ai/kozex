@@ -18,9 +18,9 @@ package workflow
 
 import (
 	"context"
-	"path/filepath"
-
+	"fmt"
 	"os"
+	"path/filepath"
 
 	"gopkg.in/yaml.v3"
 
@@ -36,13 +36,16 @@ import (
 	search "github.com/kozex-ai/kozex/backend/domain/search/service"
 	"github.com/kozex-ai/kozex/backend/domain/workflow"
 	"github.com/kozex-ai/kozex/backend/domain/workflow/config"
+	wfexecutor "github.com/kozex-ai/kozex/backend/domain/workflow/executor"
 	wrapPlugin "github.com/kozex-ai/kozex/backend/domain/workflow/plugin"
 	"github.com/kozex-ai/kozex/backend/domain/workflow/service"
 	"github.com/kozex-ai/kozex/backend/infra/cache"
 	"github.com/kozex-ai/kozex/backend/infra/coderunner"
+	"github.com/kozex-ai/kozex/backend/infra/eventbus"
 	"github.com/kozex-ai/kozex/backend/infra/idgen"
 	"github.com/kozex-ai/kozex/backend/infra/imagex"
 	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 type ServiceComponents struct {
@@ -59,6 +62,7 @@ type ServiceComponents struct {
 	CPStore                  compose.CheckPointStore
 	CodeRunner               coderunner.Runner
 	WorkflowBuildInChatModel modelbuilder.BaseChatModel
+	WorkflowJobProducer      eventbus.Producer
 }
 
 func initWorkflowConfig() (workflow.WorkflowConfig, error) {
@@ -94,13 +98,26 @@ func InitService(_ context.Context, components *ServiceComponents) (*Application
 
 	workflow.SetRepository(workflowRepo)
 
-	workflowDomainSVC := service.NewWorkflowService(workflowRepo)
+	workflowDomainSVC := service.NewWorkflowService(workflowRepo, components.WorkflowJobProducer)
 	wrapPlugin.SetOSS(components.Tos)
 
 	coderunner.SetCodeRunner(components.CodeRunner)
 	callbacks.AppendGlobalHandlers(service.GetTokenCallbackHandler())
 
 	setEventBus(components.DomainNotifier)
+
+	if components.WorkflowJobProducer != nil {
+		nameServer := os.Getenv(consts.MQServer)
+		handler := wfexecutor.NewHandler(workflowDomainSVC)
+		if err = eventbus.GetDefaultSVC().RegisterConsumer(
+			nameServer,
+			consts.RMQTopicWorkflowExecutor,
+			consts.RMQConsumeGroupWorkflowExecutor,
+			handler,
+		); err != nil {
+			return nil, fmt.Errorf("register workflow executor consumer failed: %w", err)
+		}
+	}
 
 	SVC.DomainSVC = workflowDomainSVC
 	SVC.ImageX = components.ImageX

@@ -2202,7 +2202,6 @@ func generateComplexCond(ctx context.Context, req *ExecuteSQLRequest, mode table
 
 var allowedTableNamePattern = regexp.MustCompile(`^table_\d+$`)
 
-
 func validateCustomSQL(sql string) error {
 	upperSQL := strings.ToUpper(sql)
 

@@ -55,6 +55,7 @@ type AppDependencies struct {
 	ResourceEventProducer    eventbus.Producer
 	AppEventProducer         eventbus.Producer
 	KnowledgeEventProducer   eventbus.Producer
+	WorkflowJobProducer      eventbus.Producer
 	CodeRunner               coderunner.Runner
 	ParserManager            parser.Manager
 	SearchStoreManagers      []searchstore.Manager
@@ -121,6 +122,11 @@ func Init(ctx context.Context) (*AppDependencies, error) {
 	deps.KnowledgeEventProducer, err = eventbus.InitKnowledgeEventBusProducer()
 	if err != nil {
 		return nil, fmt.Errorf("init knowledge event bus producer failed, err=%w", err)
+	}
+
+	deps.WorkflowJobProducer, err = eventbus.InitWorkflowExecutorProducer()
+	if err != nil {
+		return nil, fmt.Errorf("init workflow executor producer failed, err=%w", err)
 	}
 
 	deps.Reranker = rerank.New(knowledgeConfig)

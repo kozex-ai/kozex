@@ -326,6 +326,7 @@ func (b *basicServices) toWorkflowServiceComponents(pluginSVC *plugin.PluginAppl
 		CPStore:                  checkpoint.NewRedisStore(b.infra.CacheCli),
 		CodeRunner:               b.infra.CodeRunner,
 		WorkflowBuildInChatModel: b.infra.WorkflowBuildInChatModel,
+		WorkflowJobProducer:      b.infra.WorkflowJobProducer,
 	}
 }
 

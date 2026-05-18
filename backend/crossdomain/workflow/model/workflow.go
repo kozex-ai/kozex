@@ -96,3 +96,10 @@ type FileInfo struct {
 	FileName      string `json:"file_name"`
 	FileExtension string `json:"file_extension"`
 }
+
+// WorkflowJob is the unit of work published to MQ and consumed by the executor.
+type WorkflowJob struct {
+	ExecuteID int64          `json:"execute_id"`
+	Config    ExecuteConfig  `json:"config"`
+	Input     map[string]any `json:"input"`
+}
