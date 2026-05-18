@@ -136,6 +136,11 @@ type Request struct {
 
 var globalVariableReplaceRegexp = regexp.MustCompile(`global_variable_(\w+)\["(\w+)"]`)
 
+var defaultGetFileClient = &http.Client{
+	Timeout:   time.Second * defaultGetFileTimeout,
+	Transport: http.DefaultTransport,
+}
+
 type MD5FieldMapping struct {
 	HeaderMD5Mapping map[string]string `json:"header_md_5_mapping,omitempty"` // md5 vs key
 	ParamMD5Mapping  map[string]string `json:"param_md_5_mapping,omitempty"`
@@ -340,12 +345,14 @@ func (c *Config) Build(_ context.Context, _ *schema.NodeSchema, _ ...schema.Buil
 		bodyConfig:      c.BodyConfig,
 		md5FieldMapping: c.MD5FieldMapping,
 	}
-	client := http.DefaultClient
+	var timeout time.Duration
 	if c.Timeout > 0 {
-		client.Timeout = c.Timeout
+		timeout = c.Timeout
 	}
-
-	hg.client = client
+	hg.client = &http.Client{
+		Timeout:   timeout,
+		Transport: http.DefaultTransport,
+	}
 
 	return hg, nil
 }
@@ -623,8 +630,7 @@ func httpGet(ctx context.Context, url string) (*http.Response, error) {
 		return nil, err
 	}
 
-	http.DefaultClient.Timeout = time.Second * defaultGetFileTimeout
-	return http.DefaultClient.Do(request)
+	return defaultGetFileClient.Do(request)
 }
 
 func (hg *HTTPRequester) ToCallbackInput(_ context.Context, input map[string]any) (
