@@ -24,7 +24,9 @@ import (
 	"io"
 	"os"
 	"os/exec"
+	"strconv"
 	"strings"
+	"time"
 
 	"github.com/cloudwego/eino/components/document/parser"
 	"github.com/cloudwego/eino/schema"
@@ -33,6 +35,7 @@ import (
 	"github.com/kozex-ai/kozex/backend/infra/document/ocr"
 	contract "github.com/kozex-ai/kozex/backend/infra/document/parser"
 	"github.com/kozex-ai/kozex/backend/infra/storage"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 const (
@@ -73,8 +76,22 @@ func (p *pyPDFTableIterator) NextRow() (row []string, end bool, err error) {
 	return row, false, nil
 }
 
+const defaultDocParserTimeoutSeconds = 300
+
+func docParserTimeout() time.Duration {
+	if v := os.Getenv(consts.DocParserTimeoutSeconds); v != "" {
+		if secs, err := strconv.Atoi(v); err == nil && secs > 0 {
+			return time.Duration(secs) * time.Second
+		}
+	}
+	return defaultDocParserTimeoutSeconds * time.Second
+}
+
 func ParseByPython(config *contract.Config, storage storage.Storage, ocr ocr.OCR, pyPath, scriptPath string) ParseFn {
 	return func(ctx context.Context, reader io.Reader, opts ...parser.Option) (docs []*schema.Document, err error) {
+		ctx, cancel := context.WithTimeout(ctx, docParserTimeout())
+		defer cancel()
+
 		pr, pw, err := os.Pipe()
 		if err != nil {
 			return nil, fmt.Errorf("[ParseByPython] create rpipe failed, %w", err)
@@ -100,7 +117,7 @@ func ParseByPython(config *contract.Config, storage storage.Storage, ocr ocr.OCR
 			return nil, fmt.Errorf("[ParseByPython] close write request pipe failed, %w", err)
 		}
 
-		cmd := exec.Command(pyPath, scriptPath)
+		cmd := exec.CommandContext(ctx, pyPath, scriptPath)
 		cmd.Stdin = reader
 		cmd.Stdout = os.Stdout
 		cmd.ExtraFiles = []*os.File{w, pr}
