@@ -1,3 +1,24 @@
+# PDF parsing script invoked as a subprocess by the Go parser (ParseByPython).
+# Communicates via OS pipes: fd3 for writing JSON result, fd4 for reading config,
+# stdin for raw PDF bytes.
+#
+# Known resource risks (not bugs — constraints of pdfplumber, cannot be fixed here):
+#
+# 1. Process hang — extract_tables() on PDFs with many decorative lines (background
+#    grids, design documents) computes line-segment intersections which is O(n^2).
+#    On affected PDFs the process will spin at 100% CPU on one core and never return.
+#    From the user's perspective: the document upload is stuck in "processing" forever.
+#    Defense: the Go caller uses exec.CommandContext and kills this process on timeout.
+#
+# 2. Memory spike — the entire PDF is loaded into memory at once (pdf_data), and all
+#    extracted content (text, images, tables) accumulates in a list until the final
+#    write. Nothing is streamed. When extract_images=True, each image is decompressed
+#    to raw pixels then re-encoded as PNG then base64-encoded — a single compressed
+#    image in the PDF can occupy 10-20x its stored size in memory at peak. For a
+#    large PDF with many images, memory grows page by page and peaks at the last page.
+#    This is a pdfplumber architectural limitation; switching to a streaming library
+#    would be required to address it.
+
 import io
 import json
 import os
