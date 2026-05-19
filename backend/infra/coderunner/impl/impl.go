@@ -30,6 +30,22 @@ type Runner = coderunner.Runner
 func New(conf *config.BasicConfiguration) Runner {
 	switch conf.CodeRunnerType {
 	case config.CodeRunnerType_Sandbox:
+		// Sandbox mode runs user code inside Deno + Pyodide (Python in WASM).
+		// Its only advantage over direct mode is security isolation: user code
+		// cannot access the host filesystem, environment variables, or network
+		// beyond what is explicitly allowed via the AllowXxx fields below.
+		//
+		// Trade-offs to be aware of:
+		//   - Each invocation cold-starts a new Deno process and initializes the
+		//     Pyodide WASM runtime, adding roughly 1-3 seconds of overhead before
+		//     user code begins executing. There is no worker pool or process reuse.
+		//   - No concurrency limit: N concurrent code nodes spawn N Deno processes
+		//     simultaneously, each consuming 50MB+ of memory for the WASM runtime
+		//     alone. Under heavy load this can exhaust host memory.
+		//
+		// Use sandbox mode when the platform is open to untrusted users who can
+		// write arbitrary code. For internal/trusted users, direct mode is
+		// significantly more efficient.
 		getAndSplit := func(key string) []string {
 			v := os.Getenv(key)
 			if v == "" {
