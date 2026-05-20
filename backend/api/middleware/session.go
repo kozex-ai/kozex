@@ -93,11 +93,11 @@ func AdminAuthMW() app.HandlerFunc {
 		}
 
 		if baseConf.AdminEmails == "" {
-			baseConf.AdminEmails = os.Getenv(consts.AllowRegistrationEmail)
+			baseConf.AdminEmails = os.Getenv(consts.AdminEmails)
 		}
 
 		if baseConf.AdminEmails == "" {
-			logs.CtxWarnf(c, "[AdminAuthMW] admin emails is empty, you can set it by env %s", consts.AllowRegistrationEmail)
+			logs.CtxWarnf(c, "[AdminAuthMW] admin emails is empty, you can set it by env %s", consts.AdminEmails)
 		}
 
 		adminEmails := strings.Split(baseConf.AdminEmails, ",")

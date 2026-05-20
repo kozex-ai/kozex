@@ -23,6 +23,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/kozex-ai/kozex/backend/infra/coderunner"
@@ -50,10 +51,21 @@ func NewRunner() coderunner.Runner {
 	if endpoint == "" {
 		endpoint = "http://localhost:8889"
 	}
+
+	// HTTP client timeout = sandbox's max exec cap + 5s buffer, so the sandbox
+	// always gets a chance to return a clean JSON error before this side cuts
+	// the connection. Default matches COZE_SANDBOX_EXEC_TIMEOUT_SECONDS default.
+	maxExecTimeout := 300
+	if v := os.Getenv(consts.CozeSandboxExecTimeoutSeconds); v != "" {
+		if n, err := strconv.Atoi(v); err == nil && n > 0 {
+			maxExecTimeout = n
+		}
+	}
+
 	return &runner{
 		endpoint: endpoint,
 		client: &http.Client{
-			Timeout: 120 * time.Second,
+			Timeout: time.Duration(maxExecTimeout+5) * time.Second,
 		},
 	}
 }
@@ -80,9 +92,13 @@ func (r *runner) Run(ctx context.Context, request *coderunner.RunRequest) (*code
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode == http.StatusServiceUnavailable {
+		return nil, fmt.Errorf("[coze-sandbox] sandbox pool full, try again later")
+	}
+
 	var result executeResponse
 	if err = json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		return nil, fmt.Errorf("[coze-sandbox] decode response: %w", err)
+		return nil, fmt.Errorf("[coze-sandbox] decode response (status=%d): %w", resp.StatusCode, err)
 	}
 	if result.Error != "" {
 		return nil, fmt.Errorf("[coze-sandbox] %s", result.Error)

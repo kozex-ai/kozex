@@ -467,13 +467,13 @@ func (i *impl) ExecuteJob(ctx context.Context, job workflowModel.WorkflowJob) er
 		return err
 	}
 
-	cancelCtx, _, _, _, err := compose.NewWorkflowRunner(wfEntity.GetBasic(), workflowSC, config,
+	cancelCtx, _,opts,_,  err := compose.NewWorkflowRunner(wfEntity.GetBasic(), workflowSC, config,
 		compose.WithInput(inStr)).WithExistingID(job.ExecuteID).Prepare(ctx)
 	if err != nil {
 		return err
 	}
 
-	wf.AsyncRun(cancelCtx, convertedInput)
+	wf.AsyncRun(cancelCtx, convertedInput,opts...)
 
 	return nil
 }

@@ -63,10 +63,23 @@ func (c *BaseConfig) SaveBaseConfig(ctx context.Context, v *config.BasicConfigur
 	return c.base.Save(ctx, consts.BaseConfigNameSpace, baseConfigKey, v)
 }
 
+// getBasicConfigurationFromOldConfig seeds the initial BasicConfiguration from
+// environment variables. It is called only on first boot, when no config entry
+// exists in the database yet. Once the admin panel saves any configuration, all
+// runtime reads come from the database and this function is never invoked again.
 func getBasicConfigurationFromOldConfig() *config.BasicConfiguration {
 	disableUserRegistration := ternary.IFElse(os.Getenv(consts.DisableUserRegistration) == "true", true, false)
-	runnerTypeStr := os.Getenv(consts.CodeRunnerType)
-	codeRunnerType := ternary.IFElse(runnerTypeStr == "sandbox" || runnerTypeStr == "", config.CodeRunnerType_Sandbox, config.CodeRunnerType_Local)
+
+	var codeRunnerType config.CodeRunnerType
+	switch os.Getenv(consts.CodeRunnerType) {
+	case "0":
+		codeRunnerType = config.CodeRunnerType_Local
+	case "1":
+		codeRunnerType = config.CodeRunnerType_Sandbox
+	default: // "2" or unset → CozeSandbox (recommended default)
+		codeRunnerType = config.CodeRunnerType_CozeSandbox
+	}
+
 	timeoutSecondsStr := os.Getenv(consts.CodeRunnerTimeoutSeconds)
 	timeoutSeconds := conv.StrToFloat64D(timeoutSecondsStr, 60)
 	memoryLimitMbStr := os.Getenv(consts.CodeRunnerMemoryLimitMB)
@@ -76,7 +89,7 @@ func getBasicConfigurationFromOldConfig() *config.BasicConfiguration {
 	return &config.BasicConfiguration{
 		AdminEmails:             os.Getenv(consts.AdminEmails),
 		DisableUserRegistration: disableUserRegistration,
-		AllowRegistrationEmail:  os.Getenv(consts.DisableUserRegistration),
+		AllowRegistrationEmail:  os.Getenv(consts.AllowRegistrationEmail),
 		PluginConfiguration: &config.PluginConfiguration{
 			CozeSaasPluginEnabled: envkey.GetBoolD("COZE_SAAS_PLUGIN_ENABLED", false),
 			CozeAPIToken:          envkey.GetString("COZE_SAAS_API_KEY"),

@@ -107,6 +107,8 @@ coze-server  ──HTTP──▶  coze-sandbox  ──stdin/stdout──▶  pyt
 export CODE_RUNNER_TYPE=2
 export COZE_SANDBOX_ENDPOINT="http://coze-sandbox:8889"   # internal service URL
 export COZE_SANDBOX_POOL_SIZE=8        # pre-warmed Python worker processes
+export COZE_SANDBOX_MAX_QUEUE=32       # max requests queued while workers are busy; excess → 503
+export COZE_SANDBOX_EXEC_TIMEOUT_SECONDS=300 # max execution time; node timeout takes priority if shorter
 export COZE_SANDBOX_CPU_LIMIT=2.0      # CPU cores for the coze-sandbox container
 export COZE_SANDBOX_MEM_LIMIT=1G       # memory limit for the coze-sandbox container
 ```
@@ -127,6 +129,36 @@ RUN pip install --no-cache-dir \
     requests==2.32.3 \
     your-package==x.y.z   # add here
 ```
+
+**Execution timeout**
+
+Two independent layers control how long a Code node is allowed to run:
+
+1. **Node timeout (primary)** — Set in the workflow UI under each Code node's **Exception Handling → Timeout**. Stored as `ExceptionConfigs.TimeoutMS` and applied by the Eino framework as a `context.WithTimeout` before the node's `Invoke` call. This deadline propagates through the entire call chain:
+   ```
+   node_runner → code.Invoke → runner.Run(ctx) → HTTP request ctx → pool.Run(ctx)
+   ```
+   When it fires mid-execution, the sandbox worker is killed and a replacement is replenished asynchronously.
+
+2. **`COZE_SANDBOX_EXEC_TIMEOUT_SECONDS` (safety cap, default 300 s)** — Applied in the sandbox server only when the request ctx has no deadline, or its deadline exceeds the cap. It is a backstop, not an override:
+   ```go
+   if deadline, ok := ctx.Deadline(); !ok || time.Until(deadline) > maxExecTimeout {
+       ctx, cancel = context.WithTimeout(r.Context(), maxExecTimeout)
+   }
+   ```
+
+| Node timeout (UI) | `COZE_SANDBOX_EXEC_TIMEOUT_SECONDS` | Effective limit |
+|-------------------|--------------------------------------|-----------------|
+| Not set | 300 (default) | 300 s — cap is the fallback |
+| Not set | 600 | 600 s |
+| 60 s | 300 (default) | 60 s — node timeout wins |
+| 60 s | 600 | 60 s — node timeout wins |
+| 400 s | 300 (default) | 300 s — cap truncates node |
+| 400 s | 600 | 400 s — node within cap |
+
+**`time.sleep()` and long-running code** — `time.sleep(N)` works as long as the effective limit exceeds `N`. For `time.sleep(120)`: set the Code node's exception timeout to at least 130 s in the workflow UI. The default cap of 300 s already covers this; no env var change needed unless the node timeout itself exceeds 300 s.
+
+**Pool capacity** — Before execution begins, a request must acquire a worker from the pool. If all workers are busy and the queue (`COZE_SANDBOX_MAX_QUEUE`) is full, the sandbox returns HTTP 503. The Code node surfaces this as an error rather than retrying silently.
 
 ---
 
@@ -179,3 +211,16 @@ curl http://localhost:8889/health
 docker logs coze-sandbox
 ```
 Verify the container started and the Python pool initialized. Check `COZE_SANDBOX_POOL_SIZE` and memory limits.
+
+### Code node reports timeout error (Coze Sandbox)
+1. Check the node's Exception Handling config in the workflow UI — the timeout may be shorter than the code needs.
+2. Check `COZE_SANDBOX_EXEC_TIMEOUT_SECONDS` — the cap may be truncating the node's configured timeout (see behavior matrix above).
+3. Inspect the code for `time.sleep`, blocking I/O, or infinite loops.
+
+If `context deadline exceeded` appears much earlier than expected, a workflow-level timeout (set in `workflow_run.go` via `ForegroundRunTimeout` / `BackgroundRunTimeout`) may have already expired before the Code node was reached.
+
+### Coze Sandbox returns HTTP 503
+All workers are busy and the queue is full. Options:
+- Increase `COZE_SANDBOX_POOL_SIZE` (and raise `COZE_SANDBOX_MEM_LIMIT` — each idle worker uses ~30–50 MB)
+- Reduce concurrent workflow executions reaching Code nodes
+- Check for stuck workers caused by code that ignores signals; they will be reaped when `COZE_SANDBOX_EXEC_TIMEOUT_SECONDS` fires

@@ -17,8 +17,11 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
+	"errors"
 	"net/http"
+	"time"
 )
 
 type executeRequest struct {
@@ -32,7 +35,7 @@ type executeResponse struct {
 	Error  string         `json:"error,omitempty"`
 }
 
-func handleExecute(pool *Pool) http.HandlerFunc {
+func handleExecute(pool *Pool, maxExecTimeout time.Duration) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
@@ -43,15 +46,29 @@ func handleExecute(pool *Pool) http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
-		result, err := pool.Run(r.Context(), req.Code, req.Params)
-		resp := executeResponse{}
+
+		// Respect the caller's deadline (set by the workflow node timeout) but
+		// cap at maxExecTimeout to prevent a single request from holding a worker
+		// indefinitely when no deadline is set or the deadline is unreasonably long.
+		ctx := r.Context()
+		if deadline, ok := ctx.Deadline(); !ok || time.Until(deadline) > maxExecTimeout {
+			var cancel context.CancelFunc
+			ctx, cancel = context.WithTimeout(r.Context(), maxExecTimeout)
+			defer cancel()
+		}
+
+		result, err := pool.Run(ctx, req.Code, req.Params)
 		if err != nil {
-			resp.Error = err.Error()
-		} else {
-			resp.Result = result
+			if errors.Is(err, ErrPoolFull) {
+				http.Error(w, "sandbox pool full, try again later", http.StatusServiceUnavailable)
+				return
+			}
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(executeResponse{Error: err.Error()})
+			return
 		}
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(resp)
+		json.NewEncoder(w).Encode(executeResponse{Result: result})
 	}
 }
 

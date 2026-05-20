@@ -20,12 +20,16 @@ import (
 	"bufio"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"os/exec"
 	"sync"
 	"time"
 )
+
+// ErrPoolFull is returned when all workers are busy and the pending queue is at capacity.
+var ErrPoolFull = errors.New("sandbox pool full")
 
 type workerReq struct {
 	Code   string         `json:"code"`
@@ -106,13 +110,15 @@ func (w *worker) kill() {
 // is replaced asynchronously so pool size stays stable over time.
 type Pool struct {
 	ch         chan *worker
+	sem        chan struct{} // capacity = poolSize + maxQueue; bounds total in-flight goroutines
 	pyPath     string
 	scriptPath string
 }
 
-func NewPool(size int, pyPath, scriptPath string) *Pool {
+func NewPool(size, maxQueue int, pyPath, scriptPath string) *Pool {
 	p := &Pool{
 		ch:         make(chan *worker, size),
+		sem:        make(chan struct{}, size+maxQueue),
 		pyPath:     pyPath,
 		scriptPath: scriptPath,
 	}
@@ -128,19 +134,51 @@ func NewPool(size int, pyPath, scriptPath string) *Pool {
 }
 
 // Run acquires a worker, executes the code, and returns the worker to the pool.
-// Blocks until a worker is available or ctx is cancelled.
+// Returns ErrPoolFull immediately if the queue is at capacity.
+// Respects ctx cancellation both while waiting for a worker and during execution;
+// a cancelled execution kills the worker (blocked on I/O, cannot be interrupted otherwise).
 func (p *Pool) Run(ctx context.Context, code string, params map[string]any) (map[string]any, error) {
+	// Reject immediately when the queue is full rather than accumulating goroutines.
 	select {
-	case w := <-p.ch:
+	case p.sem <- struct{}{}:
+		defer func() { <-p.sem }()
+	default:
+		return nil, ErrPoolFull
+	}
+
+	// Wait for a free worker.
+	var w *worker
+	select {
+	case w = <-p.ch:
+	case <-ctx.Done():
+		return nil, ctx.Err()
+	}
+
+	// Run execute in a goroutine so ctx cancellation can interrupt it.
+	type execResult struct {
+		result map[string]any
+		dead   bool
+		err    error
+	}
+	done := make(chan execResult, 1)
+	go func() {
 		result, dead, err := w.execute(code, params)
-		if dead {
+		done <- execResult{result, dead, err}
+	}()
+
+	select {
+	case r := <-done:
+		if r.dead {
 			w.kill()
 			go p.replenish()
 		} else {
 			p.ch <- w
 		}
-		return result, err
+		return r.result, r.err
 	case <-ctx.Done():
+		// Worker is blocked on I/O; kill it and replenish the pool.
+		w.kill()
+		go p.replenish()
 		return nil, ctx.Err()
 	}
 }

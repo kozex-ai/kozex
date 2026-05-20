@@ -25,6 +25,7 @@ import (
 	"os/signal"
 	"strconv"
 	"syscall"
+	"time"
 )
 
 //go:embed worker.py
@@ -33,6 +34,8 @@ var workerScript []byte
 func main() {
 	pyPath := envStr("COZE_SANDBOX_PYTHON_PATH", "python3")
 	poolSize := envInt("COZE_SANDBOX_POOL_SIZE", 8)
+	maxQueue := envInt("COZE_SANDBOX_MAX_QUEUE", poolSize*4)
+	maxExecTimeout := time.Duration(envInt("COZE_SANDBOX_EXEC_TIMEOUT_SECONDS", 300)) * time.Second
 	port := envStr("COZE_SANDBOX_PORT", "8889")
 
 	// Write embedded worker script to a temp file so the Python process can be
@@ -49,11 +52,11 @@ func main() {
 	}
 	tmpFile.Close()
 
-	pool := NewPool(poolSize, pyPath, tmpFile.Name())
+	pool := NewPool(poolSize, maxQueue, pyPath, tmpFile.Name())
 	defer pool.Close()
 
 	mux := http.NewServeMux()
-	mux.Handle("/execute", handleExecute(pool))
+	mux.Handle("/execute", handleExecute(pool, maxExecTimeout))
 	mux.Handle("/health", handleHealth())
 
 	srv := &http.Server{Addr: ":" + port, Handler: mux}
@@ -66,7 +69,7 @@ func main() {
 		srv.Shutdown(context.Background())
 	}()
 
-	fmt.Printf("coze-sandbox listening on :%s (pool_size=%d)\n", port, poolSize)
+	fmt.Printf("coze-sandbox listening on :%s (pool_size=%d, max_queue=%d, exec_timeout=%s)\n", port, poolSize, maxQueue, maxExecTimeout)
 	if err = srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		fmt.Fprintf(os.Stderr, "coze-sandbox: %v\n", err)
 		os.Exit(1)

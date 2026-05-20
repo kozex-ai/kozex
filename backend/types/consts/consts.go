@@ -95,10 +95,12 @@ const (
 
 	DocParserTimeoutSeconds = "DOC_PARSER_TIMEOUT_SECONDS"
 
-	CozeSandboxEndpoint   = "COZE_SANDBOX_ENDPOINT"
-	CozeSandboxPoolSize   = "COZE_SANDBOX_POOL_SIZE"
-	CozeSandboxPort       = "COZE_SANDBOX_PORT"
-	CozeSandboxPythonPath = "COZE_SANDBOX_PYTHON_PATH"
+	CozeSandboxEndpoint            = "COZE_SANDBOX_ENDPOINT"
+	CozeSandboxPoolSize            = "COZE_SANDBOX_POOL_SIZE"
+	CozeSandboxMaxQueue            = "COZE_SANDBOX_MAX_QUEUE"
+	CozeSandboxExecTimeoutSeconds  = "COZE_SANDBOX_EXEC_TIMEOUT_SECONDS"
+	CozeSandboxPort                = "COZE_SANDBOX_PORT"
+	CozeSandboxPythonPath          = "COZE_SANDBOX_PYTHON_PATH"
 
 	UseSSL      = "USE_SSL"
 	SSLCertFile = "SSL_CERT_FILE"
