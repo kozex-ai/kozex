@@ -180,8 +180,9 @@ func (p *ModelStatus) Value() (driver.Value, error) {
 type CodeRunnerType int64
 
 const (
-	CodeRunnerType_Local   CodeRunnerType = 0
-	CodeRunnerType_Sandbox CodeRunnerType = 1
+	CodeRunnerType_Local       CodeRunnerType = 0
+	CodeRunnerType_Sandbox     CodeRunnerType = 1
+	CodeRunnerType_CozeSandbox  CodeRunnerType = 2
 )
 
 func (p CodeRunnerType) String() string {
@@ -190,6 +191,8 @@ func (p CodeRunnerType) String() string {
 		return "Local"
 	case CodeRunnerType_Sandbox:
 		return "Sandbox"
+	case CodeRunnerType_CozeSandbox:
+		return "CozeSandbox"
 	}
 	return "<UNSET>"
 }
@@ -200,6 +203,8 @@ func CodeRunnerTypeFromString(s string) (CodeRunnerType, error) {
 		return CodeRunnerType_Local, nil
 	case "Sandbox":
 		return CodeRunnerType_Sandbox, nil
+	case "CozeSandbox":
+		return CodeRunnerType_CozeSandbox, nil
 	}
 	return CodeRunnerType(0), fmt.Errorf("not a valid CodeRunnerType string")
 }

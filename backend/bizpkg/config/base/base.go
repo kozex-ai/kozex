@@ -74,7 +74,7 @@ func getBasicConfigurationFromOldConfig() *config.BasicConfiguration {
 
 	const ServerHost = "SERVER_HOST"
 	return &config.BasicConfiguration{
-		AdminEmails:             "",
+		AdminEmails:             os.Getenv(consts.AdminEmails),
 		DisableUserRegistration: disableUserRegistration,
 		AllowRegistrationEmail:  os.Getenv(consts.DisableUserRegistration),
 		PluginConfiguration: &config.PluginConfiguration{

@@ -47,6 +47,7 @@ import (
 	"github.com/kozex-ai/kozex/backend/pkg/lang/ptr"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
 	"github.com/kozex-ai/kozex/backend/pkg/sonic"
+	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 // Handler implements eventbus.ConsumerHandler for workflow execution jobs.
@@ -62,6 +63,16 @@ func (h *Handler) HandleMessage(ctx context.Context, msg *eventbus.Message) (ret
 	var job workflowModel.WorkflowJob
 	if err := sonic.UnmarshalString(string(msg.Body), &job); err != nil {
 		return fmt.Errorf("executor: failed to unmarshal job: %w", err)
+	}
+
+	// Restore the original log ID from the execution record so all async logs
+	// share the same log ID as the HTTP request that enqueued the job.
+	if job.ExecuteID != 0 {
+		repo := workflow.GetRepository()
+		if exe, found, err := repo.GetWorkflowExecution(ctx, job.ExecuteID); err == nil && found && exe.LogID != "" {
+			logs.CtxInfof(ctx, "executor: restored log ID from execution record execute_id=%d log_id=%s", job.ExecuteID, exe.LogID)
+			ctx = context.WithValue(ctx, consts.CtxLogIDKey, exe.LogID)
+		}
 	}
 
 	defer func() {
@@ -83,8 +94,7 @@ func (h *Handler) HandleMessage(ctx context.Context, msg *eventbus.Message) (ret
 		}
 	}()
 
-	logs.CtxInfof(ctx, "executor: processing workflow job execute_id=%d workflow_id=%d",
-		job.ExecuteID, job.Config.ID)
+	logs.CtxInfof(ctx, "executor: processing workflow job execute_id=%d workflow_id=%d", job.ExecuteID, job.Config.ID)
 
 	if err := h.svc.ExecuteJob(ctx, job); err != nil {
 		logs.CtxErrorf(ctx, "executor: job failed execute_id=%d err=%v", job.ExecuteID, err)

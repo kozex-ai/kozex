@@ -23,12 +23,21 @@ import (
 	"log"
 	"os"
 
+	"github.com/google/uuid"
+
 	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
 var logger FullLogger = &defaultLogger{
 	level:  LevelInfo,
 	stdlog: log.New(os.Stderr, "", log.LstdFlags|log.Lshortfile|log.Lmicroseconds),
+}
+
+// WithLogID returns a child context with a fresh UUID injected as the log ID.
+// Call this once per incoming message/request at infra boundaries (MQ consumers,
+// background jobs) where there is no HTTP middleware to set the ID automatically.
+func WithLogID(ctx context.Context) context.Context {
+	return context.WithValue(ctx, consts.CtxLogIDKey, uuid.New().String())
 }
 
 // SetOutput sets the output of default logs. By default, it is stderr.

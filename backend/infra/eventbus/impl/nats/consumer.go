@@ -26,6 +26,7 @@ import (
 	"github.com/nats-io/nats.go"
 
 	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
 	"github.com/kozex-ai/kozex/backend/pkg/safego"
@@ -162,9 +163,9 @@ func startJetStreamConsumer(ctx context.Context, nc *nats.Conn, topic, group str
 						Body:  msg.Data,
 					}
 
-					// Handle message with context
-					if err := consumerHandler.HandleMessage(ctx, eventMsg); err != nil {
-						logs.Errorf("handle NATS JetStream message failed, topic: %s, group: %s, err: %v", topic, group, err)
+					msgCtx := logs.WithLogID(ctxcache.Init(ctx))
+					if err := consumerHandler.HandleMessage(msgCtx, eventMsg); err != nil {
+						logs.CtxErrorf(msgCtx, "handle NATS JetStream message failed, topic: %s, group: %s, err: %v", topic, group, err)
 						// Negative acknowledge on error
 						msg.Nak()
 						continue
@@ -194,9 +195,9 @@ func startCoreConsumer(ctx context.Context, nc *nats.Conn, topic, group string, 
 				Body:  msg.Data,
 			}
 
-			// Handle message with context
-			if err := consumerHandler.HandleMessage(ctx, eventMsg); err != nil {
-				logs.Errorf("handle NATS core message failed, topic: %s, group: %s, err: %v", topic, group, err)
+			msgCtx := logs.WithLogID(ctxcache.Init(ctx))
+			if err := consumerHandler.HandleMessage(msgCtx, eventMsg); err != nil {
+				logs.CtxErrorf(msgCtx, "handle NATS core message failed, topic: %s, group: %s, err: %v", topic, group, err)
 				// For core NATS, we can't nack, just log the error
 				return
 			}

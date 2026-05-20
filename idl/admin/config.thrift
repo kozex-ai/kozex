@@ -44,7 +44,7 @@ struct DisplayInfo {
 
 
 enum ModelType {
-    LLM = 0 
+    LLM = 0
     TextEmbedding = 1
     Rerank = 2
 }
@@ -53,7 +53,7 @@ struct Model {
     1: i64 id
     2: ModelProvider provider
     3: DisplayInfo display_info
-    4: developer_api.ModelAbility capability  
+    4: developer_api.ModelAbility capability
     5: Connection  connection
     6: ModelType type
     7: list<developer_api.ModelParameter> parameters
@@ -63,7 +63,7 @@ struct Model {
 }
 
 enum ThinkingType {
-    Default = 0 
+    Default = 0
     Enable = 1
     Disable = 2
     Auto = 3
@@ -189,8 +189,9 @@ struct GetBasicConfigurationResp {
 }
 
 enum CodeRunnerType {
-    Local = 0 
+    Local = 0
     Sandbox = 1
+    CozeSandbox = 2
 }
 
 struct SandboxConfig {
@@ -262,7 +263,7 @@ struct EmbeddingConfig {
 }
 
 enum EmbeddingType {
-    Ark = 0 
+    Ark = 0
     OpenAI = 1
     Ollama = 2
     Gemini = 3
@@ -284,7 +285,7 @@ struct HttpConnection {
 }
 
 enum RerankType {
-    VikingDB = 0 
+    VikingDB = 0
     RRF = 1
 }
 
@@ -303,7 +304,7 @@ struct VikingDBConfig {
 }
 
 enum OCRType {
-    Volcengine = 0 
+    Volcengine = 0
     Paddleocr = 1
 }
 
@@ -315,7 +316,7 @@ struct OCRConfig {
 }
 
 enum ParserType {
-   builtin = 0 
+   builtin = 0
    Paddleocr = 1
 }
 

@@ -22,30 +22,27 @@ import (
 	"github.com/kozex-ai/kozex/backend/api/model/admin/config"
 	"github.com/kozex-ai/kozex/backend/infra/coderunner"
 	"github.com/kozex-ai/kozex/backend/infra/coderunner/impl/direct"
+	"github.com/kozex-ai/kozex/backend/infra/coderunner/impl/cozesandbox"
 	"github.com/kozex-ai/kozex/backend/infra/coderunner/impl/sandbox"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 )
 
 type Runner = coderunner.Runner
 
+// New initialises the code runner selected by the admin configuration.
+//
+// Runner comparison (framework overhead per request, excluding user code):
+//
+//	Type 0 — Local/Direct  ~100–300 ms   fork a Python subprocess per request
+//	Type 1 — Sandbox       ~1000–3000 ms new Deno process + Pyodide WASM init per request
+//	Type 2 — Coze Sandbox  ~10–50 ms     pre-warmed worker pool, HTTP + stdin/stdout IPC
 func New(conf *config.BasicConfiguration) Runner {
+	logs.Infof("init code runner, type=%v", conf.CodeRunnerType)
 	switch conf.CodeRunnerType {
 	case config.CodeRunnerType_Sandbox:
-		// Sandbox mode runs user code inside Deno + Pyodide (Python in WASM).
-		// Its only advantage over direct mode is security isolation: user code
-		// cannot access the host filesystem, environment variables, or network
-		// beyond what is explicitly allowed via the AllowXxx fields below.
-		//
-		// Trade-offs to be aware of:
-		//   - Each invocation cold-starts a new Deno process and initializes the
-		//     Pyodide WASM runtime, adding roughly 1-3 seconds of overhead before
-		//     user code begins executing. There is no worker pool or process reuse.
-		//   - No concurrency limit: N concurrent code nodes spawn N Deno processes
-		//     simultaneously, each consuming 50MB+ of memory for the WASM runtime
-		//     alone. Under heavy load this can exhaust host memory.
-		//
-		// Use sandbox mode when the platform is open to untrusted users who can
-		// write arbitrary code. For internal/trusted users, direct mode is
-		// significantly more efficient.
+		// Sandbox: Deno + Pyodide WASM isolation. Strong security boundary but
+		// ~1-3s cold-start per request and no process reuse. Best for platforms
+		// open to untrusted users; overkill for internal/trusted deployments.
 		getAndSplit := func(key string) []string {
 			v := os.Getenv(key)
 			if v == "" {
@@ -66,7 +63,13 @@ func New(conf *config.BasicConfiguration) Runner {
 		}
 
 		return sandbox.NewRunner(config)
+	case config.CodeRunnerType_CozeSandbox:
+		// CozeSandbox: dedicated service (backend/cmd/coze-sandbox) with pre-warmed worker pool.
+		// ~10-50ms per request. Configure endpoint via COZE_SANDBOX_ENDPOINT.
+		return cozesandbox.NewRunner()
 	default:
+		// Local/Direct: fork a Python subprocess per request. ~100-300ms overhead,
+		// no isolation. Suitable for trusted internal deployments.
 		return direct.NewRunner()
 	}
 }

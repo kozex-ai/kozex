@@ -26,6 +26,7 @@ import (
 	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/nsq"
 	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/pulsar"
 	"github.com/kozex-ai/kozex/backend/infra/eventbus/impl/rmq"
+	"github.com/kozex-ai/kozex/backend/pkg/logs"
 	"github.com/kozex-ai/kozex/backend/types/consts"
 )
 
@@ -49,6 +50,7 @@ func DefaultSVC() ConsumerService {
 
 func (consumerServiceImpl) RegisterConsumer(nameServer, topic, group string, consumerHandler eventbus.ConsumerHandler, opts ...eventbus.ConsumerOpt) error {
 	tp := os.Getenv(consts.MQTypeKey)
+	logs.Infof("eventbus RegisterConsumer: type=%s, nameServer=%s, topic=%s, group=%s", tp, nameServer, topic, group)
 	switch tp {
 	case "nsq":
 		return nsq.RegisterConsumer(nameServer, topic, group, consumerHandler, opts...)

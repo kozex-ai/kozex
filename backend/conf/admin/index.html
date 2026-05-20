@@ -275,11 +275,11 @@
             .sidebar {
                 width: 200px;
             }
-            
+
             .content-area {
                 padding: 20px;
             }
-            
+
             .top-bar {
                 padding: 15px 20px;
             }
@@ -423,7 +423,7 @@
                     <span class="logo-text">Coze Studio</span>
                 </div>
             </div>
-            
+
             <ul class="nav-menu">
                 <li class="nav-item has-submenu">
                     <a href="#" class="nav-link" data-page="config">
@@ -453,7 +453,7 @@
                     </ul>
                 </li>
             </ul>
-            
+
             <div class="sidebar-footer">
                 <div class="user-info">
                     <div class="user-avatar" id="userAvatar">👤</div>
@@ -677,7 +677,7 @@
                 'model.modal.thinking_type.enable': 'Enable',
                 'model.modal.thinking_type.disable': 'Disable',
                 'model.modal.thinking_type.auto': 'Auto',
-                
+
                 // 知识库配置
                 'knowledge.error.load_failed_json': '加载知识库配置失败: 返回结果不是有效 JSON',
                 'knowledge.error.load_failed_msg': '加载知识库配置失败: {msg}',
@@ -881,7 +881,7 @@
                 'model.modal.thinking_type.enable': 'Enable',
                 'model.modal.thinking_type.disable': 'Disable',
                 'model.modal.thinking_type.auto': 'Auto',
-                
+
                 // Knowledge Config
                 'knowledge.error.load_failed_json': 'Load knowledge config failed: invalid JSON response',
                 'knowledge.error.load_failed_msg': 'Load knowledge config failed: {msg}',
@@ -996,10 +996,10 @@
             setLocale(storedLocale || (navigator.language && navigator.language.toLowerCase().startsWith('en') ? 'en-US' : 'zh-CN'));
             // 加载用户信息
             loadUserInfo();
-            
+
             // 初始化子菜单功能
             initSubmenuToggle();
-            
+
             // 默认展开配置管理子菜单
             const configMenu = document.querySelector('[data-page="config"]');
             if (configMenu) {
@@ -1008,7 +1008,7 @@
                     navItem.classList.add('expanded');
                 }
             }
-            
+
             // 从URL hash获取当前页面，如果没有则显示默认页面
             initPageFromURL();
         });
@@ -1040,10 +1040,10 @@
                     // 移除所有活动状态
                     navLinks.forEach(l => l.classList.remove('active'));
                     submenuLinks.forEach(l => l.classList.remove('active'));
-                    
+
                     // 添加当前活动状态
                     targetLink.classList.add('active');
-                    
+
                     // 如果是子菜单项，确保父菜单展开
                     if (targetLink.classList.contains('submenu-link')) {
                         const parentNavItem = targetLink.closest('.nav-item');
@@ -1052,7 +1052,7 @@
                         }
                     }
                 }
-                
+
                 // 加载页面内容
                 loadPageContent(hash);
             } else {
@@ -1067,7 +1067,7 @@
                 // 从当前页面URL获取host
                 const currentHost = window.location.origin;
                 const apiUrl = `${currentHost}/api/passport/account/info/v2/`;
-                
+
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {
@@ -1076,11 +1076,11 @@
                     body: JSON.stringify({})
                 });
                 const result = await response.json();
-                
+
                 if (handleApiCode(result)) {
                     return;
                 }
-                
+
                 if (result.code === 0 && result.data) {
                     // 应用语言
                     const apiLocale = result.data.locale;
@@ -1092,7 +1092,7 @@
                     if (userNameElement && result.data.name) {
                         userNameElement.textContent = result.data.name;
                     }
-                    
+
                     // 更新用户头像
                     const userAvatarElement = document.getElementById('userAvatar');
                     if (userAvatarElement && result.data.avatar_url) {
@@ -1104,12 +1104,12 @@
                         img.style.height = '100%';
                         img.style.borderRadius = '50%';
                         img.style.objectFit = 'cover';
-                        
+
                         // 添加错误处理，如果图片加载失败则显示默认图标
                         img.onerror = function() {
                             userAvatarElement.innerHTML = '👤';
                         };
-                        
+
                         userAvatarElement.innerHTML = '';
                         userAvatarElement.appendChild(img);
                     }
@@ -1128,12 +1128,12 @@
         // 初始化子菜单切换功能
         function initSubmenuToggle() {
             const hasSubmenuItems = document.querySelectorAll('.has-submenu');
-            
+
             hasSubmenuItems.forEach(item => {
                 const navLink = item.querySelector('.nav-link');
                 navLink.addEventListener('click', (e) => {
                     e.preventDefault();
-                    
+
                     // 切换展开状态
                     item.classList.toggle('expanded');
                 });
@@ -1144,18 +1144,18 @@
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const parentItem = link.closest('.nav-item');
-                
+
                 // 如果不是子菜单项，处理页面跳转
                 if (!parentItem.classList.contains('has-submenu')) {
                     e.preventDefault();
-                    
+
                     // 移除所有活动状态
                     navLinks.forEach(l => l.classList.remove('active'));
                     submenuLinks.forEach(l => l.classList.remove('active'));
-                    
+
                     // 添加当前活动状态
                     link.classList.add('active');
-                    
+
                     const pageName = link.getAttribute('data-page');
                     // 更新URL hash
                     window.location.hash = pageName;
@@ -1168,14 +1168,14 @@
         submenuLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 // 移除所有活动状态
                 navLinks.forEach(l => l.classList.remove('active'));
                 submenuLinks.forEach(l => l.classList.remove('active'));
-                
+
                 // 添加当前活动状态
                 link.classList.add('active');
-                
+
                 const pageName = link.getAttribute('data-page');
                 // 更新URL hash
                 window.location.hash = pageName;
@@ -1190,12 +1190,12 @@
                 'model-management': { title: t('page.model.title'), description: t('page.model.desc') },
                 'knowledge-config': { title: t('page.knowledge.title'), description: t('page.knowledge.desc') }
             };
-            
+
             const config = pageConfig[pageName] || { title: t('page.default.title'), description: t('page.default.desc') };
-            
+
             pageTitle.textContent = config.title;
             pageDescription.textContent = config.description;
-            
+
             // 显示页面内容
             showPageContent(pageName, config.title);
         }
@@ -1208,11 +1208,11 @@
                 // 移除所有活动状态
                 navLinks.forEach(l => l.classList.remove('active'));
                 submenuLinks.forEach(l => l.classList.remove('active'));
-                
+
                 // 添加基础配置的活动状态
                 basicConfigLink.classList.add('active');
             }
-            
+
             // 设置默认页面的URL hash
             window.location.hash = 'basic-config';
             loadPageContent('basic-config');
@@ -1237,13 +1237,13 @@
                 loadKnowledgeConfigPage();
                 return;
             }
-            
+
             pageContent.innerHTML = `
                 <div style="padding: 30px;">
                     <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="color: #2c3e50; margin-bottom: 20px;">${title}</h2>
                         <p style="color: #7f8c8d; margin-bottom: 30px;">${t('page.contentArea', { title })}</p>
-                        
+
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
                             <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
                                 <h4 style="color: #2c3e50; margin: 0 0 10px;">${t('feature.module1')}</h4>
@@ -1258,7 +1258,7 @@
                                 <p style="color: #7f8c8d; margin: 0; font-size: 14px;">${t('feature.desc')}</p>
                             </div>
                         </div>
-                        
+
                         <div style="margin-top: 30px; padding: 20px; background: #ecf0f1; border-radius: 6px;">
                             <h4 style="color: #2c3e50; margin: 0 0 15px;">${t('quick.title')}</h4>
                             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -1449,6 +1449,7 @@
         <div class="radio-group">
           <div class="radio-item"><input type="radio" id="codeRunnerLocal" name="codeRunnerType" value="0" class="radio-input" /><label for="codeRunnerLocal">Local</label></div>
           <div class="radio-item"><input type="radio" id="codeRunnerSandbox" name="codeRunnerType" value="1" class="radio-input" /><label for="codeRunnerSandbox">Sandbox</label></div>
+          <div class="radio-item"><input type="radio" id="codeRunnerCozeSandbox" name="codeRunnerType" value="2" class="radio-input" /><label for="codeRunnerCozeSandbox">Coze Sandbox</label></div>
         </div>
         <div class="help-text">${t('basic.help.local_risk')}</div>
       </div>
@@ -1634,13 +1635,12 @@
                 });
             }
 
-            const localEl = document.getElementById('codeRunnerLocal');
-            const sandboxEl = document.getElementById('codeRunnerSandbox');
-            if (localEl && sandboxEl) {
-                const updateSandbox = () => toggleConfigSandboxConfig(sandboxEl.checked);
-                localEl.addEventListener('change', updateSandbox);
-                sandboxEl.addEventListener('change', updateSandbox);
-            }
+            document.querySelectorAll('input[name="codeRunnerType"]').forEach(el => {
+                el.addEventListener('change', () => {
+                    const sandboxEl = document.getElementById('codeRunnerSandbox');
+                    toggleConfigSandboxConfig(sandboxEl && sandboxEl.checked);
+                });
+            });
         }
 
         function toggleConfigWhitelistEmailConfig(show) {
@@ -1716,9 +1716,11 @@
             const crt = Number(cfg.code_runner_type || 0);
             const localEl = document.getElementById('codeRunnerLocal');
             const sandboxEl = document.getElementById('codeRunnerSandbox');
-            if (localEl && sandboxEl) {
-                localEl.checked = crt !== 1;
+            const cozeSandboxEl = document.getElementById('codeRunnerCozeSandbox');
+            if (localEl && sandboxEl && cozeSandboxEl) {
+                localEl.checked = crt === 0;
                 sandboxEl.checked = crt === 1;
+                cozeSandboxEl.checked = crt === 2;
             }
             toggleConfigSandboxConfig(crt === 1);
 
@@ -1740,7 +1742,7 @@
             const adminEmails = getEmailTags();
             const allowedEmails = getWhitelistEmailTags();
             const disableReg = document.getElementById('disableUserRegistration').checked;
-            const codeRunnerType = document.getElementById('codeRunnerSandbox').checked ? 1 : 0;
+            const codeRunnerType = parseInt(document.querySelector('input[name="codeRunnerType"]:checked')?.value ?? '0', 10);
             const cozeApiToken = (document.getElementById('cozeApiToken')?.value || '').trim();
             const cozeSaasPluginEnabled = !!(document.getElementById('cozeSaasPluginEnabled')?.checked);
             const cozeSaasApiBaseUrlRaw = (document.getElementById('cozeSaasApiBaseUrl')?.value || '');
@@ -1864,7 +1866,7 @@
                 day: 'numeric',
                 weekday: 'long'
             });
-            
+
             const hour = now.getHours();
             let greetingKey = 'workspace.greeting.evening';
             if (hour < 6) {
@@ -1879,7 +1881,7 @@
                 greetingKey = 'workspace.greeting.evening';
             }
             const greeting = t(greetingKey);
-            
+
             pageContent.innerHTML = `
                 <div style="padding: 30px;">
                     <div style="text-align: center; margin-bottom: 40px;">
@@ -1891,7 +1893,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
                         <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #3498db;">
                             <div style="display: flex; align-items: center; margin-bottom: 15px;">
@@ -1901,7 +1903,7 @@
                             <p style="color: #7f8c8d; margin-bottom: 15px; line-height: 1.6;">${t('workspace.card.basic.desc')}</p>
                             <button onclick="loadPageContent('basic-config')" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: all 0.3s;">${t('workspace.card.basic.cta')}</button>
                         </div>
-                        
+
                         <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71;">
                             <div style="display: flex; align-items: center; margin-bottom: 15px;">
                                 <div style="background: #2ecc71; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 18px;">🤖</div>
@@ -1910,7 +1912,7 @@
                             <p style="color: #7f8c8d; margin-bottom: 15px; line-height: 1.6;">${t('workspace.card.model.desc')}</p>
                             <button onclick="loadPageContent('model-management')" style="background: #2ecc71; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: all 0.3s;">${t('workspace.card.model.cta')}</button>
                         </div>
-                        
+
                         <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #f39c12;">
                             <div style="display: flex; align-items: center; margin-bottom: 15px;">
                                 <div style="background: #f39c12; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 18px;">📚</div>
@@ -1920,7 +1922,7 @@
                             <button onclick="loadPageContent('knowledge-config')" style="background: #f39c12; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: all 0.3s;">${t('workspace.card.knowledge.cta')}</button>
                         </div>
                     </div>
-                    
+
                     <div style="margin-top: 30px; text-align: center; color: #95a5a6; font-size: 14px;">
                         <p>🚀 ${t('workspace.footer.cta')}</p>
                     </div>
@@ -2151,7 +2153,7 @@
                  showError(t('model.error.delete_failed') + ': ' + error.message);
              }
          }
- 
+
          function openAddModelModalWithProvider(btn) {
               const modal = document.getElementById('addModelModal');
               if (!modal) { showError(t('model.error.open_modal_failed')); return; }
@@ -2206,7 +2208,7 @@
               if (geminiProjectInput) geminiProjectInput.style.display = isGemini ? '' : 'none';
               if (geminiLocationLabel) geminiLocationLabel.style.display = isGemini ? '' : 'none';
               if (geminiLocationInput) geminiLocationInput.style.display = isGemini ? '' : 'none';
-              
+
               // Show/hide ThinkingType dropdown
               const thinkingTypeLabel = document.getElementById('newModelThinkingTypeLabel');
               const thinkingTypeSelect = document.getElementById('newModelThinkingType');
@@ -2219,7 +2221,7 @@
                   thinkingTypeSelect.value = '2'; // Reset to Disable
               }
               if (thinkingTypeAutoOption) thinkingTypeAutoOption.style.display = isArkProvider ? '' : 'none';
-              
+
               modal.style.display = 'flex';
           }
           function closeAddModelModal() {
@@ -2265,7 +2267,7 @@
               const baseConn = { model: model };
               if (baseUrl) baseConn.base_url = baseUrl;
               if (requireApiKey && apiKey) baseConn.api_key = apiKey;
-              
+
               // 读取 ThinkingType（仅 Ark, Claude, Gemini, Qwen, Ollama）
               const thinkingTypeSelect = document.getElementById('newModelThinkingType');
               const hasThinkingType = [2, 3, 11, 15, 20].includes(providerClass);
@@ -2688,7 +2690,7 @@
                                     <div style="${labelStyle}">Model<span style="display:inline-block;width:6px;height:6px;background:#e74c3c;border-radius:50%;margin-left:6px;"></span></div>
                                     <input id="kb_gemini_model" type="text" style="${inputStyle}" value="${initial.gemini_model}" />
                                   </div>
-                           
+
                                   <div>
                                     <div style="${labelStyle}">Backend<span style="display:inline-block;width:6px;height:6px;background:#e74c3c;border-radius:50%;margin-left:6px;"></span></div>
                                     <input id="kb_gemini_embedding_backend" type="number" style="${inputStyle}" value="${initial.gemini_embedding_backend}" />
@@ -3112,7 +3114,7 @@
                           showError('Dims must be >= 0');
                           return;
                       }
-                      
+
                       if (missing.length > 0) {
                           showError(t('error.missing_required', { list: missing.join(', ') }));
                           return;
@@ -3336,7 +3338,7 @@
         // 加载外部页面
         function loadPage(filename) {
             showLoading();
-            
+
             fetch(filename)
                 .then(response => {
                     if (!response.ok) {
@@ -3348,16 +3350,16 @@
                     // 解析HTML并提取内容
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-                    
+
                     const title = doc.querySelector('title')?.textContent || t('page.default.title');
-                    const content = doc.querySelector('.page-content')?.innerHTML || 
-                                  doc.querySelector('body')?.innerHTML || 
+                    const content = doc.querySelector('.page-content')?.innerHTML ||
+                                  doc.querySelector('body')?.innerHTML ||
                                   `<p>${t('page.empty')}</p>`;
-                    
+
                     pageTitle.textContent = title;
                     pageDescription.textContent = t('page.manage_config', { title });
                     pageContent.innerHTML = content;
-                    
+
                     // 执行页面中的脚本
                     const scripts = doc.querySelectorAll('script');
                     scripts.forEach(script => {
@@ -3431,7 +3433,7 @@
                     knowledge: { maxSize: "10GB", indexing: true }
                 }
             };
-            
+
             const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -3439,7 +3441,7 @@
             a.download = 'coze-studio-config.json';
             a.click();
             URL.revokeObjectURL(url);
-            
+
             alert(t('export.success'));
         }
 

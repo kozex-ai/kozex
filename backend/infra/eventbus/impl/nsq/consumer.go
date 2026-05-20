@@ -23,6 +23,7 @@ import (
 	"github.com/nsqio/go-nsq"
 
 	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
@@ -84,14 +85,15 @@ func (h *MessageHandler) HandleMessage(m *nsq.Message) error {
 		Body:  m.Body,
 	}
 
-	logs.Debugf("[Subscribe] receive msg : %v \n", conv.DebugJsonToStr(msg))
-	err := h.ConsumerHandler.HandleMessage(context.Background(), msg)
+	ctx := logs.WithLogID(ctxcache.Init(context.Background()))
+	logs.CtxDebugf(ctx, "[Subscribe] receive msg : %v \n", conv.DebugJsonToStr(msg))
+	err := h.ConsumerHandler.HandleMessage(ctx, msg)
 	if err != nil {
-		logs.Errorf("[Subscribe] handle msg failed, topic : %s , group : %s, err: %v \n", msg.Topic, msg.Group, err)
+		logs.CtxErrorf(ctx, "[Subscribe] handle msg failed, topic : %s , group : %s, err: %v \n", msg.Topic, msg.Group, err)
 		return err
 	}
 
-	logs.Debugf("subscribe callback: %v \n", conv.DebugJsonToStr(msg))
+	logs.CtxDebugf(ctx, "subscribe callback: %v \n", conv.DebugJsonToStr(msg))
 
 	return nil
 }

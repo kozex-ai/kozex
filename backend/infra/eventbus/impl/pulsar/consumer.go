@@ -24,6 +24,7 @@ import (
 	"github.com/apache/pulsar-client-go/pulsar"
 
 	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
 	"github.com/kozex-ai/kozex/backend/pkg/safego"
@@ -114,9 +115,9 @@ func RegisterConsumer(serviceURL, topic, group string, consumerHandler eventbus.
 					Body:  msg.Payload(),
 				}
 
-				// Handle message with context
-				if err := consumerHandler.HandleMessage(ctx, eventMsg); err != nil {
-					logs.Errorf("handle pulsar message failed, topic: %s, group: %s, err: %v", topic, group, err)
+				msgCtx := logs.WithLogID(ctxcache.Init(ctx))
+				if err := consumerHandler.HandleMessage(msgCtx, eventMsg); err != nil {
+					logs.CtxErrorf(msgCtx, "handle pulsar message failed, topic: %s, group: %s, err: %v", topic, group, err)
 					// Negative acknowledge on error
 					consumer.Nack(msg)
 					continue

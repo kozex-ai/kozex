@@ -1,0 +1,42 @@
+# Stage 1: Build coze-sandbox binary
+FROM golang:1.24-alpine AS builder
+
+WORKDIR /app
+
+RUN apk add --no-cache git gcc libc-dev
+
+COPY backend/go.mod backend/go.sum ./
+RUN go mod download
+
+COPY backend/ ./
+RUN go build -ldflags="-s -w" -o /app/coze-sandbox ./cmd/coze-sandbox/
+
+
+# Stage 2: Runtime image
+FROM alpine:3.22.0
+
+WORKDIR /app
+
+# Python runtime + pip packages available to user code executed in code nodes.
+# Add packages here as needed; rebuilding the image is required after changes.
+RUN apk add --no-cache python3 py3-pip curl
+
+RUN apk add --no-cache --virtual .build-deps build-base python3-dev && \
+    python3 -m venv /app/.venv && \
+    . /app/.venv/bin/activate && \
+    pip install --no-cache-dir \
+        numpy==2.3.1 \
+        httpx==0.28.1 \
+        requests==2.32.3 && \
+    apk del .build-deps
+
+ENV PATH="/app/.venv/bin:${PATH}"
+
+COPY --from=builder /app/coze-sandbox /app/coze-sandbox
+
+EXPOSE 8889
+
+HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:8889/health || exit 1
+
+CMD ["/app/coze-sandbox"]

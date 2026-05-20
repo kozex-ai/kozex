@@ -27,6 +27,7 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/rlog"
 
 	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/conv"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
@@ -79,17 +80,17 @@ func RegisterConsumer(nameServer, topic, group string, consumerHandler eventbus.
 	err = c.Subscribe(topic, consumer.MessageSelector{},
 		func(ctx context.Context, msgArr ...*primitive.MessageExt) (consumer.ConsumeResult, error) {
 			for i := range msgArr {
-
+				msgCtx := logs.WithLogID(ctxcache.Init(ctx))
 				msg := &eventbus.Message{
 					Topic: msgArr[i].Topic,
 					Group: group,
 					Body:  msgArr[i].Body,
 				}
 
-				logs.CtxDebugf(ctx, "[Subscribe] receive msg : %v \n", conv.DebugJsonToStr(msg))
-				err = consumerHandler.HandleMessage(ctx, msg)
+				logs.CtxDebugf(msgCtx, "[Subscribe] receive msg : %v \n", conv.DebugJsonToStr(msg))
+				err = consumerHandler.HandleMessage(msgCtx, msg)
 				if err != nil {
-					logs.CtxErrorf(ctx, "[Subscribe] handle msg failed, topic : %s , group : %s, err: %v \n", msg.Topic, msg.Group, err)
+					logs.CtxErrorf(msgCtx, "[Subscribe] handle msg failed, topic : %s , group : %s, err: %v \n", msg.Topic, msg.Group, err)
 					return consumer.ConsumeRetryLater, err // TODO: Policies can be configured
 				}
 

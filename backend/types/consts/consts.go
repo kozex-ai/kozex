@@ -95,6 +95,11 @@ const (
 
 	DocParserTimeoutSeconds = "DOC_PARSER_TIMEOUT_SECONDS"
 
+	CozeSandboxEndpoint   = "COZE_SANDBOX_ENDPOINT"
+	CozeSandboxPoolSize   = "COZE_SANDBOX_POOL_SIZE"
+	CozeSandboxPort       = "COZE_SANDBOX_PORT"
+	CozeSandboxPythonPath = "COZE_SANDBOX_PYTHON_PATH"
+
 	UseSSL      = "USE_SSL"
 	SSLCertFile = "SSL_CERT_FILE"
 	SSLKeyFile  = "SSL_KEY_FILE"
@@ -135,6 +140,7 @@ const (
 )
 
 const (
+	AdminEmails             = "ADMIN_EMAILS"
 	DisableUserRegistration = "DISABLE_USER_REGISTRATION"
 	AllowRegistrationEmail  = "ALLOW_REGISTRATION_EMAIL"
 )

@@ -23,6 +23,7 @@ import (
 	"github.com/IBM/sarama"
 
 	"github.com/kozex-ai/kozex/backend/infra/eventbus"
+	"github.com/kozex-ai/kozex/backend/pkg/ctxcache"
 	"github.com/kozex-ai/kozex/backend/pkg/lang/signal"
 	"github.com/kozex-ai/kozex/backend/pkg/logs"
 	"github.com/kozex-ai/kozex/backend/pkg/safego"
@@ -90,9 +91,8 @@ func (c *consumerImpl) Cleanup(sess sarama.ConsumerGroupSession) error {
 }
 
 func (c *consumerImpl) ConsumeClaim(sess sarama.ConsumerGroupSession, claim sarama.ConsumerGroupClaim) error {
-	ctx := context.Background()
-
 	for msg := range claim.Messages() {
+		ctx := logs.WithLogID(ctxcache.Init(context.Background()))
 		m := &eventbus.Message{
 			Topic: msg.Topic,
 			Group: c.groupID,

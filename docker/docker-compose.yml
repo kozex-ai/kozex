@@ -382,6 +382,34 @@ services:
     networks:
       - coze-network
 
+  coze-sandbox:
+    # build:
+    #   context: ../
+    #   dockerfile: backend/Dockerfile.coze-sandbox
+    image: cozedev/coze-studio-runner:latest
+    container_name: coze-sandbox
+    restart: always
+    env_file: *env_file
+    environment:
+      - COZE_SANDBOX_POOL_SIZE=${COZE_SANDBOX_POOL_SIZE:-8}
+      - COZE_SANDBOX_PORT=8889
+    networks:
+      - coze-network
+    # Limit resources so user code cannot starve other services.
+    # Tune COZE_SANDBOX_POOL_SIZE and these limits together: each Python worker
+    # uses ~30-50 MB at idle; multiply by pool size for a baseline.
+    deploy:
+      resources:
+        limits:
+          cpus: '${COZE_SANDBOX_CPU_LIMIT:-2.0}'
+          memory: ${COZE_SANDBOX_MEM_LIMIT:-1G}
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8889/health']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
   coze-server:
     # build:
     #   context: ../
@@ -390,8 +418,8 @@ services:
     restart: always
     container_name: coze-server
     env_file: *env_file
-    # environment:
-    #   LISTEN_ADDR: 0.0.0.0:8888
+    environment:
+      - COZE_SANDBOX_ENDPOINT=http://coze-sandbox:8889
     networks:
       - coze-network
     # ports:
@@ -411,6 +439,8 @@ services:
       minio:
         condition: service_healthy
       milvus:
+        condition: service_healthy
+      coze-sandbox:
         condition: service_healthy
     command: ['/app/opencoze']
 

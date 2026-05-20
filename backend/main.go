@@ -28,6 +28,7 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/config"
+	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/hertz-contrib/cors"
 	"github.com/joho/godotenv"
 
@@ -133,20 +134,28 @@ func setLogLevel() {
 	switch level {
 	case "trace":
 		logs.SetLevel(logs.LevelTrace)
+		hlog.SetLevel(hlog.LevelTrace)
 	case "debug":
 		logs.SetLevel(logs.LevelDebug)
+		hlog.SetLevel(hlog.LevelDebug)
 	case "info":
 		logs.SetLevel(logs.LevelInfo)
+		hlog.SetLevel(hlog.LevelInfo)
 	case "notice":
 		logs.SetLevel(logs.LevelNotice)
+		hlog.SetLevel(hlog.LevelInfo)
 	case "warn":
 		logs.SetLevel(logs.LevelWarn)
+		hlog.SetLevel(hlog.LevelWarn)
 	case "error":
 		logs.SetLevel(logs.LevelError)
+		hlog.SetLevel(hlog.LevelError)
 	case "fatal":
 		logs.SetLevel(logs.LevelFatal)
+		hlog.SetLevel(hlog.LevelFatal)
 	default:
 		logs.SetLevel(logs.LevelInfo)
+		hlog.SetLevel(hlog.LevelInfo)
 	}
 }
 
