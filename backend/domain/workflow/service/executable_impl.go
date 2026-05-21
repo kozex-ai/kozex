@@ -322,6 +322,16 @@ func (i *impl) QueueExecute(ctx context.Context, config workflowModel.ExecuteCon
 		return 0, err
 	}
 
+	config.WorkflowMode = wfMeta.Mode
+	isApplicationWorkflow := wfMeta.AppID != nil
+	if isApplicationWorkflow && config.Mode == workflowModel.ExecuteModeRelease {
+		err = i.checkApplicationWorkflowReleaseVersion(ctx, *wfMeta.AppID, config.ConnectorID, config.ID, config.Version)
+		if err != nil {
+			return 0, err
+		}
+	}
+
+
 	repo := workflow.GetRepository()
 	executeID, err := repo.GenID(ctx)
 	if err != nil {
@@ -467,13 +477,12 @@ func (i *impl) ExecuteJob(ctx context.Context, job workflowModel.WorkflowJob) er
 		return err
 	}
 
-	cancelCtx, _,opts,_,  err := compose.NewWorkflowRunner(wfEntity.GetBasic(), workflowSC, config,
+	cancelCtx, _, opts, _, err := compose.NewWorkflowRunner(wfEntity.GetBasic(), workflowSC, config,
 		compose.WithInput(inStr)).WithExistingID(job.ExecuteID).Prepare(ctx)
 	if err != nil {
 		return err
 	}
-
-	wf.AsyncRun(cancelCtx, convertedInput,opts...)
+	wf.AsyncRun(cancelCtx, convertedInput, opts...)
 
 	return nil
 }

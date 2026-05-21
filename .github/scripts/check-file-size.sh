@@ -23,6 +23,7 @@ CI_MODE=${CI:-false}
 # Specify the pattern you want to exclude, using *space* as the separator
 EXCLUDE_PATTERNS=(
   '**/pnpm-lock.yaml'
+  'backend/api/model/**'
   'packages/arch/bot-api/src/auto-generate/**'
   'apps/bot-op/src/services/bam-auto-generate/**'
   'apps/prompt-platform/src/services/auto-generate/**'
