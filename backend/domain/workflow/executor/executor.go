@@ -69,9 +69,16 @@ func (h *Handler) HandleMessage(ctx context.Context, msg *eventbus.Message) (ret
 	// share the same log ID as the HTTP request that enqueued the job.
 	if job.ExecuteID != 0 {
 		repo := workflow.GetRepository()
-		if exe, found, err := repo.GetWorkflowExecution(ctx, job.ExecuteID); err == nil && found && exe.LogID != "" {
-			logs.CtxInfof(ctx, "executor: restored log ID from execution record execute_id=%d log_id=%s", job.ExecuteID, exe.LogID)
-			ctx = context.WithValue(ctx, consts.CtxLogIDKey, exe.LogID)
+		if exe, found, err := repo.GetWorkflowExecution(ctx, job.ExecuteID); err == nil && found {
+			if exe.LogID != "" {
+				logs.CtxInfof(ctx, "executor: restored log ID from execution record execute_id=%d log_id=%s", job.ExecuteID, exe.LogID)
+				ctx = context.WithValue(ctx, consts.CtxLogIDKey, exe.LogID)
+			}
+			// Job was canceled while waiting in queue — skip execution.
+			if exe.Status == entity.WorkflowCancel {
+				logs.CtxInfof(ctx, "executor: skipping canceled job execute_id=%d", job.ExecuteID)
+				return nil
+			}
 		}
 	}
 

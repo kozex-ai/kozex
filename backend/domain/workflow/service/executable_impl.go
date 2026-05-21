@@ -313,10 +313,9 @@ func (i *impl) QueueExecute(ctx context.Context, config workflowModel.ExecuteCon
 	}
 
 	wfMeta, err := i.Get(ctx, &vo.GetPolicy{
-		ID:       config.ID,
-		QType:    config.From,
-		MetaOnly: true,
-		Version:  config.Version,
+		ID:      config.ID,
+		QType:   config.From,
+		Version: config.Version,
 	})
 	if err != nil {
 		return 0, err
@@ -331,6 +330,16 @@ func (i *impl) QueueExecute(ctx context.Context, config workflowModel.ExecuteCon
 		}
 	}
 
+	issues, err := validateWorkflowTree(ctx, vo.ValidateTreeConfig{
+		CanvasSchema: wfMeta.Canvas,
+		AppID:        wfMeta.AppID,
+	})
+	if err != nil {
+		return 0, fmt.Errorf("QueueExecute: canvas validation failed: %w", err)
+	}
+	if len(issues) > 0 {
+		return 0, fmt.Errorf("QueueExecute: canvas has validation errors: %s", issues[0].Message)
+	}
 
 	repo := workflow.GetRepository()
 	executeID, err := repo.GenID(ctx)
@@ -1191,13 +1200,26 @@ func (i *impl) Cancel(ctx context.Context, wfExeID int64, wfID, spaceID int64) e
 		return fmt.Errorf("workflow execution id mismatch, wfExeID: %d, wfID: %d, spaceID: %d", wfExeID, wfID, spaceID)
 	}
 
-	if wfExe.Status != entity.WorkflowRunning && wfExe.Status != entity.WorkflowInterrupted {
+	switch wfExe.Status {
+	case entity.WorkflowRunning, entity.WorkflowInterrupted, entity.WorkflowQueued:
+		// cancelable states — continue below
+	default:
 		// already reached terminal state, no need to cancel
 		return nil
 	}
 
 	if wfExe.ID != wfExe.RootExecutionID {
 		return fmt.Errorf("can only cancel root execute ID")
+	}
+
+	// Queued: job not yet picked up by consumer — cancel directly in DB.
+	// The consumer will re-check status before executing and skip it.
+	if wfExe.Status == entity.WorkflowQueued {
+		_, _, err = i.repo.UpdateWorkflowExecution(ctx, &entity.WorkflowExecution{
+			ID:     wfExe.ID,
+			Status: entity.WorkflowCancel,
+		}, []entity.WorkflowExecuteStatus{entity.WorkflowQueued})
+		return err
 	}
 
 	wfExec := &entity.WorkflowExecution{

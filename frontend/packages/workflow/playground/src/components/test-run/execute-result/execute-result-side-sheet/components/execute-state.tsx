@@ -81,7 +81,8 @@ export const ExecuteState = ({ hiddenStateText, extra, onClick }: Props) => {
 
   const loading =
     viewStatus === WorkflowExecStatus.EXECUTING ||
-    executeStatus === WorkflowExeStatus.Running;
+    executeStatus === WorkflowExeStatus.Running ||
+    executeStatus === WorkflowExeStatus.Queueing;
 
   // That is, there is no running result, and there is no verification error, indicating that it has not been run and has no running state.
   if (!hasNodeResult && !hasError && !loading) {

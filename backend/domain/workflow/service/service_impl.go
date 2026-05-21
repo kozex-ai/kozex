@@ -18,6 +18,7 @@ package service
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"strconv"
@@ -394,7 +395,7 @@ func (i *impl) QueryNodeProperties(ctx context.Context, wfID int64) (map[string]
 	mainCanvas := &vo.Canvas{}
 	err = sonic.UnmarshalString(canvasSchema, mainCanvas)
 	if err != nil {
-		return nil, vo.WrapError(errno.ErrSerializationDeserializationFail, err)
+		return nil, vo.WrapError(errno.ErrSerializationDeserializationFail, fmt.Errorf("failed to unmarshal canvas schema: %w", err))
 	}
 
 	mainCanvas.Nodes, mainCanvas.Edges = adaptor.PruneIsolatedNodes(mainCanvas.Nodes, mainCanvas.Edges, nil)
@@ -1921,7 +1922,14 @@ func (i *impl) GetConvRelatedInfo(ctx context.Context, convID int64) (*entity.Co
 
 func (i *impl) calculateTestRunSuccess(ctx context.Context, c *vo.Canvas, wid int64) (bool, error) {
 	sc, err := adaptor.CanvasToWorkflowSchema(ctx, c)
-	if err != nil { // not even legal, test run can't possibly be successful
+	if err != nil {
+		// JSON syntax errors mean the canvas data is corrupted — reject the save
+		// so bad data never reaches the executor. Schema-level errors (e.g. unfinished
+		// nodes, missing connections) are normal for drafts and are silently allowed.
+		var syntaxErr *json.SyntaxError
+		if errors.As(err, &syntaxErr) {
+			return false, fmt.Errorf("canvas contains invalid JSON: %w", err)
+		}
 		return false, nil
 	}
 

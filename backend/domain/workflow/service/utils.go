@@ -18,6 +18,7 @@ package service
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
@@ -97,6 +98,20 @@ func validateWorkflowTree(ctx context.Context, config vo.ValidateTreeConfig) ([]
 	}
 	if len(issues) > 0 {
 		return issues, nil
+	}
+
+	// Deep-parse node inputs to catch nested JSON syntax errors (e.g., invalid
+	// Object/List literal values) that structural validation doesn't reach.
+	// This exercises the same code path as actual execution, so any error here
+	// would cause the executor to fail too.
+	if _, err = adaptor.CanvasToWorkflowSchema(ctx, c); err != nil {
+		issue := &validate.Issue{Message: fmt.Sprintf("canvas node parse error: %v", err)}
+		var nodeParseErr *adaptor.NodeParseError
+		if errors.As(err, &nodeParseErr) {
+			issue.NodeErr = &validate.NodeErr{NodeID: nodeParseErr.NodeID}
+			issue.Message = fmt.Sprintf("canvas node parse error: %v", nodeParseErr.Err)
+		}
+		return []*validate.Issue{issue}, nil
 	}
 
 	return issues, nil

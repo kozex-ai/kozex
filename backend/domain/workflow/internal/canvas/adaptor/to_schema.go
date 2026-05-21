@@ -63,6 +63,19 @@ import (
 	"github.com/kozex-ai/kozex/backend/pkg/sonic"
 )
 
+// NodeParseError is returned by CanvasToWorkflowSchema when a specific node
+// fails to parse, so callers can surface the node ID in error messages.
+type NodeParseError struct {
+	NodeID string
+	Err    error
+}
+
+func (e *NodeParseError) Error() string {
+	return fmt.Sprintf("node %s: %v", e.NodeID, e.Err)
+}
+
+func (e *NodeParseError) Unwrap() error { return e.Err }
+
 func CanvasToWorkflowSchema(ctx context.Context, s *vo.Canvas) (sc *schema.WorkflowSchema, err error) {
 	defer func() {
 		if panicErr := recover(); panicErr != nil {
@@ -113,7 +126,7 @@ func CanvasToWorkflowSchema(ctx context.Context, s *vo.Canvas) (sc *schema.Workf
 
 		nsList, hierarchy, err := NodeToNodeSchema(ctx, node, s)
 		if err != nil {
-			return nil, err
+			return nil, &NodeParseError{NodeID: node.ID, Err: err}
 		}
 
 		sc.Nodes = append(sc.Nodes, nsList...)

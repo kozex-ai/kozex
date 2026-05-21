@@ -297,7 +297,7 @@ func QueryWorkflowNodeTypes(ctx context.Context, c *app.RequestContext) {
 	}
 	resp, err := appworkflow.SVC.QueryWorkflowNodeTypes(ctx, &req)
 	if err != nil {
-		c.String(consts.StatusInternalServerError, err.Error())
+		internalServerErrorResponse(ctx, c, err)
 		return
 	}
 

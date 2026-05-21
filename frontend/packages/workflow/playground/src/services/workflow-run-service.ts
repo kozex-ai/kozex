@@ -337,7 +337,10 @@ export class WorkflowRunService {
     this.execState.updateConfig(result || {});
     this.updateExecuteState(result);
 
-    if (result?.executeStatus !== WorkflowExeStatus.Running) {
+    if (
+      result?.executeStatus !== WorkflowExeStatus.Running &&
+      result?.executeStatus !== WorkflowExeStatus.Queueing
+    ) {
       return result?.executeStatus;
     }
 
@@ -649,6 +652,7 @@ export class WorkflowRunService {
        */
       if (
         result?.executeStatus === WorkflowExeStatus.Running ||
+        result?.executeStatus === WorkflowExeStatus.Queueing ||
         (result?.executeStatus as number) === 0
       ) {
         /** To turn on polling, you need to first make the view read-only */

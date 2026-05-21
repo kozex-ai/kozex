@@ -739,6 +739,7 @@ export enum WorkflowExeStatus {
   Success = 2,
   Fail = 3,
   Cancel = 4,
+  Queueing = 6,
 }
 
 export enum WorkFlowListStatus {

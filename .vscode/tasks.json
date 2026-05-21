@@ -4,8 +4,11 @@
     {
       "label": "build-opencoze-debug",
       "type": "shell",
-      "command": "go",
+      "command": "nice",
       "args": [
+        "-n",
+        "15",
+        "go",
         "build",
         "-gcflags=all=-N -l",
         "-o",
@@ -13,7 +16,11 @@
         "main.go"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/backend"
+        "cwd": "${workspaceFolder}/backend",
+        "env": {
+          "GOMAXPROCS": "4",
+          "GOGC": "50"
+        }
       },
       "group": "build",
       "problemMatcher": ["$go"]

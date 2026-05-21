@@ -45,7 +45,7 @@ import (
 func GetBasicConfiguration(ctx context.Context, c *app.RequestContext) {
 	baseConfig, err := bizConf.Base().GetBaseConfig(ctx)
 	if err != nil {
-		c.String(consts.StatusInternalServerError, err.Error())
+		internalServerErrorResponse(ctx, c, fmt.Errorf("get basic config failed: %w", err))
 		return
 	}
 
@@ -62,7 +62,7 @@ func SaveBasicConfiguration(ctx context.Context, c *app.RequestContext) {
 	var req config.SaveBasicConfigurationReq
 	err = c.BindAndValidate(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		invalidParamRequestResponse(c, fmt.Sprintf("bind and validate request failed: %v", err))
 		return
 	}
 
@@ -139,7 +139,7 @@ func UpdateKnowledgeConfig(ctx context.Context, c *app.RequestContext) {
 	var req config.UpdateKnowledgeConfigReq
 	err = c.BindAndValidate(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		invalidParamRequestResponse(c, fmt.Sprintf("bind and validate request failed: %v", err))
 		return
 	}
 
@@ -216,7 +216,7 @@ func GetModelList(ctx context.Context, c *app.RequestContext) {
 	var req config.GetModelListReq
 	err = c.BindAndValidate(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		invalidParamRequestResponse(c, fmt.Sprintf("bind and validate request failed: %v", err))
 		return
 	}
 
@@ -239,7 +239,7 @@ func CreateModel(ctx context.Context, c *app.RequestContext) {
 	var req config.CreateModelReq
 	err = c.BindAndValidate(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		invalidParamRequestResponse(c, fmt.Sprintf("bind and validate request failed: %v", err))
 		return
 	}
 
@@ -292,7 +292,7 @@ func DeleteModel(ctx context.Context, c *app.RequestContext) {
 	var req config.DeleteModelReq
 	err = c.BindAndValidate(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		invalidParamRequestResponse(c, fmt.Sprintf("bind and validate request failed: %v", err))
 		return
 	}
 
