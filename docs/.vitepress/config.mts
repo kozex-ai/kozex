@@ -124,7 +124,21 @@ export default defineConfig({
     },
   },
 
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-CG0KC2WMWT' }],
+    ['script', {}, `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CG0KC2WMWT');`],
+    ['script', {}, `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fbc77fe3711a0548fb5c914e99daea6a";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();`],
+  ],
 
   ignoreDeadLinks: [
     /localhost/,     // runtime app links in quickstart/config docs
